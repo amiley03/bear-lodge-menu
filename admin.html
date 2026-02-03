@@ -471,6 +471,7 @@
             <div class="tab" data-tab="mexican">Mexican</div>
             <div class="tab" data-tab="snacks">Snacks</div>
             <div class="tab" data-tab="desserts">Desserts</div>
+            <div class="tab" data-tab="import">Import JSON</div>
             <div class="tab" data-tab="export">Export JSON</div>
         </div>
 
@@ -584,6 +585,49 @@
                     </div>
                 `;
             });
+
+            // Import panel
+            html += `
+                <div class="panel" data-panel="import">
+                    <h2>Import Recipes</h2>
+                    <p>Paste JSON to add new recipes to the menu. You can import a single item or multiple items.</p>
+
+                    <div class="form-group">
+                        <label for="import-category">Add to Category</label>
+                        <select id="import-category">
+                            ${menuData.categories.map(cat => `<option value="${cat.id}">${cat.name}</option>`).join('')}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="import-json">Paste JSON</label>
+                        <textarea id="import-json" style="min-height: 200px; font-family: monospace; font-size: 0.85rem;" placeholder='{
+  "name": "New Recipe",
+  "description": "A delicious dish",
+  "image": "https://images.unsplash.com/...",
+  "isFavorite": false,
+  "recipe": {
+    "ingredients": ["item 1", "item 2"],
+    "instructions": ["Step 1", "Step 2"]
+  }
+}'></textarea>
+                        <p class="help-text">Paste a single recipe object { } or an array of recipes [ { }, { } ]</p>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                        <button class="btn-add" onclick="previewImport()">Preview Import</button>
+                        <button class="btn-save" onclick="executeImport()" id="import-btn" disabled>Import Recipes</button>
+                    </div>
+
+                    <div id="import-preview" style="display: none;">
+                        <h3 style="margin-bottom: 1rem;">Preview (${`<span id="import-count">0</span>`} items to import)</h3>
+                        <div id="import-preview-list" class="item-list"></div>
+                    </div>
+
+                    <div id="import-error" style="color: var(--soft-red); margin-top: 1rem; display: none;"></div>
+                    <div id="import-success" style="color: var(--forest-green); margin-top: 1rem; display: none;"></div>
+                </div>
+            `;
 
             // Export panel
             html += `
@@ -760,6 +804,128 @@
                 document.execCommand('copy');
                 alert('JSON copied!');
             });
+        }
+
+        // Import functionality
+        let pendingImports = [];
+
+        function previewImport() {
+            const jsonInput = document.getElementById('import-json').value.trim();
+            const errorDiv = document.getElementById('import-error');
+            const successDiv = document.getElementById('import-success');
+            const previewDiv = document.getElementById('import-preview');
+            const previewList = document.getElementById('import-preview-list');
+            const importBtn = document.getElementById('import-btn');
+
+            errorDiv.style.display = 'none';
+            successDiv.style.display = 'none';
+            previewDiv.style.display = 'none';
+            importBtn.disabled = true;
+            pendingImports = [];
+
+            if (!jsonInput) {
+                errorDiv.textContent = 'Please paste some JSON first.';
+                errorDiv.style.display = 'block';
+                return;
+            }
+
+            try {
+                let parsed = JSON.parse(jsonInput);
+
+                // Normalize to array
+                if (!Array.isArray(parsed)) {
+                    parsed = [parsed];
+                }
+
+                // Validate each item
+                for (let i = 0; i < parsed.length; i++) {
+                    const item = parsed[i];
+                    if (!item.name) {
+                        throw new Error(`Item ${i + 1} is missing required field: name`);
+                    }
+                    if (!item.description) {
+                        item.description = '';
+                    }
+                    // Generate ID if not provided
+                    if (!item.id) {
+                        item.id = item.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+                    }
+                    // Default image if not provided
+                    if (!item.image) {
+                        item.image = 'https://images.unsplash.com/photo-1495195134817-aeb325a55b65?w=400';
+                    }
+                    pendingImports.push(item);
+                }
+
+                // Show preview
+                document.getElementById('import-count').textContent = pendingImports.length;
+                previewList.innerHTML = pendingImports.map(item => `
+                    <div class="item-card">
+                        <img src="${item.image}" alt="${item.name}"
+                             onerror="this.src='https://images.unsplash.com/photo-1495195134817-aeb325a55b65?w=100'">
+                        <div class="info">
+                            <h4>${item.name}${item.isFavorite ? '<span class="badge favorite">Fave</span>' : ''}</h4>
+                            <p>${item.description || 'No description'}</p>
+                            <p style="font-size: 0.8rem; color: #888;">
+                                ${item.recipe ? `${item.recipe.ingredients?.length || 0} ingredients, ${item.recipe.instructions?.length || 0} steps` : 'No recipe'}
+                            </p>
+                        </div>
+                    </div>
+                `).join('');
+
+                previewDiv.style.display = 'block';
+                importBtn.disabled = false;
+
+            } catch (err) {
+                errorDiv.textContent = 'Invalid JSON: ' + err.message;
+                errorDiv.style.display = 'block';
+            }
+        }
+
+        function executeImport() {
+            if (pendingImports.length === 0) return;
+
+            const categoryId = document.getElementById('import-category').value;
+            const category = findCategory(categoryId);
+
+            if (!category) {
+                document.getElementById('import-error').textContent = 'Category not found.';
+                document.getElementById('import-error').style.display = 'block';
+                return;
+            }
+
+            // Add items to category
+            let added = 0;
+            let skipped = 0;
+            for (const item of pendingImports) {
+                // Check if ID already exists
+                const exists = category.items.find(i => i.id === item.id);
+                if (exists) {
+                    skipped++;
+                } else {
+                    category.items.push(item);
+                    added++;
+                }
+            }
+
+            // Clear and show success
+            document.getElementById('import-json').value = '';
+            document.getElementById('import-preview').style.display = 'none';
+            document.getElementById('import-btn').disabled = true;
+            pendingImports = [];
+
+            const successDiv = document.getElementById('import-success');
+            successDiv.textContent = `Successfully imported ${added} recipe(s) to ${category.name}.${skipped > 0 ? ` (${skipped} skipped - already exist)` : ''}`;
+            successDiv.style.display = 'block';
+
+            // Refresh panels
+            renderPanels();
+            updateJsonPreview();
+
+            // Switch to the category tab to show new items
+            setTimeout(() => {
+                document.querySelector(`[data-tab="${categoryId}"]`).click();
+            }, 1500);
         }
 
         // Close modal on outside click
