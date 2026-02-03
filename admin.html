@@ -523,6 +523,8 @@
                     <textarea id="edit-instructions" placeholder="Preheat oven to 350F.&#10;Mix dry ingredients.&#10;Add wet ingredients and stir."></textarea>
                 </div>
 
+                <div id="edit-validation" style="display:none; margin-bottom:1rem; padding:0.75rem 1rem; border-radius:6px; font-size:0.9rem;"></div>
+
                 <div class="form-actions">
                     <button type="submit" class="btn-save">Save Item</button>
                     <button type="button" class="btn-cancel" onclick="closeModal()">Cancel</button>
@@ -760,6 +762,7 @@
             document.getElementById('edit-signature').checked = false;
             document.getElementById('edit-ingredients').value = '';
             document.getElementById('edit-instructions').value = '';
+            document.getElementById('edit-validation').style.display = 'none';
             document.getElementById('edit-modal').classList.add('active');
         }
 
@@ -785,6 +788,7 @@
                 document.getElementById('edit-instructions').value = '';
             }
 
+            document.getElementById('edit-validation').style.display = 'none';
             document.getElementById('edit-modal').classList.add('active');
         }
 
@@ -816,6 +820,32 @@
                 .split('\n').filter(l => l.trim());
             const instructions = document.getElementById('edit-instructions').value
                 .split('\n').filter(l => l.trim());
+
+            // Validate ingredients against core list
+            const validationDiv = document.getElementById('edit-validation');
+            validationDiv.style.display = 'none';
+
+            if (ingredients.length > 0 && menuData.coreIngredients && menuData.forbiddenIngredients) {
+                const result = validateIngredients(ingredients);
+
+                if (result.forbidden.length > 0 || result.warnings.length > 0) {
+                    let msg = '';
+                    if (result.forbidden.length > 0) {
+                        msg += '<strong>FORBIDDEN:</strong> ' + result.forbidden.join(', ') + '<br>';
+                    }
+                    if (result.warnings.length > 0) {
+                        msg += '<strong>NOT IN CORE LIST:</strong> ' + result.warnings.join(', ') + '<br>';
+                    }
+                    msg += '<br>Only ingredients from the Foundation list are allowed. Check the Foundation tab for approved ingredients.';
+                    validationDiv.innerHTML = msg;
+                    validationDiv.style.display = 'block';
+                    validationDiv.style.background = '#fdecea';
+                    validationDiv.style.border = '1px solid #c75b4a';
+                    validationDiv.style.color = '#c75b4a';
+                    validationDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    return;
+                }
+            }
 
             const itemData = {
                 id: itemId || document.getElementById('edit-name').value.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
@@ -1012,8 +1042,17 @@
 
                 previewDiv.style.display = 'block';
 
+                // Check for any non-core ingredients
+                const hasNonCore = pendingImports.some(item =>
+                    item._validation && (item._validation.forbidden.length > 0 || item._validation.warnings.length > 0)
+                );
+
                 if (hasForbidden) {
-                    errorDiv.innerHTML = '<strong>Cannot import:</strong> One or more recipes contain forbidden ingredients that are unsafe for Larry. Please remove these items or edit the ingredients.';
+                    errorDiv.innerHTML = '<strong>BLOCKED:</strong> Contains forbidden ingredients that are unsafe for Larry (high fiber, fatty, etc). Remove these items before importing.';
+                    errorDiv.style.display = 'block';
+                    importBtn.disabled = true;
+                } else if (hasNonCore) {
+                    errorDiv.innerHTML = '<strong>BLOCKED:</strong> Contains ingredients not in the core list. All recipes must use only approved core ingredients to maintain the meal prep foundation. Check the Foundation tab for approved ingredients.';
                     errorDiv.style.display = 'block';
                     importBtn.disabled = true;
                 } else {
