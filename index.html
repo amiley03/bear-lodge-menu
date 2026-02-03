@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bear Lodge Inn - Made Fresh for Larry</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Bear Lodge Inn</h1>
+            <p class="tagline">Cozy Cabin Diner in the Woods</p>
+            <p class="made-for">Made Fresh for Larry</p>
+        </div>
+    </header>
+
+    <nav class="menu-nav">
+        <div class="nav-container">
+            <a href="#breakfast" class="nav-item">Breakfast</a>
+            <a href="#soups" class="nav-item">Soups</a>
+            <a href="#dinners" class="nav-item">Dinners</a>
+            <a href="#mexican" class="nav-item">Mexican</a>
+            <a href="#snacks" class="nav-item">Snacks</a>
+            <a href="#desserts" class="nav-item">Desserts</a>
+            <a href="#guidelines" class="nav-item">Guidelines</a>
+        </div>
+    </nav>
+
+    <main class="menu-container">
+        <!-- Daily Schedule Banner -->
+        <section class="schedule-banner">
+            <h3>Daily Eating Schedule</h3>
+            <div class="schedule-grid" id="schedule-grid">
+                <!-- Populated by JS -->
+            </div>
+        </section>
+
+        <!-- Menu Sections -->
+        <div id="menu-sections">
+            <!-- Populated by JS -->
+        </div>
+
+        <!-- Guidelines Section -->
+        <section id="guidelines" class="guidelines-section">
+            <h2>Eating Guidelines for Larry</h2>
+
+            <div class="guidelines-grid">
+                <div class="guideline-card good">
+                    <h3>The Bear Lodge Way</h3>
+                    <ul id="rules-list">
+                        <!-- Populated by JS -->
+                    </ul>
+                </div>
+
+                <div class="guideline-card avoid">
+                    <h3>Foods to Avoid</h3>
+                    <div id="avoid-list">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="meal-prep-section">
+                <h3>Weekly Meal Prep</h3>
+                <div class="prep-grid">
+                    <div class="prep-card">
+                        <h4>Cook on Sunday</h4>
+                        <ul id="weekly-prep">
+                            <!-- Populated by JS -->
+                        </ul>
+                    </div>
+                    <div class="prep-card">
+                        <h4>Always Stock</h4>
+                        <ul id="always-stock">
+                            <!-- Populated by JS -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Recipe Modal -->
+    <div id="recipe-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-body">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Bear Lodge Inn &bull; Made with love for Larry</p>
+        <p class="footer-note">Designed for portal hypertension & gastroparesis - soft, low-fiber, low-fat comfort foods</p>
+        <a href="admin.html" class="admin-link">Edit Menu</a>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

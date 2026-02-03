@@ -1,0 +1,584 @@
+{
+  "restaurant": {
+    "name": "Bear Lodge Inn",
+    "tagline": "Cozy Cabin Diner in the Woods",
+    "madeFor": "Larry",
+    "description": "Every meal is cozy, comforting, and designed to be gentle on the stomach while still tasting like real food made with love."
+  },
+  "dietaryNotes": {
+    "conditions": ["Portal Hypertension", "Gastroparesis", "Esophageal Varices"],
+    "mealPattern": "6 small meals per day - 5 easy digestible + 1 solid dinner",
+    "rules": [
+      "Soft, low-fiber, low-fat foods",
+      "Small portions every 2-3 hours",
+      "Sit upright 45-60 min after eating",
+      "Fork-only foods preferred"
+    ]
+  },
+  "categories": [
+    {
+      "id": "breakfast",
+      "name": "Breakfast Favorites",
+      "icon": "sunrise",
+      "items": [
+        {
+          "id": "french-toast",
+          "name": "Custard French Toast",
+          "description": "Soft, warm, and sweet. Easy on the stomach and full of comfort.",
+          "image": "https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=400",
+          "isFavorite": true,
+          "recipe": {
+            "ingredients": ["4 slices white bread", "2 eggs", "1/4 cup milk", "1 tsp vanilla", "2 tbsp butter", "Maple syrup"],
+            "instructions": ["Beat eggs with milk and vanilla until smooth.", "Soak bread slices until saturated but not falling apart.", "Melt butter in pan over medium-low heat.", "Cook each side until golden and custardy inside.", "Serve with syrup."]
+          }
+        },
+        {
+          "id": "sausage-egg-bowl",
+          "name": "Sausage Egg Breakfast Bowl",
+          "description": "All the flavor of a breakfast sandwich in a fork-friendly bowl.",
+          "image": "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=400",
+          "isFavorite": true,
+          "recipe": {
+            "ingredients": ["2 eggs", "2 oz breakfast sausage (crumbled, cooked)", "1 slice white toast (cubed)", "2 tbsp shredded cheese", "Salt to taste"],
+            "instructions": ["Scramble eggs until soft and fluffy.", "Cook sausage until no pink remains, crumble finely.", "Cube toast into small pieces.", "Combine all in a bowl, top with cheese.", "Serve warm."]
+          }
+        },
+        {
+          "id": "scrambled-eggs",
+          "name": "Scrambled Eggs & Toast",
+          "description": "Classic diner comfort with yogurt on the side.",
+          "image": "https://images.unsplash.com/photo-1551185618-b7b29ed16560?w=400",
+          "recipe": {
+            "ingredients": ["2-3 eggs", "1 tbsp butter", "2 slices white toast", "1/2 cup vanilla yogurt", "Salt"],
+            "instructions": ["Melt butter in non-stick pan over low heat.", "Beat eggs with a pinch of salt.", "Cook slowly, stirring gently until soft curds form.", "Serve with buttered toast and yogurt."]
+          }
+        },
+        {
+          "id": "cream-of-wheat",
+          "name": "Cream of Wheat",
+          "description": "Warm, gentle, and comforting. Perfect start to any day.",
+          "image": "https://images.unsplash.com/photo-1517673400267-0251440c45dc?w=400",
+          "recipe": {
+            "ingredients": ["3 tbsp cream of wheat", "1 cup milk", "1 tbsp butter", "2 tbsp brown sugar", "Pinch of salt"],
+            "instructions": ["Heat milk in saucepan until simmering.", "Slowly whisk in cream of wheat.", "Cook 2-3 minutes, stirring constantly.", "Remove from heat, stir in butter and brown sugar.", "Serve warm."]
+          }
+        },
+        {
+          "id": "cottage-peaches",
+          "name": "Cottage Cheese & Peaches",
+          "description": "Light, protein-rich, and naturally sweet.",
+          "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400",
+          "recipe": {
+            "ingredients": ["1 cup cottage cheese", "1/2 cup canned peaches (drained)", "1 tsp honey (optional)"],
+            "instructions": ["Spoon cottage cheese into bowl.", "Top with peach slices.", "Drizzle with honey if desired."]
+          }
+        },
+        {
+          "id": "yogurt-banana",
+          "name": "Yogurt, Banana & Honey Bowl",
+          "description": "Creamy, sweet, and full of easy calories.",
+          "image": "https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?w=400",
+          "recipe": {
+            "ingredients": ["1 cup vanilla yogurt", "1 ripe banana (sliced)", "1 tbsp honey"],
+            "instructions": ["Spoon yogurt into bowl.", "Arrange banana slices on top.", "Drizzle generously with honey."]
+          }
+        },
+        {
+          "id": "protein-smoothie",
+          "name": "Banana Protein Smoothie",
+          "description": "Liquid calories that go down easy. Great for mid-morning.",
+          "image": "https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=400",
+          "recipe": {
+            "ingredients": ["1 ripe banana", "1 cup milk", "1 tbsp peanut butter", "1 scoop vanilla protein powder"],
+            "instructions": ["Add all ingredients to blender.", "Blend until completely smooth.", "Serve immediately."]
+          }
+        }
+      ]
+    },
+    {
+      "id": "soups",
+      "name": "Soups & Cozy Lunches",
+      "icon": "soup",
+      "description": "Soup is king for Larry - warm, easy to digest, and comforting.",
+      "items": [
+        {
+          "id": "chicken-noodle",
+          "name": "Chicken Noodle Soup",
+          "description": "Warm broth, soft noodles, shredded chicken. The ultimate comfort.",
+          "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400",
+          "isFavorite": true,
+          "recipe": {
+            "ingredients": ["4 cups chicken broth", "1 cup shredded chicken", "1 cup egg noodles", "1/2 cup soft-cooked carrots (diced small)", "Salt to taste"],
+            "instructions": ["Bring broth to simmer.", "Add carrots, cook until very soft (15 min).", "Add noodles, cook until very soft.", "Stir in shredded chicken.", "Season and serve warm."]
+          }
+        },
+        {
+          "id": "tomato-grilled-cheese",
+          "name": "Tomato Soup & Grilled Cheese",
+          "description": "Creamy soup with melty white-bread grilled cheese.",
+          "image": "https://images.unsplash.com/photo-1547592180-85f173990554?w=400",
+          "recipe": {
+            "ingredients": ["1 can cream of tomato soup", "1/2 cup milk", "2 slices white bread", "2 slices American cheese", "2 tbsp butter"],
+            "instructions": ["Heat soup with milk until warm (not boiling).", "Butter bread slices on outside.", "Place cheese between bread.", "Grill on medium-low until golden and cheese melts.", "Cut sandwich into strips for dipping."]
+          }
+        },
+        {
+          "id": "turkey-rice",
+          "name": "Turkey & Rice Soup",
+          "description": "Gentle, filling, and perfect midday comfort.",
+          "image": "https://images.unsplash.com/photo-1603105037880-880cd4edfb0d?w=400",
+          "recipe": {
+            "ingredients": ["4 cups chicken broth", "1 cup cooked shredded turkey", "1/2 cup cooked white rice", "1/4 cup soft carrots", "Salt"],
+            "instructions": ["Simmer broth with carrots until very soft.", "Add cooked rice and turkey.", "Heat through.", "Season and serve."]
+          }
+        },
+        {
+          "id": "potato-soup",
+          "name": "Creamy Potato Soup",
+          "description": "Silky, warm, and filling. Blended smooth.",
+          "image": "https://images.unsplash.com/photo-1578020190125-f4f7c18bc9cb?w=400",
+          "recipe": {
+            "ingredients": ["3 cups peeled potatoes (cubed)", "2 cups chicken broth", "1 cup milk", "2 tbsp butter", "Salt", "Shredded cheese for topping"],
+            "instructions": ["Boil potatoes in broth until very soft.", "Add milk and butter.", "Blend until completely smooth.", "Reheat gently, top with cheese."]
+          }
+        },
+        {
+          "id": "chicken-rice-broth",
+          "name": "Chicken & Rice Broth Bowl",
+          "description": "Simple, soothing, perfect when appetite is low.",
+          "image": "https://images.unsplash.com/photo-1604152135912-04a022e23696?w=400",
+          "recipe": {
+            "ingredients": ["2 cups chicken broth", "1/2 cup cooked white rice", "1/2 cup shredded chicken", "Salt"],
+            "instructions": ["Heat broth until simmering.", "Add rice and chicken.", "Warm through and serve."]
+          }
+        },
+        {
+          "id": "chicken-pot-pie-bowl",
+          "name": "Chicken Pot Pie Bowl",
+          "description": "All the comfort of pot pie, no crust needed.",
+          "image": "https://images.unsplash.com/photo-1626200419199-391ae4be7a41?w=400",
+          "recipe": {
+            "ingredients": ["1 cup shredded chicken", "1 can cream of chicken soup", "1/4 cup milk", "1/4 cup soft peas", "1/4 cup soft carrots", "Mashed potatoes"],
+            "instructions": ["Mix soup with milk, heat gently.", "Add chicken and very soft vegetables.", "Serve over mashed potatoes."]
+          }
+        }
+      ]
+    },
+    {
+      "id": "dinners",
+      "name": "Bear Lodge Dinner Specials",
+      "icon": "utensils",
+      "description": "The one 'real meal' of the day - satisfying but still gentle.",
+      "items": [
+        {
+          "id": "balsamic-pork",
+          "name": "Balsamic Shredded Pork",
+          "description": "Larry's favorite - tender pork with sweet balsamic over creamy mashed potatoes.",
+          "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=400",
+          "isFavorite": true,
+          "isSignature": true,
+          "recipe": {
+            "ingredients": ["2 lb pork loin", "1/2 cup balsamic glaze", "1/4 cup chicken broth", "Salt", "4 cups mashed potatoes"],
+            "instructions": ["Place pork in slow cooker with broth.", "Cook on low 6-8 hours until shreddable.", "Shred with forks.", "Drizzle with balsamic glaze.", "Serve over smooth mashed potatoes."]
+          }
+        },
+        {
+          "id": "stroganoff",
+          "name": "Creamy Beef Stroganoff",
+          "description": "Rich and cozy over soft egg noodles. A classic.",
+          "image": "https://images.unsplash.com/photo-1619895092538-128341789043?w=400",
+          "isFavorite": true,
+          "recipe": {
+            "ingredients": ["1 lb ground beef", "1 can cream of mushroom soup", "1/2 cup sour cream", "2 cups egg noodles (cooked very soft)", "Salt"],
+            "instructions": ["Brown beef finely, drain fat.", "Stir in soup and sour cream.", "Heat gently (don't boil).", "Serve over very soft egg noodles.", "Keep portions small."]
+          }
+        },
+        {
+          "id": "bbq-chicken",
+          "name": "BBQ Shredded Chicken Bowl",
+          "description": "All the BBQ rib flavor without the heaviness.",
+          "image": "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=400",
+          "isFavorite": true,
+          "recipe": {
+            "ingredients": ["1.5 cups shredded chicken", "1/3 cup BBQ sauce (mild)", "2 cups mashed potatoes"],
+            "instructions": ["Mix shredded chicken with BBQ sauce.", "Warm gently.", "Serve over creamy mashed potatoes."]
+          }
+        },
+        {
+          "id": "turkey-gravy-toast",
+          "name": "Turkey Gravy Toast Bowl",
+          "description": "Open-face comfort food you eat with a fork. Like a smothered sandwich.",
+          "image": "https://images.unsplash.com/photo-1574484284002-952d92456975?w=400",
+          "isFavorite": true,
+          "recipe": {
+            "ingredients": ["2 slices white bread (cubed)", "1 cup shredded turkey", "1 cup turkey or chicken gravy", "Mashed potatoes"],
+            "instructions": ["Cube bread into bowl.", "Top with shredded turkey.", "Warm gravy and pour over.", "Serve with mashed potatoes on side."]
+          }
+        },
+        {
+          "id": "meatloaf",
+          "name": "Turkey Meatloaf",
+          "description": "Soft, savory, and served with creamy mashed potatoes.",
+          "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=400",
+          "recipe": {
+            "ingredients": ["1 lb ground turkey", "1 egg", "1/2 cup white breadcrumbs", "1/4 cup milk", "Salt", "2 tbsp ketchup"],
+            "instructions": ["Mix turkey, egg, breadcrumbs, milk, and salt.", "Form into loaf in baking pan.", "Top with ketchup.", "Bake at 350°F for 40 minutes.", "Slice and serve with mashed potatoes and gravy."]
+          }
+        },
+        {
+          "id": "chicken-alfredo",
+          "name": "Creamy Chicken Alfredo",
+          "description": "Rich, creamy pasta in a small satisfying portion.",
+          "image": "https://images.unsplash.com/photo-1645112411341-6c4fd023714a?w=400",
+          "recipe": {
+            "ingredients": ["1 cup cooked pasta (very soft)", "1/2 cup shredded chicken", "1/2 cup Alfredo sauce"],
+            "instructions": ["Cook pasta until very soft.", "Warm Alfredo sauce with chicken.", "Combine and serve small portion."]
+          }
+        },
+        {
+          "id": "white-fish",
+          "name": "Baked White Fish & Rice",
+          "description": "Light, flaky fish with butter and lemon over white rice.",
+          "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=400",
+          "recipe": {
+            "ingredients": ["1 tilapia or cod fillet", "2 tbsp butter", "1 tbsp lemon juice", "Salt", "1 cup cooked white rice"],
+            "instructions": ["Place fish in baking dish.", "Top with butter and lemon juice.", "Bake at 375°F for 15-20 minutes until flaky.", "Serve over white rice."]
+          }
+        },
+        {
+          "id": "shepherds-pie",
+          "name": "Shepherd's Pie Bowl",
+          "description": "Ground turkey topped with creamy mashed potatoes.",
+          "image": "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=400",
+          "recipe": {
+            "ingredients": ["1 cup cooked ground turkey", "1/4 cup gravy", "1 cup mashed potatoes", "2 tbsp shredded cheese"],
+            "instructions": ["Place turkey in bowl, mix with gravy.", "Top with mashed potatoes.", "Sprinkle with cheese.", "Microwave until cheese melts."]
+          }
+        }
+      ]
+    },
+    {
+      "id": "mexican",
+      "name": "Mexican Comforts",
+      "icon": "pepper",
+      "description": "Soft, cheesy, satisfying - Mexican flavors made gentle.",
+      "items": [
+        {
+          "id": "enchiladas",
+          "name": "Soft Chicken Enchiladas",
+          "description": "Baked tender and cheesy. A Larry favorite.",
+          "image": "https://images.unsplash.com/photo-1534352956036-cd81e27dd615?w=400",
+          "isFavorite": true,
+          "recipe": {
+            "ingredients": ["4 flour tortillas", "1.5 cups shredded chicken", "1 cup mild enchilada sauce", "1 cup shredded cheese", "1/4 cup sour cream"],
+            "instructions": ["Fill tortillas with chicken and cheese.", "Roll and place seam-down in baking dish.", "Cover with enchilada sauce and more cheese.", "Bake at 350°F for 20 minutes until bubbly.", "Top with sour cream."]
+          }
+        },
+        {
+          "id": "cheese-enchiladas",
+          "name": "Cheese Enchilada Bake",
+          "description": "Soft, cheesy, and perfectly satisfying.",
+          "image": "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=400",
+          "recipe": {
+            "ingredients": ["4 flour tortillas", "2 cups shredded cheese", "1 cup mild enchilada sauce", "1/4 cup sour cream"],
+            "instructions": ["Fill tortillas with cheese.", "Roll and place in baking dish.", "Cover with sauce and more cheese.", "Bake at 350°F for 15-20 minutes.", "Serve with sour cream."]
+          }
+        },
+        {
+          "id": "quesadilla",
+          "name": "Chicken Quesadilla (Soft)",
+          "description": "Melted, not crispy. Easy to eat.",
+          "image": "https://images.unsplash.com/photo-1618040996337-56904b7850b9?w=400",
+          "recipe": {
+            "ingredients": ["2 flour tortillas", "1/2 cup shredded chicken", "1/2 cup shredded cheese", "Sour cream for dipping"],
+            "instructions": ["Place chicken and cheese on one tortilla.", "Top with second tortilla.", "Cook on medium-low until cheese melts (don't crisp).", "Cut into wedges, serve with sour cream."]
+          }
+        },
+        {
+          "id": "mexican-rice-bowl",
+          "name": "Mexican Chicken Rice Bowl",
+          "description": "Rice, chicken, sauce, cheese - simple and satisfying.",
+          "image": "https://images.unsplash.com/photo-1543339308-43e59d6b73a6?w=400",
+          "recipe": {
+            "ingredients": ["1 cup cooked white rice", "1/2 cup shredded chicken", "1/4 cup mild enchilada sauce", "1/4 cup shredded cheese", "2 tbsp sour cream"],
+            "instructions": ["Place rice in bowl.", "Top with chicken and sauce.", "Sprinkle with cheese.", "Microwave until warm.", "Top with sour cream."]
+          }
+        },
+        {
+          "id": "enchilada-casserole",
+          "name": "Enchilada Casserole Scoop",
+          "description": "All the enchilada flavors, spoonable comfort.",
+          "image": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400",
+          "recipe": {
+            "ingredients": ["4 flour tortillas (torn)", "1 cup shredded chicken", "1.5 cups mild enchilada sauce", "1.5 cups shredded cheese"],
+            "instructions": ["Layer torn tortillas, chicken, sauce, and cheese in baking dish.", "Repeat layers.", "Bake at 350°F for 25 minutes.", "Scoop and serve."]
+          }
+        },
+        {
+          "id": "taco-bowl",
+          "name": "Turkey Taco Rice Bowl",
+          "description": "Mild taco flavors over rice. No shell needed.",
+          "image": "https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?w=400",
+          "recipe": {
+            "ingredients": ["1/2 lb ground turkey", "1 tbsp mild taco seasoning", "1 cup cooked white rice", "1/4 cup shredded cheese", "2 tbsp sour cream"],
+            "instructions": ["Brown turkey, drain fat.", "Add taco seasoning and a little water, simmer.", "Serve over rice.", "Top with cheese and sour cream."]
+          }
+        },
+        {
+          "id": "mexican-potato-bowl",
+          "name": "Mexican Mashed Potato Bowl",
+          "description": "Creamy potatoes with taco turkey and all the toppings.",
+          "image": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400",
+          "recipe": {
+            "ingredients": ["1.5 cups mashed potatoes", "1/2 cup seasoned ground turkey", "1/4 cup shredded cheese", "2 tbsp sour cream", "Mild salsa (optional)"],
+            "instructions": ["Place mashed potatoes in bowl.", "Top with seasoned turkey.", "Add cheese and sour cream.", "Drizzle with mild salsa if tolerated."]
+          }
+        },
+        {
+          "id": "soft-taquitos",
+          "name": "Cheesy Chicken Taquitos (Soft)",
+          "description": "Rolled tortillas baked just until warm, not crispy.",
+          "image": "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=400",
+          "recipe": {
+            "ingredients": ["4 flour tortillas", "1 cup shredded chicken", "1/2 cup shredded cheese", "Sour cream for dipping"],
+            "instructions": ["Mix chicken with cheese.", "Place filling on edge of each tortilla, roll tight.", "Place seam-down on baking sheet.", "Bake at 350°F for 10 minutes (keep soft).", "Serve with sour cream."]
+          }
+        }
+      ]
+    },
+    {
+      "id": "snacks",
+      "name": "Snacks & Mini-Meals",
+      "icon": "clock",
+      "description": "Easy calories between meals. These save the day.",
+      "items": [
+        {
+          "id": "yogurt-honey",
+          "name": "Yogurt with Honey",
+          "description": "Quick protein and easy calories.",
+          "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400",
+          "recipe": {
+            "ingredients": ["1 cup vanilla yogurt", "1 tbsp honey"],
+            "instructions": ["Spoon yogurt into bowl.", "Drizzle with honey.", "Enjoy."]
+          }
+        },
+        {
+          "id": "applesauce-cinnamon",
+          "name": "Warm Applesauce & Cinnamon",
+          "description": "Gentle, sweet, and soothing.",
+          "image": "https://images.unsplash.com/photo-1568909344668-6f14a07b56a0?w=400",
+          "recipe": {
+            "ingredients": ["1 cup applesauce", "1/4 tsp cinnamon", "1 tsp butter (optional)"],
+            "instructions": ["Warm applesauce in microwave.", "Stir in cinnamon and butter.", "Serve warm."]
+          }
+        },
+        {
+          "id": "protein-pudding",
+          "name": "Protein Pudding Cup",
+          "description": "Creamy, satisfying, protein-packed.",
+          "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400",
+          "recipe": {
+            "ingredients": ["1 cup prepared vanilla pudding", "1/2 scoop vanilla protein powder"],
+            "instructions": ["Mix protein powder into pudding.", "Stir until smooth.", "Chill and serve."]
+          }
+        },
+        {
+          "id": "cottage-pears",
+          "name": "Cottage Cheese & Pears",
+          "description": "Protein-rich and naturally sweet.",
+          "image": "https://images.unsplash.com/photo-1464454709131-ffd692591ee5?w=400",
+          "recipe": {
+            "ingredients": ["1 cup cottage cheese", "1/2 cup canned pears (drained)"],
+            "instructions": ["Spoon cottage cheese into bowl.", "Top with pear slices."]
+          }
+        },
+        {
+          "id": "milkshake",
+          "name": "Vanilla Protein Milkshake",
+          "description": "Liquid calories when solid food is tough.",
+          "image": "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=400",
+          "recipe": {
+            "ingredients": ["1 cup vanilla ice cream", "1/2 cup milk", "1 scoop vanilla protein powder"],
+            "instructions": ["Blend all ingredients until smooth.", "Serve immediately."]
+          }
+        }
+      ]
+    },
+    {
+      "id": "desserts",
+      "name": "Sweet Treats",
+      "icon": "cake",
+      "description": "These aren't cheats - they're medically ideal. Soft, easy calories.",
+      "items": [
+        {
+          "id": "banana-pudding",
+          "name": "Banana Pudding",
+          "description": "Cool, creamy, and perfect for evenings.",
+          "image": "https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?w=400",
+          "isFavorite": true,
+          "recipe": {
+            "ingredients": ["2 cups vanilla pudding", "2 ripe bananas (sliced)", "1 cup vanilla wafers", "Whipped cream"],
+            "instructions": ["Layer pudding, bananas, and wafers in dish.", "Repeat layers.", "Top with whipped cream.", "Chill before serving."]
+          }
+        },
+        {
+          "id": "rice-pudding",
+          "name": "Rice Pudding",
+          "description": "Warm cinnamon comfort. An ideal food.",
+          "image": "https://images.unsplash.com/photo-1614961233913-a5113a4a34ed?w=400",
+          "recipe": {
+            "ingredients": ["1 cup cooked white rice", "1.5 cups milk", "1/4 cup sugar", "1/2 tsp vanilla", "1/4 tsp cinnamon"],
+            "instructions": ["Combine rice, milk, and sugar in saucepan.", "Simmer on low 20 minutes, stirring often.", "Stir in vanilla.", "Serve warm with cinnamon on top."]
+          }
+        },
+        {
+          "id": "bread-pudding",
+          "name": "Bread Pudding",
+          "description": "Soft, custardy, and deeply comforting.",
+          "image": "https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=400",
+          "recipe": {
+            "ingredients": ["4 slices white bread (cubed)", "2 cups milk", "2 eggs", "1/2 cup sugar", "1 tsp vanilla", "2 tbsp butter"],
+            "instructions": ["Place bread cubes in buttered baking dish.", "Whisk milk, eggs, sugar, and vanilla.", "Pour over bread, let soak 15 minutes.", "Dot with butter.", "Bake at 350°F for 40-45 minutes."]
+          }
+        },
+        {
+          "id": "peach-cobbler",
+          "name": "Peach Cobbler",
+          "description": "Sweet canned peaches with soft topping.",
+          "image": "https://images.unsplash.com/photo-1568571780765-9276ac8b75a2?w=400",
+          "recipe": {
+            "ingredients": ["2 cans sliced peaches (drained)", "1 cup flour", "1 cup sugar", "1 cup milk", "1/2 cup butter (melted)"],
+            "instructions": ["Pour melted butter in baking dish.", "Mix flour, sugar, and milk into batter.", "Pour batter over butter (don't stir).", "Add peaches on top.", "Bake at 350°F for 45 minutes."]
+          }
+        },
+        {
+          "id": "ice-cream",
+          "name": "Ice Cream",
+          "description": "Simple, smooth, and always welcome.",
+          "image": "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=400",
+          "recipe": {
+            "ingredients": ["Vanilla ice cream", "Chocolate sauce (optional)", "Whipped cream (optional)"],
+            "instructions": ["Scoop ice cream into bowl.", "Add toppings if desired.", "Enjoy."]
+          }
+        },
+        {
+          "id": "vanilla-custard",
+          "name": "Vanilla Custard",
+          "description": "Silky smooth and easy to digest.",
+          "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400",
+          "recipe": {
+            "ingredients": ["2 cups milk", "3 egg yolks", "1/3 cup sugar", "2 tbsp cornstarch", "1 tsp vanilla"],
+            "instructions": ["Whisk yolks, sugar, and cornstarch.", "Heat milk until steaming.", "Slowly add hot milk to egg mixture, whisking.", "Return to pan, cook until thick.", "Stir in vanilla, chill."]
+          }
+        },
+        {
+          "id": "peanut-butter-ice-cream",
+          "name": "Peanut Butter Swirl Ice Cream",
+          "description": "Extra calories and protein in every bite.",
+          "image": "https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=400",
+          "recipe": {
+            "ingredients": ["Vanilla ice cream", "2 tbsp peanut butter (warmed)", "Chocolate sauce"],
+            "instructions": ["Scoop ice cream into bowl.", "Drizzle with warm peanut butter.", "Add chocolate sauce if desired."]
+          }
+        }
+      ]
+    }
+  ],
+  "mealPrepGuide": {
+    "weekly": [
+      "Cook and shred 6 chicken breasts",
+      "Slow cook and shred a pork loin with balsamic",
+      "Make a large pot of mashed potatoes",
+      "Cook a big batch of white rice",
+      "Cook egg noodles and store",
+      "Brown and season ground turkey for the week",
+      "Make a large pot of chicken noodle soup base"
+    ],
+    "alwaysStock": [
+      "White bread and crackers",
+      "Yogurt cups",
+      "Pudding cups",
+      "Applesauce cups",
+      "Cottage cheese",
+      "Vanilla ice cream",
+      "Eggs and milk",
+      "Butter",
+      "Shredded cheese",
+      "Canned soups (cream of mushroom, chicken, tomato)",
+      "Chicken broth",
+      "Protein powder"
+    ],
+    "freezerFriendly": [
+      "Portioned soups",
+      "Shredded meats",
+      "Mashed potatoes",
+      "Cooked rice"
+    ]
+  },
+  "notAllowed": {
+    "title": "Foods to Avoid",
+    "categories": [
+      {
+        "name": "Raw Vegetables",
+        "items": ["Salads", "Raw broccoli/cauliflower", "Raw carrots", "Celery"],
+        "reason": "Fiber sits in stomach for hours"
+      },
+      {
+        "name": "Tough Fruits",
+        "items": ["Apples with skin", "Oranges", "Berries with seeds", "Pineapple"],
+        "reason": "Fiber and skins delay emptying"
+      },
+      {
+        "name": "Whole Grains",
+        "items": ["Brown rice", "Quinoa", "Oatmeal", "Whole-wheat bread"],
+        "reason": "High fiber is worst for gastroparesis"
+      },
+      {
+        "name": "Fatty Meats",
+        "items": ["Steak", "Burgers", "Sausage links", "Bacon"],
+        "reason": "Fat slows stomach emptying"
+      },
+      {
+        "name": "Fried Foods",
+        "items": ["French fries", "Fried chicken", "Chips"],
+        "reason": "Fat plus reflux risk"
+      },
+      {
+        "name": "Nuts & Seeds",
+        "items": ["Almonds", "Peanuts (whole)", "Chia", "Flax"],
+        "reason": "Don't digest well, sit in stomach"
+      },
+      {
+        "name": "Beans & Legumes",
+        "items": ["Black beans", "Chili", "Lentils"],
+        "reason": "Gas, fiber, and pressure"
+      },
+      {
+        "name": "Carbonation",
+        "items": ["Soda", "Sparkling water", "Beer"],
+        "reason": "Expands stomach, pressure on varices"
+      },
+      {
+        "name": "Alcohol",
+        "items": ["All types"],
+        "reason": "Portal pressure and variceal risk"
+      },
+      {
+        "name": "Large Meals",
+        "items": ["Any oversized portion"],
+        "reason": "Physically dangerous"
+      }
+    ]
+  },
+  "dailySchedule": {
+    "description": "Eat every 2-3 hours. Stop before feeling full.",
+    "meals": [
+      {"time": "Breakfast", "type": "Easy comfort", "examples": "French toast, eggs, breakfast bowl"},
+      {"time": "Mid-morning", "type": "Slides through", "examples": "Yogurt, pudding, smoothie"},
+      {"time": "Lunch", "type": "Soup (always)", "examples": "Chicken noodle, tomato, potato"},
+      {"time": "Afternoon", "type": "Easy calories", "examples": "Cottage cheese, applesauce, shake"},
+      {"time": "Dinner", "type": "The real meal", "examples": "Bear Lodge special"},
+      {"time": "Evening", "type": "Perfect night food", "examples": "Pudding, ice cream, rice pudding"}
+    ]
+  }
+}

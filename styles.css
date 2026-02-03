@@ -1,0 +1,555 @@
+/* Bear Lodge Inn - Cozy Cabin Diner Styles */
+
+:root {
+    --cabin-brown: #5D4037;
+    --cabin-dark: #3E2723;
+    --cabin-light: #8D6E63;
+    --cream: #FFF8E7;
+    --warm-white: #FFFDF7;
+    --gold: #D4A84B;
+    --forest-green: #2E5339;
+    --soft-red: #C75B4A;
+    --text-dark: #2C2416;
+    --text-light: #5D5348;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--cream);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 45vh;
+    min-height: 350px;
+    background: linear-gradient(135deg, var(--cabin-dark) 0%, var(--cabin-brown) 50%, var(--cabin-light) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30z' fill='%23ffffff' fill-opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: var(--cream);
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+}
+
+.hero .tagline {
+    font-size: 1.4rem;
+    color: var(--gold);
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.hero .made-for {
+    font-size: 1.2rem;
+    color: var(--cream);
+    background: var(--forest-green);
+    display: inline-block;
+    padding: 0.5rem 2rem;
+    border-radius: 30px;
+    margin-top: 1rem;
+}
+
+/* Navigation */
+.menu-nav {
+    background: var(--cabin-dark);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-item {
+    color: var(--cream);
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.nav-item:hover {
+    background: var(--gold);
+    color: var(--cabin-dark);
+}
+
+/* Main Container */
+.menu-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* Schedule Banner */
+.schedule-banner {
+    background: linear-gradient(135deg, var(--forest-green), #1a3320);
+    color: var(--cream);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.schedule-banner h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.schedule-item {
+    background: rgba(255,255,255,0.1);
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.schedule-item .time {
+    font-weight: 700;
+    color: var(--gold);
+    font-size: 0.9rem;
+}
+
+.schedule-item .type {
+    font-size: 0.85rem;
+    opacity: 0.9;
+    margin-top: 0.3rem;
+}
+
+/* Menu Sections */
+.menu-section {
+    margin-bottom: 4rem;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid var(--cabin-light);
+}
+
+.section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--cabin-brown);
+    margin-bottom: 0.5rem;
+}
+
+.section-header p {
+    color: var(--text-light);
+    font-style: italic;
+}
+
+/* Menu Grid */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Menu Item Card */
+.menu-item {
+    background: var(--warm-white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.menu-item.favorite {
+    border: 3px solid var(--gold);
+}
+
+.menu-item.signature {
+    border: 3px solid var(--soft-red);
+}
+
+.item-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.item-content {
+    padding: 1.2rem;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+}
+
+.item-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--cabin-dark);
+}
+
+.item-badges {
+    display: flex;
+    gap: 0.3rem;
+}
+
+.badge {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.badge.favorite {
+    background: var(--gold);
+    color: var(--cabin-dark);
+}
+
+.badge.signature {
+    background: var(--soft-red);
+    color: white;
+}
+
+.item-description {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+.view-recipe {
+    display: inline-block;
+    margin-top: 0.8rem;
+    color: var(--forest-green);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Guidelines Section */
+.guidelines-section {
+    background: var(--warm-white);
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    margin-top: 3rem;
+}
+
+.guidelines-section h2 {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    color: var(--cabin-brown);
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+}
+
+.guidelines-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.guideline-card {
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+
+.guideline-card.good {
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    border-left: 5px solid var(--forest-green);
+}
+
+.guideline-card.avoid {
+    background: linear-gradient(135deg, #ffebee, #ffcdd2);
+    border-left: 5px solid var(--soft-red);
+}
+
+.guideline-card h3 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1rem;
+    color: var(--cabin-dark);
+}
+
+.guideline-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.guideline-card li {
+    padding: 0.4rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.guideline-card.good li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--forest-green);
+    font-weight: bold;
+}
+
+.guideline-card.avoid li::before {
+    content: '✗';
+    position: absolute;
+    left: 0;
+    color: var(--soft-red);
+    font-weight: bold;
+}
+
+.avoid-category {
+    margin-bottom: 1rem;
+}
+
+.avoid-category h4 {
+    font-size: 0.95rem;
+    color: var(--cabin-dark);
+    margin-bottom: 0.3rem;
+}
+
+.avoid-category span {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+/* Meal Prep Section */
+.meal-prep-section {
+    margin-top: 2rem;
+}
+
+.meal-prep-section h3 {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    color: var(--cabin-brown);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.prep-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.prep-card {
+    background: var(--cream);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 2px solid var(--cabin-light);
+}
+
+.prep-card h4 {
+    color: var(--cabin-brown);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.prep-card ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+
+.prep-card li {
+    padding: 0.3rem 0;
+    color: var(--text-dark);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 2rem 1rem;
+}
+
+.modal.active {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.modal-content {
+    background: var(--warm-white);
+    border-radius: 15px;
+    max-width: 600px;
+    width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text-light);
+    z-index: 10;
+}
+
+.close-modal:hover {
+    color: var(--cabin-dark);
+}
+
+.modal-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+}
+
+.modal-body-content {
+    padding: 2rem;
+}
+
+.modal-body-content h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--cabin-dark);
+    margin-bottom: 0.5rem;
+}
+
+.modal-body-content .description {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.recipe-section {
+    margin-bottom: 1.5rem;
+}
+
+.recipe-section h3 {
+    color: var(--cabin-brown);
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    border-bottom: 2px solid var(--cabin-light);
+    padding-bottom: 0.3rem;
+}
+
+.recipe-section ul, .recipe-section ol {
+    padding-left: 1.5rem;
+}
+
+.recipe-section li {
+    padding: 0.4rem 0;
+}
+
+/* Footer */
+footer {
+    background: var(--cabin-dark);
+    color: var(--cream);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+.footer-note {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.admin-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.admin-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero .tagline {
+        font-size: 1.1rem;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .nav-item {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .menu-nav, .admin-link, .view-recipe {
+        display: none;
+    }
+
+    .menu-item {
+        break-inside: avoid;
+    }
+}
