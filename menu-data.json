@@ -484,6 +484,76 @@
       ]
     }
   ],
+  "coreIngredients": {
+    "description": "All recipes should be built from these safe, approved ingredients",
+    "proteins": [
+      "chicken breast", "shredded chicken", "chicken",
+      "ground turkey", "turkey", "shredded turkey",
+      "pork loin", "shredded pork", "pork",
+      "ground beef",
+      "white fish", "tilapia", "cod", "fish",
+      "eggs", "egg"
+    ],
+    "carbs": [
+      "white bread", "bread", "toast",
+      "white rice", "rice",
+      "egg noodles", "noodles", "pasta",
+      "potatoes", "mashed potatoes",
+      "flour tortillas", "tortillas",
+      "crackers", "saltines",
+      "white breadcrumbs", "breadcrumbs"
+    ],
+    "dairy": [
+      "milk", "butter",
+      "cheese", "shredded cheese", "american cheese", "swiss cheese",
+      "sour cream", "cream cheese",
+      "cottage cheese",
+      "yogurt", "vanilla yogurt",
+      "ice cream", "vanilla ice cream",
+      "whipped cream"
+    ],
+    "sauces": [
+      "chicken broth", "broth",
+      "gravy", "turkey gravy", "chicken gravy",
+      "cream of mushroom soup", "cream of chicken soup", "cream of tomato soup",
+      "alfredo sauce",
+      "enchilada sauce", "mild enchilada sauce",
+      "bbq sauce", "mild bbq sauce",
+      "balsamic glaze", "balsamic",
+      "tomato soup",
+      "mild taco seasoning"
+    ],
+    "produce": [
+      "banana", "bananas",
+      "applesauce",
+      "canned peaches", "peaches",
+      "canned pears", "pears",
+      "carrots", "soft carrots",
+      "zucchini", "soft zucchini",
+      "soft peas", "peas"
+    ],
+    "pantry": [
+      "sugar", "brown sugar",
+      "honey", "maple syrup", "syrup",
+      "vanilla", "vanilla extract",
+      "cinnamon",
+      "salt",
+      "protein powder", "vanilla protein powder",
+      "pudding", "vanilla pudding",
+      "vanilla wafers",
+      "peanut butter"
+    ]
+  },
+  "forbiddenIngredients": [
+    "salad", "raw vegetables", "raw broccoli", "raw cauliflower", "celery",
+    "apple", "orange", "berries", "pineapple", "seeds",
+    "brown rice", "quinoa", "oatmeal", "whole wheat", "whole grain",
+    "steak", "burger", "bacon", "sausage links",
+    "fried", "french fries", "chips",
+    "almonds", "peanuts", "walnuts", "nuts", "chia", "flax",
+    "black beans", "beans", "lentils", "chili",
+    "soda", "carbonated", "sparkling", "beer", "wine", "alcohol"
+  ],
   "mealPrepGuide": {
     "weekly": [
       "Cook and shred 6 chicken breasts",
