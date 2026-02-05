@@ -61,10 +61,12 @@ function renderMenuItem(item) {
     const badges = [];
     if (item.isFavorite) badges.push('<span class="badge favorite">Larry\'s Fave</span>');
     if (item.isSignature) badges.push('<span class="badge signature">Signature</span>');
+    if (item.isFlareUpSafe) badges.push('<span class="badge gentle">Gentle</span>');
 
     let cardClass = 'menu-item';
     if (item.isFavorite) cardClass += ' favorite';
     if (item.isSignature) cardClass += ' signature';
+    if (item.isFlareUpSafe) cardClass += ' flare-up-safe';
 
     return `
         <div class="${cardClass}" data-item-id="${item.id}" onclick="showRecipe('${item.id}')">
@@ -80,6 +82,23 @@ function renderMenuItem(item) {
             </div>
         </div>
     `;
+}
+
+// Toggle Flare-Up Mode filter
+function toggleFlareUpFilter() {
+    const toggle = document.getElementById('flareup-toggle');
+    const isActive = toggle.checked;
+    document.body.classList.toggle('flare-up-mode', isActive);
+
+    // Hide/show menu sections that have no gentle items
+    document.querySelectorAll('.menu-section').forEach(section => {
+        const gentleItems = section.querySelectorAll('.menu-item.flare-up-safe');
+        if (isActive && gentleItems.length === 0) {
+            section.style.display = 'none';
+        } else {
+            section.style.display = '';
+        }
+    });
 }
 
 // Render guidelines
