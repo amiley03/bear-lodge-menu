@@ -347,26 +347,39 @@ async function generateRecipe() {
         typeof item === 'string' ? item : item.name
     );
 
+    // Get existing recipe names to avoid duplicates
+    const existingRecipes = [];
+    menuData.categories.forEach(cat => {
+        cat.items.forEach(item => existingRecipes.push(item.name));
+    });
+
     const systemPrompt = `You are a recipe creator for Larry, who has portal hypertension, severe gastroparesis, and esophageal varices.
 
-CRITICAL RULES:
+CRITICAL DIETARY RULES:
 - ONLY use ingredients from this approved list: ${approved.join(', ')}
 - NEVER use these forbidden ingredients: ${forbidden.join(', ')}
 - All foods must be soft, low-fiber, low-fat
 - Small portions only (1-1.5 cups max)
 - No spicy foods, no raw vegetables, no tough meats
 - Soups and soft foods are ideal
+- Foods should be easy to swallow, requiring minimal chewing
+
+EXISTING RECIPES (do NOT recreate these or anything too similar):
+${existingRecipes.join(', ')}
+
+Create something NEW and DIFFERENT from the existing recipes above.
 
 Respond with a JSON object in this exact format:
 {
   "name": "Recipe Name",
-  "description": "Short appealing description",
+  "description": "Short appealing description (1 sentence)",
   "ingredients": ["ingredient 1 with amount", "ingredient 2 with amount"],
   "instructions": ["Step 1", "Step 2", "Step 3"],
-  "category": "breakfast|soups|dinners|mexican|snacks|desserts"
+  "category": "breakfast|soups|dinners|mexican|snacks|desserts",
+  "imageSearch": "simple food photography search term for unsplash"
 }
 
-Only respond with the JSON, no other text.`;
+Only respond with valid JSON, no other text.`;
 
     // Show loading
     document.getElementById('explore-result').style.display = 'block';
@@ -402,10 +415,16 @@ Only respond with the JSON, no other text.`;
 
         // Parse the JSON response
         const recipe = JSON.parse(text);
+
+        // Generate Unsplash image URL from search term
+        const searchTerm = recipe.imageSearch || recipe.name;
+        recipe.image = `https://source.unsplash.com/800x600/?${encodeURIComponent(searchTerm)},food`;
+
         generatedRecipeData = recipe;
 
         // Display the recipe
         document.getElementById('generated-recipe').innerHTML = `
+            <img src="${recipe.image}" alt="${recipe.name}" style="width:100%;max-width:400px;border-radius:12px;margin-bottom:1rem;">
             <h3>${recipe.name}</h3>
             <p>${recipe.description}</p>
             <h4>Ingredients:</h4>
@@ -447,7 +466,7 @@ function addGeneratedToMenu() {
         id: generatedRecipeData.name.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
         name: generatedRecipeData.name,
         description: generatedRecipeData.description,
-        image: 'https://images.unsplash.com/photo-1495195134817-aeb325a55b65?w=400',
+        image: generatedRecipeData.image || 'https://images.unsplash.com/photo-1495195134817-aeb325a55b65?w=400',
         submittedBy: 'AI Generated',
         recipe: {
             ingredients: generatedRecipeData.ingredients,
