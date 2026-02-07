@@ -31,7 +31,8 @@
             <a href="#chinese" class="nav-item">Chinese</a>
             <a href="#snacks" class="nav-item">Snacks</a>
             <a href="#desserts" class="nav-item">Desserts</a>
-            <a href="#explore" class="nav-item">Explore</a>
+            <a href="#shopping" class="nav-item">Shopping</a>
+            <a href="#explore" class="nav-item">Chef Bear</a>
             <a href="#guidelines" class="nav-item">Guidelines</a>
         </div>
     </nav>
@@ -57,41 +58,65 @@
             <!-- Populated by JS -->
         </div>
 
+        <!-- Shopping Section -->
+        <section id="shopping" class="shopping-section">
+            <h2>Weekly Shopping List</h2>
+            <p class="section-subtitle">Everything Larry needs, ready to order from Walmart</p>
+
+            <div class="shopping-grid" id="shopping-grid">
+                <!-- Populated by JS -->
+            </div>
+        </section>
+
         <!-- Explore Section (AI Recipe Generator) -->
         <section id="explore" class="explore-section">
-            <h2>Explore New Recipes</h2>
+            <div class="chef-bear-header">
+                <span class="chef-bear-icon">🐻</span>
+                <h2>Chef Bear's Kitchen</h2>
+                <p class="chef-bear-tagline">AI-powered recipes made safe for Larry</p>
+            </div>
+
+            <!-- Recipe of the Day -->
+            <div id="recipe-of-day" class="recipe-of-day">
+                <h3>🌟 Today's Special</h3>
+                <div id="daily-recipe-content">
+                    <p class="login-prompt">Enter password to see today's AI-generated recipe</p>
+                </div>
+            </div>
 
             <!-- Login Gate -->
             <div id="explore-login" class="explore-login">
-                <p>Enter the family password to use AI recipe generation</p>
+                <p>Enter the family password to unlock Chef Bear</p>
                 <input type="password" id="explore-password" placeholder="Password" onkeypress="if(event.key==='Enter')unlockExplore()">
-                <button onclick="unlockExplore()">Unlock</button>
+                <button onclick="unlockExplore()">Unlock the Kitchen</button>
                 <p class="explore-error" id="explore-error" style="display:none;">Incorrect password</p>
             </div>
 
             <!-- AI Interface (hidden until login) -->
             <div id="explore-interface" class="explore-interface" style="display:none;">
                 <div id="no-api-key-warning" class="no-api-key" style="display:none;">
-                    <p>API key not set up yet. Ask Nick to configure it in the Admin page.</p>
+                    <p>Chef Bear is sleeping. Ask Nick to wake him up (configure API).</p>
                 </div>
 
                 <div class="explore-chat">
+                    <h3>What sounds good?</h3>
                     <div class="explore-prompt-ideas">
-                        <p>Try asking:</p>
-                        <button onclick="setPrompt('Suggest a new soup recipe')">New soup idea</button>
-                        <button onclick="setPrompt('I want something sweet for dessert')">Sweet dessert</button>
-                        <button onclick="setPrompt('Quick breakfast I can make in 10 minutes')">Quick breakfast</button>
-                        <button onclick="setPrompt('Something with chicken and rice')">Chicken & rice</button>
+                        <button onclick="setPrompt('Suggest a comforting soup')">🍲 Soup</button>
+                        <button onclick="setPrompt('Something sweet for dessert')">🍮 Dessert</button>
+                        <button onclick="setPrompt('Easy breakfast idea')">🍳 Breakfast</button>
+                        <button onclick="setPrompt('Make something with shredded chicken')">🍗 Chicken</button>
+                        <button onclick="setPrompt('A soft pasta dish')">🍝 Pasta</button>
+                        <button onclick="setPrompt('Cozy comfort food')">🏠 Comfort</button>
                     </div>
 
                     <div class="explore-input">
-                        <textarea id="explore-prompt" placeholder="What are you craving? Ask for a recipe idea..."></textarea>
-                        <button onclick="generateRecipe()" id="generate-btn">Generate Recipe</button>
+                        <textarea id="explore-prompt" placeholder="Tell Chef Bear what you're craving..."></textarea>
+                        <button onclick="generateRecipe()" id="generate-btn">🐻 Cook Something Up!</button>
                     </div>
 
                     <div id="explore-result" class="explore-result" style="display:none;">
                         <div id="explore-loading" class="explore-loading" style="display:none;">
-                            <p>Creating a recipe just for Larry...</p>
+                            <p>🐻 Chef Bear is cooking up something special...</p>
                         </div>
                         <div id="generated-recipe"></div>
                         <div id="recipe-actions" style="display:none;">

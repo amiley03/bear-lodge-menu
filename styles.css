@@ -544,6 +544,155 @@ body.flare-up-mode .menu-item:not(.flare-up-safe) {
     font-size: 1rem;
 }
 
+/* Chef Bear Branding */
+.chef-bear-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.chef-bear-icon {
+    font-size: 4rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.chef-bear-header h2 {
+    margin-bottom: 0.3rem;
+}
+
+.chef-bear-tagline {
+    color: var(--text-light);
+    font-style: italic;
+}
+
+/* Recipe of the Day */
+.recipe-of-day {
+    background: linear-gradient(135deg, var(--gold), #e6c76a);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.recipe-of-day h3 {
+    color: var(--cabin-dark);
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.recipe-of-day .login-prompt {
+    color: var(--cabin-dark);
+    opacity: 0.8;
+}
+
+.daily-recipe-card {
+    background: var(--warm-white);
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: left;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.daily-recipe-card:hover {
+    transform: scale(1.02);
+}
+
+.daily-recipe-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.daily-recipe-card h4 {
+    color: var(--cabin-dark);
+    margin-bottom: 0.3rem;
+}
+
+.daily-recipe-card p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* Shopping Section */
+.shopping-section {
+    background: var(--warm-white);
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    margin-bottom: 3rem;
+}
+
+.shopping-section h2 {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    color: var(--cabin-brown);
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+.shopping-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.shopping-category {
+    background: var(--cream);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 2px solid var(--cabin-light);
+}
+
+.shopping-category h3 {
+    color: var(--cabin-brown);
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.shopping-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.shopping-category li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shopping-category li:last-child {
+    border-bottom: none;
+}
+
+.walmart-link {
+    background: #0071dc;
+    color: white;
+    text-decoration: none;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.walmart-link:hover {
+    background: #004c91;
+}
+
 .item-image {
     width: 100%;
     height: 200px;

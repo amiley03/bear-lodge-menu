@@ -55,8 +55,43 @@ async function loadMenuData() {
 function renderMenu() {
     renderSchedule();
     renderMenuSections();
+    renderShoppingList();
     renderGuidelines();
     setupModal();
+}
+
+// Render shopping list with Walmart links
+function renderShoppingList() {
+    const container = document.getElementById('shopping-grid');
+    if (!container || !menuData) return;
+
+    const categories = [
+        { name: 'Proteins', icon: '🥩', items: menuData.coreIngredients.proteins },
+        { name: 'Dairy & Eggs', icon: '🥛', items: menuData.coreIngredients.dairy },
+        { name: 'Carbs & Grains', icon: '🍞', items: menuData.coreIngredients.carbs },
+        { name: 'Sauces & Broths', icon: '🥫', items: menuData.coreIngredients.sauces },
+        { name: 'Produce', icon: '🍌', items: menuData.coreIngredients.produce },
+        { name: 'Pantry Staples', icon: '🧂', items: menuData.coreIngredients.pantry }
+    ];
+
+    container.innerHTML = categories.map(cat => `
+        <div class="shopping-category">
+            <h3>${cat.icon} ${cat.name}</h3>
+            <ul>
+                ${cat.items.slice(0, 8).map(item => {
+                    const name = typeof item === 'string' ? item : item.name;
+                    const link = typeof item === 'object' && item.link ? item.link :
+                        `https://www.walmart.com/search?q=${encodeURIComponent(name)}`;
+                    return `
+                        <li>
+                            <span>${name}</span>
+                            <a href="${link}" target="_blank" class="walmart-link">Walmart</a>
+                        </li>
+                    `;
+                }).join('')}
+            </ul>
+        </div>
+    `).join('');
 }
 
 // Render daily schedule
@@ -308,7 +343,180 @@ function checkWorkerConfigured() {
     if (WORKER_URL === 'YOUR_WORKER_URL_HERE') {
         document.getElementById('no-api-key-warning').style.display = 'block';
         document.getElementById('generate-btn').disabled = true;
+    } else {
+        // Load or generate Recipe of the Day
+        loadRecipeOfDay();
     }
+}
+
+// Recipe of the Day - generates once per day, caches in localStorage
+async function loadRecipeOfDay() {
+    const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+    const cached = localStorage.getItem('recipeOfDay');
+    const dailyContent = document.getElementById('daily-recipe-content');
+
+    if (cached) {
+        const data = JSON.parse(cached);
+        if (data.date === today && data.recipe) {
+            displayDailyRecipe(data.recipe);
+            return;
+        }
+    }
+
+    // Generate new recipe for today
+    dailyContent.innerHTML = '<p>🐻 Chef Bear is preparing today\'s special...</p>';
+
+    try {
+        const themes = [
+            'a cozy breakfast bowl',
+            'a warming soup',
+            'a comforting dinner',
+            'a satisfying snack',
+            'a gentle dessert',
+            'something with pasta',
+            'a creamy bowl'
+        ];
+        // Use date to pick a consistent theme
+        const dayOfYear = Math.floor((new Date() - new Date(new Date().getFullYear(), 0, 0)) / 86400000);
+        const theme = themes[dayOfYear % themes.length];
+
+        const recipe = await generateRecipeOfDay(theme);
+        if (recipe) {
+            localStorage.setItem('recipeOfDay', JSON.stringify({ date: today, recipe }));
+            displayDailyRecipe(recipe);
+        }
+    } catch (error) {
+        dailyContent.innerHTML = '<p>Chef Bear is taking a break. Try again later!</p>';
+    }
+}
+
+function displayDailyRecipe(recipe) {
+    const dailyContent = document.getElementById('daily-recipe-content');
+    dailyContent.innerHTML = `
+        <div class="daily-recipe-card" onclick="showDailyRecipeModal()">
+            <img src="${recipe.image}" alt="${recipe.name}"
+                 onerror="this.src='https://images.unsplash.com/photo-1495195134817-aeb325a55b65?w=400'">
+            <div>
+                <h4>${recipe.name}</h4>
+                <p>${recipe.description}</p>
+                <span style="color:var(--forest-green);font-weight:600;">Click to view recipe →</span>
+            </div>
+        </div>
+    `;
+    // Store for modal
+    window.dailyRecipeData = recipe;
+}
+
+function showDailyRecipeModal() {
+    const recipe = window.dailyRecipeData;
+    if (!recipe) return;
+
+    const modal = document.getElementById('recipe-modal');
+    const modalBody = document.getElementById('modal-body');
+
+    modalBody.innerHTML = `
+        <img src="${recipe.image}" alt="${recipe.name}" class="modal-image"
+             onerror="this.src='https://images.unsplash.com/photo-1495195134817-aeb325a55b65?w=400'">
+        <div class="modal-body-content">
+            <div class="modal-header-row">
+                <h2>🌟 ${recipe.name}</h2>
+            </div>
+            <p class="description">${recipe.description}</p>
+            <p class="modal-submitter">Today's Special from Chef Bear</p>
+
+            <div class="recipe-section">
+                <h3>Ingredients</h3>
+                <ul>${recipe.ingredients.map(i => `<li>${i}</li>`).join('')}</ul>
+            </div>
+
+            <div class="recipe-section">
+                <h3>Instructions</h3>
+                <ol>${recipe.instructions.map(i => `<li>${i}</li>`).join('')}</ol>
+            </div>
+
+            <button onclick="addDailyToMenu()" style="margin-top:1rem;background:var(--forest-green);color:white;border:none;padding:0.8rem 1.5rem;border-radius:8px;font-weight:600;cursor:pointer;">
+                Add to Menu
+            </button>
+        </div>
+    `;
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function addDailyToMenu() {
+    const recipe = window.dailyRecipeData;
+    if (!recipe) return;
+
+    const category = menuData.categories.find(c => c.id === (recipe.category || 'dinners'));
+    if (!category) return;
+
+    const newItem = {
+        id: recipe.name.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+        name: recipe.name,
+        description: recipe.description,
+        image: recipe.image,
+        submittedBy: 'Chef Bear',
+        recipe: {
+            ingredients: recipe.ingredients,
+            instructions: recipe.instructions
+        }
+    };
+
+    category.items.push(newItem);
+    renderMenuSections();
+    alert(`"${recipe.name}" added to ${category.name}! Export from Admin to save.`);
+
+    document.getElementById('recipe-modal').classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+async function generateRecipeOfDay(theme) {
+    const approved = [];
+    ['proteins', 'carbs', 'dairy', 'sauces', 'produce', 'pantry'].forEach(cat => {
+        menuData.coreIngredients[cat].forEach(item => {
+            approved.push(typeof item === 'string' ? item : item.name);
+        });
+    });
+
+    const forbidden = menuData.forbiddenIngredients.map(item =>
+        typeof item === 'string' ? item : item.name
+    );
+
+    const existingRecipes = [];
+    menuData.categories.forEach(cat => {
+        cat.items.forEach(item => existingRecipes.push(item.name));
+    });
+
+    const systemPrompt = `You are Chef Bear, a friendly AI chef creating safe recipes for Larry who has gastroparesis.
+
+ONLY use: ${approved.join(', ')}
+NEVER use: ${forbidden.join(', ')}
+NOT similar to: ${existingRecipes.join(', ')}
+
+Create ${theme}. Make it NEW and CREATIVE. Soft, gentle, easy to digest.
+
+Return JSON only:
+{"name":"Recipe Name","description":"One sentence","ingredients":["item with amount"],"instructions":["Step"],"category":"breakfast|soups|dinners|snacks|desserts","imageSearch":"food photo search term"}`;
+
+    const response = await fetch(WORKER_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            model: 'claude-sonnet-4-20250514',
+            max_tokens: 1024,
+            messages: [{ role: 'user', content: `Create ${theme} for today's special` }],
+            system: systemPrompt
+        })
+    });
+
+    if (!response.ok) throw new Error('API error');
+
+    const data = await response.json();
+    const recipe = JSON.parse(data.content[0].text);
+    recipe.image = `https://source.unsplash.com/800x600/?${encodeURIComponent(recipe.imageSearch || recipe.name)},food`;
+
+    return recipe;
 }
 
 function setPrompt(text) {
