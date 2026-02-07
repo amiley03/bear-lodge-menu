@@ -608,22 +608,41 @@
                 `;
             });
 
-            // Foundation panel - editable ingredients with buy links
+            // Foundation panel - editable ingredients with up to 3 buy links
             const renderIngredientList = (items, category) => {
                 return items.map((item, idx) => {
                     const name = typeof item === 'string' ? item : item.name;
-                    const link = typeof item === 'string' ? '' : (item.link || '');
+                    // Support both old single link format and new links array
+                    let links = [];
+                    if (typeof item === 'object') {
+                        if (item.links && Array.isArray(item.links)) {
+                            links = item.links;
+                        } else if (item.link) {
+                            links = [item.link]; // Convert old format
+                        }
+                    }
+                    // Pad to 3 slots
+                    while (links.length < 3) links.push('');
+
                     return `
-                        <div class="ingredient-row" style="display:flex;gap:0.5rem;align-items:center;margin-bottom:0.5rem;">
-                            <input type="text" value="${name}"
-                                   onchange="updateIngredient('${category}', ${idx}, 'name', this.value)"
-                                   style="flex:1;padding:0.4rem;border:1px solid #ddd;border-radius:4px;">
-                            <input type="url" value="${link}" placeholder="Buy link (Walmart)"
-                                   onchange="updateIngredient('${category}', ${idx}, 'link', this.value)"
-                                   style="flex:1;padding:0.4rem;border:1px solid #ddd;border-radius:4px;font-size:0.85rem;">
-                            ${link ? `<a href="${link}" target="_blank" style="color:var(--forest-green);font-size:0.8rem;">🛒</a>` : ''}
-                            <button onclick="removeIngredient('${category}', ${idx})"
-                                    style="background:var(--soft-red);color:white;border:none;border-radius:4px;padding:0.3rem 0.5rem;cursor:pointer;">✕</button>
+                        <div class="ingredient-row" style="margin-bottom:1rem;padding:0.75rem;background:#f9f9f9;border-radius:8px;">
+                            <div style="display:flex;gap:0.5rem;align-items:center;margin-bottom:0.5rem;">
+                                <input type="text" value="${name}"
+                                       onchange="updateIngredient('${category}', ${idx}, 'name', this.value)"
+                                       style="flex:1;padding:0.5rem;border:1px solid #ddd;border-radius:4px;font-weight:600;">
+                                <button onclick="removeIngredient('${category}', ${idx})"
+                                        style="background:var(--soft-red);color:white;border:none;border-radius:4px;padding:0.4rem 0.6rem;cursor:pointer;">✕</button>
+                            </div>
+                            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+                                ${[0, 1, 2].map(i => `
+                                    <div style="flex:1;min-width:120px;display:flex;gap:0.25rem;align-items:center;">
+                                        <input type="url" value="${links[i] || ''}" placeholder="Link ${i + 1}"
+                                               onchange="updateIngredientLink('${category}', ${idx}, ${i}, this.value)"
+                                               style="flex:1;padding:0.35rem;border:1px solid #ddd;border-radius:4px;font-size:0.8rem;">
+                                        ${links[i] ? `<a href="${links[i]}" target="_blank" style="color:var(--forest-green);">🛒</a>` : ''}
+                                    </div>
+                                `).join('')}
+                            </div>
                         </div>
                     `;
                 }).join('');
@@ -974,16 +993,45 @@
 
         // Ingredient management functions
         function updateIngredient(category, index, field, value) {
-            const item = menuData.coreIngredients[category][index];
+            let item = menuData.coreIngredients[category][index];
             if (typeof item === 'string') {
-                menuData.coreIngredients[category][index] = { name: item, link: '' };
+                item = { name: item, links: [] };
+                menuData.coreIngredients[category][index] = item;
             }
-            menuData.coreIngredients[category][index][field] = value;
+            // Migrate old link format to links array
+            if (item.link && !item.links) {
+                item.links = [item.link];
+                delete item.link;
+            }
+            if (!item.links) item.links = [];
+            item[field] = value;
+            autoSaveToCloud();
+        }
+
+        function updateIngredientLink(category, index, linkIndex, value) {
+            let item = menuData.coreIngredients[category][index];
+            if (typeof item === 'string') {
+                item = { name: item, links: [] };
+                menuData.coreIngredients[category][index] = item;
+            }
+            // Migrate old link format
+            if (item.link && !item.links) {
+                item.links = [item.link];
+                delete item.link;
+            }
+            if (!item.links) item.links = [];
+            // Ensure array is long enough
+            while (item.links.length <= linkIndex) item.links.push('');
+            item.links[linkIndex] = value;
+            // Remove trailing empty links
+            while (item.links.length > 0 && !item.links[item.links.length - 1]) {
+                item.links.pop();
+            }
             autoSaveToCloud();
         }
 
         function addIngredient(category) {
-            menuData.coreIngredients[category].push({ name: '', link: '' });
+            menuData.coreIngredients[category].push({ name: '', links: [] });
             renderPanels();
             document.querySelector(`[data-tab="foundation"]`).click();
             autoSaveToCloud();

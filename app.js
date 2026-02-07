@@ -75,7 +75,7 @@ function renderMenu() {
     setupModal();
 }
 
-// Render shopping list with Walmart links
+// Render shopping list with buy links
 function renderShoppingList() {
     const container = document.getElementById('shopping-grid');
     if (!container || !menuData) return;
@@ -89,18 +89,45 @@ function renderShoppingList() {
         { name: 'Pantry Staples', icon: '🧂', items: menuData.coreIngredients.pantry }
     ];
 
+    // Helper to get store name from URL
+    const getStoreName = (url) => {
+        if (!url) return 'Shop';
+        if (url.includes('walmart')) return 'Walmart';
+        if (url.includes('amazon')) return 'Amazon';
+        if (url.includes('target')) return 'Target';
+        if (url.includes('costco')) return 'Costco';
+        if (url.includes('kroger')) return 'Kroger';
+        if (url.includes('instacart')) return 'Instacart';
+        return 'Shop';
+    };
+
     container.innerHTML = categories.map(cat => `
         <div class="shopping-category">
             <h3>${cat.icon} ${cat.name}</h3>
             <ul>
                 ${cat.items.slice(0, 8).map(item => {
                     const name = typeof item === 'string' ? item : item.name;
-                    const link = typeof item === 'object' && item.link ? item.link :
-                        `https://www.walmart.com/search?q=${encodeURIComponent(name)}`;
+                    // Support both old link format and new links array
+                    let links = [];
+                    if (typeof item === 'object') {
+                        if (item.links && Array.isArray(item.links)) {
+                            links = item.links.filter(l => l);
+                        } else if (item.link) {
+                            links = [item.link];
+                        }
+                    }
+                    // Fallback to Walmart search if no links
+                    if (links.length === 0) {
+                        links = [`https://www.walmart.com/search?q=${encodeURIComponent(name)}`];
+                    }
                     return `
                         <li>
                             <span>${name}</span>
-                            <a href="${link}" target="_blank" class="walmart-link">Walmart</a>
+                            <div class="buy-links">
+                                ${links.map(link => `
+                                    <a href="${link}" target="_blank" class="buy-link">${getStoreName(link)}</a>
+                                `).join('')}
+                            </div>
                         </li>
                     `;
                 }).join('')}

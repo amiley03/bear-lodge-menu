@@ -796,6 +796,45 @@ body.healing-mode .menu-item:not(.healing-safe) {
     background: #004c91;
 }
 
+.buy-links {
+    display: flex;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+}
+
+.buy-link {
+    background: var(--forest-green);
+    color: white;
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.buy-link:hover {
+    background: var(--cabin-brown);
+}
+
+/* Store-specific colors */
+.buy-link[href*="walmart"] {
+    background: #0071dc;
+}
+.buy-link[href*="amazon"] {
+    background: #ff9900;
+    color: #111;
+}
+.buy-link[href*="target"] {
+    background: #cc0000;
+}
+.buy-link[href*="costco"] {
+    background: #e31837;
+}
+.buy-link[href*="kroger"] {
+    background: #0063b2;
+}
+
 .item-image {
     width: 100%;
     height: 200px;
