@@ -590,56 +590,88 @@
                 `;
             });
 
-            // Foundation panel
+            // Foundation panel - editable ingredients with buy links
+            const renderIngredientList = (items, category) => {
+                return items.map((item, idx) => {
+                    const name = typeof item === 'string' ? item : item.name;
+                    const link = typeof item === 'string' ? '' : (item.link || '');
+                    return `
+                        <div class="ingredient-row" style="display:flex;gap:0.5rem;align-items:center;margin-bottom:0.5rem;">
+                            <input type="text" value="${name}"
+                                   onchange="updateIngredient('${category}', ${idx}, 'name', this.value)"
+                                   style="flex:1;padding:0.4rem;border:1px solid #ddd;border-radius:4px;">
+                            <input type="url" value="${link}" placeholder="Buy link (Walmart)"
+                                   onchange="updateIngredient('${category}', ${idx}, 'link', this.value)"
+                                   style="flex:1;padding:0.4rem;border:1px solid #ddd;border-radius:4px;font-size:0.85rem;">
+                            ${link ? `<a href="${link}" target="_blank" style="color:var(--forest-green);font-size:0.8rem;">🛒</a>` : ''}
+                            <button onclick="removeIngredient('${category}', ${idx})"
+                                    style="background:var(--soft-red);color:white;border:none;border-radius:4px;padding:0.3rem 0.5rem;cursor:pointer;">✕</button>
+                        </div>
+                    `;
+                }).join('');
+            };
+
+            const renderForbiddenList = () => {
+                return menuData.forbiddenIngredients.map((item, idx) => {
+                    const name = typeof item === 'string' ? item : item.name;
+                    const reason = typeof item === 'string' ? '' : (item.reason || '');
+                    return `
+                        <div class="ingredient-row" style="display:flex;gap:0.5rem;align-items:center;margin-bottom:0.5rem;">
+                            <input type="text" value="${name}"
+                                   onchange="updateForbidden(${idx}, 'name', this.value)"
+                                   style="flex:1;padding:0.4rem;border:1px solid #ddd;border-radius:4px;">
+                            <input type="text" value="${reason}" placeholder="Reason"
+                                   onchange="updateForbidden(${idx}, 'reason', this.value)"
+                                   style="flex:1;padding:0.4rem;border:1px solid #ddd;border-radius:4px;font-size:0.85rem;">
+                            <button onclick="removeForbidden(${idx})"
+                                    style="background:var(--soft-red);color:white;border:none;border-radius:4px;padding:0.3rem 0.5rem;cursor:pointer;">✕</button>
+                        </div>
+                    `;
+                }).join('');
+            };
+
             html += `
                 <div class="panel" data-panel="foundation">
-                    <h2>Bear Lodge Foundation</h2>
-                    <p style="margin-bottom: 1.5rem;">All recipes must be built from these core ingredients. This ensures everything is safe for Larry's diet and works with the weekly meal prep system.</p>
+                    <h2>Bear Lodge Foundation - Approved Ingredients</h2>
+                    <p style="margin-bottom: 1.5rem;">Edit ingredients and add Walmart/buy links. All recipes must use only these ingredients.</p>
 
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem;">
                         <div class="prep-card">
-                            <h4 style="color: var(--forest-green);">Proteins (Batch Cook)</h4>
-                            <ul style="font-size: 0.9rem;">
-                                ${menuData.coreIngredients.proteins.filter((v, i, a) => a.indexOf(v) === i).slice(0, 10).map(i => `<li>${i}</li>`).join('')}
-                            </ul>
+                            <h4 style="color: var(--forest-green); margin-bottom: 1rem;">Proteins</h4>
+                            <div id="proteins-list">${renderIngredientList(menuData.coreIngredients.proteins, 'proteins')}</div>
+                            <button onclick="addIngredient('proteins')" style="margin-top:0.5rem;background:var(--forest-green);color:white;border:none;border-radius:4px;padding:0.4rem 0.8rem;cursor:pointer;">+ Add Protein</button>
                         </div>
                         <div class="prep-card">
-                            <h4 style="color: var(--forest-green);">Carbs (Batch Cook)</h4>
-                            <ul style="font-size: 0.9rem;">
-                                ${menuData.coreIngredients.carbs.filter((v, i, a) => a.indexOf(v) === i).slice(0, 10).map(i => `<li>${i}</li>`).join('')}
-                            </ul>
+                            <h4 style="color: var(--forest-green); margin-bottom: 1rem;">Carbs</h4>
+                            <div id="carbs-list">${renderIngredientList(menuData.coreIngredients.carbs, 'carbs')}</div>
+                            <button onclick="addIngredient('carbs')" style="margin-top:0.5rem;background:var(--forest-green);color:white;border:none;border-radius:4px;padding:0.4rem 0.8rem;cursor:pointer;">+ Add Carb</button>
                         </div>
                         <div class="prep-card">
-                            <h4 style="color: var(--forest-green);">Dairy</h4>
-                            <ul style="font-size: 0.9rem;">
-                                ${menuData.coreIngredients.dairy.filter((v, i, a) => a.indexOf(v) === i).slice(0, 10).map(i => `<li>${i}</li>`).join('')}
-                            </ul>
+                            <h4 style="color: var(--forest-green); margin-bottom: 1rem;">Dairy</h4>
+                            <div id="dairy-list">${renderIngredientList(menuData.coreIngredients.dairy, 'dairy')}</div>
+                            <button onclick="addIngredient('dairy')" style="margin-top:0.5rem;background:var(--forest-green);color:white;border:none;border-radius:4px;padding:0.4rem 0.8rem;cursor:pointer;">+ Add Dairy</button>
                         </div>
                         <div class="prep-card">
-                            <h4 style="color: var(--forest-green);">Sauces & Broths</h4>
-                            <ul style="font-size: 0.9rem;">
-                                ${menuData.coreIngredients.sauces.filter((v, i, a) => a.indexOf(v) === i).slice(0, 10).map(i => `<li>${i}</li>`).join('')}
-                            </ul>
+                            <h4 style="color: var(--forest-green); margin-bottom: 1rem;">Sauces & Broths</h4>
+                            <div id="sauces-list">${renderIngredientList(menuData.coreIngredients.sauces, 'sauces')}</div>
+                            <button onclick="addIngredient('sauces')" style="margin-top:0.5rem;background:var(--forest-green);color:white;border:none;border-radius:4px;padding:0.4rem 0.8rem;cursor:pointer;">+ Add Sauce</button>
                         </div>
                         <div class="prep-card">
-                            <h4 style="color: var(--forest-green);">Safe Produce</h4>
-                            <ul style="font-size: 0.9rem;">
-                                ${menuData.coreIngredients.produce.filter((v, i, a) => a.indexOf(v) === i).map(i => `<li>${i}</li>`).join('')}
-                            </ul>
+                            <h4 style="color: var(--forest-green); margin-bottom: 1rem;">Safe Produce</h4>
+                            <div id="produce-list">${renderIngredientList(menuData.coreIngredients.produce, 'produce')}</div>
+                            <button onclick="addIngredient('produce')" style="margin-top:0.5rem;background:var(--forest-green);color:white;border:none;border-radius:4px;padding:0.4rem 0.8rem;cursor:pointer;">+ Add Produce</button>
                         </div>
                         <div class="prep-card">
-                            <h4 style="color: var(--forest-green);">Pantry Staples</h4>
-                            <ul style="font-size: 0.9rem;">
-                                ${menuData.coreIngredients.pantry.filter((v, i, a) => a.indexOf(v) === i).slice(0, 10).map(i => `<li>${i}</li>`).join('')}
-                            </ul>
+                            <h4 style="color: var(--forest-green); margin-bottom: 1rem;">Pantry Staples</h4>
+                            <div id="pantry-list">${renderIngredientList(menuData.coreIngredients.pantry, 'pantry')}</div>
+                            <button onclick="addIngredient('pantry')" style="margin-top:0.5rem;background:var(--forest-green);color:white;border:none;border-radius:4px;padding:0.4rem 0.8rem;cursor:pointer;">+ Add Pantry Item</button>
                         </div>
                     </div>
 
                     <div style="margin-top: 2rem; padding: 1.5rem; background: #ffebee; border-radius: 12px; border-left: 5px solid var(--soft-red);">
-                        <h4 style="color: var(--soft-red); margin-bottom: 1rem;">NEVER USE (Forbidden)</h4>
-                        <p style="font-size: 0.9rem; color: #666;">
-                            ${menuData.forbiddenIngredients.join(', ')}
-                        </p>
+                        <h4 style="color: var(--soft-red); margin-bottom: 1rem;">FORBIDDEN - Never Use These</h4>
+                        <div id="forbidden-list">${renderForbiddenList()}</div>
+                        <button onclick="addForbidden()" style="margin-top:0.5rem;background:var(--soft-red);color:white;border:none;border-radius:4px;padding:0.4rem 0.8rem;cursor:pointer;">+ Add Forbidden Item</button>
                     </div>
 
                     <div style="margin-top: 2rem; padding: 1.5rem; background: #e3f2fd; border-radius: 12px; border-left: 5px solid #1976d2;">
@@ -909,16 +941,19 @@
         function validateIngredients(ingredients) {
             if (!ingredients || !Array.isArray(ingredients)) return { approved: [], warnings: [], forbidden: [] };
 
-            const allCore = [
-                ...menuData.coreIngredients.proteins,
-                ...menuData.coreIngredients.carbs,
-                ...menuData.coreIngredients.dairy,
-                ...menuData.coreIngredients.sauces,
-                ...menuData.coreIngredients.produce,
-                ...menuData.coreIngredients.pantry
-            ].map(i => i.toLowerCase());
+            // Handle both old string format and new object format
+            const extractNames = (arr) => arr.map(i => (typeof i === 'string' ? i : i.name).toLowerCase());
 
-            const forbidden = menuData.forbiddenIngredients.map(i => i.toLowerCase());
+            const allCore = [
+                ...extractNames(menuData.coreIngredients.proteins),
+                ...extractNames(menuData.coreIngredients.carbs),
+                ...extractNames(menuData.coreIngredients.dairy),
+                ...extractNames(menuData.coreIngredients.sauces),
+                ...extractNames(menuData.coreIngredients.produce),
+                ...extractNames(menuData.coreIngredients.pantry)
+            ];
+
+            const forbidden = extractNames(menuData.forbiddenIngredients);
 
             const result = { approved: [], warnings: [], forbidden: [] };
 
@@ -1120,6 +1155,54 @@
         document.getElementById('edit-modal').addEventListener('click', function(e) {
             if (e.target === this) closeModal();
         });
+
+        // Ingredient management functions
+        function updateIngredient(category, index, field, value) {
+            const item = menuData.coreIngredients[category][index];
+            if (typeof item === 'string') {
+                // Convert to object format
+                menuData.coreIngredients[category][index] = { name: item, link: '' };
+            }
+            menuData.coreIngredients[category][index][field] = value;
+            updateJsonPreview();
+        }
+
+        function addIngredient(category) {
+            menuData.coreIngredients[category].push({ name: '', link: '' });
+            renderPanels();
+            document.querySelector(`[data-tab="foundation"]`).click();
+            updateJsonPreview();
+        }
+
+        function removeIngredient(category, index) {
+            menuData.coreIngredients[category].splice(index, 1);
+            renderPanels();
+            document.querySelector(`[data-tab="foundation"]`).click();
+            updateJsonPreview();
+        }
+
+        function updateForbidden(index, field, value) {
+            const item = menuData.forbiddenIngredients[index];
+            if (typeof item === 'string') {
+                menuData.forbiddenIngredients[index] = { name: item, reason: '' };
+            }
+            menuData.forbiddenIngredients[index][field] = value;
+            updateJsonPreview();
+        }
+
+        function addForbidden() {
+            menuData.forbiddenIngredients.push({ name: '', reason: '' });
+            renderPanels();
+            document.querySelector(`[data-tab="foundation"]`).click();
+            updateJsonPreview();
+        }
+
+        function removeForbidden(index) {
+            menuData.forbiddenIngredients.splice(index, 1);
+            renderPanels();
+            document.querySelector(`[data-tab="foundation"]`).click();
+            updateJsonPreview();
+        }
 
         // Initialize
         loadMenuData();
