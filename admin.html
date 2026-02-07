@@ -448,7 +448,11 @@
     <div id="main-content" class="main-content">
     <header>
         <h1>Bear Lodge Inn - Menu Editor</h1>
-        <a href="index.html">← Back to Menu</a>
+        <div style="display: flex; align-items: center; gap: 1rem;">
+            <button id="save-cloud-btn" onclick="saveToCloud()" style="background: var(--forest-green); color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600; cursor: pointer;">Save to Cloud</button>
+            <span id="save-status" style="font-size: 0.9rem;"></span>
+            <a href="index.html">← Back to Menu</a>
+        </div>
     </header>
 
     <div class="container">
@@ -457,9 +461,8 @@
             <ol>
                 <li>Click a category tab below to see its items</li>
                 <li>Click "Edit" to modify an item, or "Add New Item" to create one</li>
-                <li>When done, go to the "Export" tab and click "Copy JSON"</li>
-                <li>Open <code>menu-data.json</code> in a text editor and replace the contents</li>
-                <li>Save the file and refresh the menu page</li>
+                <li>Click <strong>"Save to Cloud"</strong> (top right) to save your changes</li>
+                <li>Refresh the menu page to see your updates!</li>
             </ol>
             <p style="margin-top: 1rem;"><strong>Tip:</strong> For images, use URLs from Unsplash (free). Search for the food at unsplash.com, right-click the image, and copy the image URL.</p>
         </div>
@@ -566,16 +569,95 @@
         }
 
         let menuData = null;
+        const WORKER_URL = 'https://bear-lodge-api.amiley03.workers.dev';
 
-        // Load menu data
+        // Load menu data - try cloud first, fallback to local
         async function loadMenuData() {
+            try {
+                // Try loading from Cloudflare KV first
+                const cloudResponse = await fetch(`${WORKER_URL}/menu`);
+                if (cloudResponse.ok) {
+                    menuData = await cloudResponse.json();
+                    console.log('Menu loaded from cloud');
+                    renderPanels();
+                    return;
+                }
+            } catch (error) {
+                console.log('Cloud unavailable, falling back to local JSON');
+            }
+
+            // Fallback to local JSON file
             try {
                 const response = await fetch('menu-data.json');
                 menuData = await response.json();
+                console.log('Menu loaded from local file');
                 renderPanels();
             } catch (error) {
                 console.error('Error loading menu:', error);
                 document.getElementById('panels').innerHTML = '<p style="color: red;">Error loading menu data.</p>';
+            }
+        }
+
+        // Save menu data to Cloudflare
+        async function saveToCloud() {
+            const saveBtn = document.getElementById('save-cloud-btn');
+            const status = document.getElementById('save-status');
+
+            saveBtn.disabled = true;
+            saveBtn.textContent = 'Saving...';
+            status.textContent = '';
+            status.style.color = '';
+
+            try {
+                const response = await fetch(`${WORKER_URL}/menu`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        password: 'bearbear',
+                        menuData: menuData
+                    })
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    status.textContent = 'Saved to cloud!';
+                    status.style.color = 'var(--forest-green)';
+                } else {
+                    throw new Error(result.error || 'Save failed');
+                }
+            } catch (error) {
+                status.textContent = 'Error: ' + error.message;
+                status.style.color = 'var(--soft-red)';
+            } finally {
+                saveBtn.disabled = false;
+                saveBtn.textContent = 'Save to Cloud';
+            }
+        }
+
+        // Initialize menu data in cloud (one-time upload)
+        async function initCloud() {
+            if (!confirm('This will upload your current menu-data.json to the cloud. Continue?')) return;
+
+            try {
+                const response = await fetch(`${WORKER_URL}/init`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        password: 'bearbear',
+                        menuData: menuData,
+                        force: true
+                    })
+                });
+
+                const result = await response.json();
+                if (response.ok) {
+                    alert('Menu uploaded to cloud successfully!');
+                } else {
+                    alert('Error: ' + (result.error || 'Upload failed'));
+                }
+            } catch (error) {
+                alert('Error: ' + error.message);
             }
         }
 
@@ -735,9 +817,18 @@
             // Export panel
             html += `
                 <div class="panel" data-panel="export">
-                    <h2>Export Menu Data</h2>
-                    <p>Copy this JSON and save it to <code>menu-data.json</code> to update the menu.</p>
+                    <h2>Save & Export Menu Data</h2>
+
+                    <div style="background: linear-gradient(135deg, #e8f5e9, #c8e6c9); padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; border-left: 5px solid var(--forest-green);">
+                        <h3 style="color: var(--forest-green); margin-bottom: 1rem;">☁️ Cloud Save (Recommended)</h3>
+                        <p style="margin-bottom: 1rem;">Save directly to Cloudflare. Changes appear on the menu immediately.</p>
+                        <button onclick="saveToCloud()" style="background: var(--forest-green); color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer; margin-right: 1rem;">Save to Cloud</button>
+                        <button onclick="initCloud()" style="background: #666; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer;">Upload Full Menu (Reset)</button>
+                    </div>
+
                     <div class="export-section">
+                        <h3>Manual Export (Backup)</h3>
+                        <p>Copy this JSON to save as a backup or update menu-data.json manually.</p>
                         <button class="btn-copy" onclick="copyJson()">Copy JSON to Clipboard</button>
                         <div class="json-preview" id="json-preview"></div>
                     </div>

@@ -35,11 +35,26 @@ function setVote(itemId, vote, event) {
     }
 }
 
-// Load menu data
+// Load menu data - try Cloudflare first, fallback to local JSON
 async function loadMenuData() {
+    try {
+        // Try loading from Cloudflare KV first
+        const cloudResponse = await fetch(`${WORKER_URL}/menu`);
+        if (cloudResponse.ok) {
+            menuData = await cloudResponse.json();
+            console.log('Menu loaded from cloud');
+            renderMenu();
+            return;
+        }
+    } catch (error) {
+        console.log('Cloud unavailable, falling back to local JSON');
+    }
+
+    // Fallback to local JSON file
     try {
         const response = await fetch('menu-data.json');
         menuData = await response.json();
+        console.log('Menu loaded from local file');
         renderMenu();
     } catch (error) {
         console.error('Error loading menu data:', error);
