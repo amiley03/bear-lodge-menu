@@ -56,7 +56,8 @@
               "Serve with syrup."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "sausage-egg-bowl",
@@ -80,7 +81,8 @@
               "Serve warm."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "scrambled-eggs",
@@ -103,7 +105,8 @@
               "Serve with buttered toast and yogurt."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "pancakes",
@@ -128,7 +131,8 @@
               "Serve soft with butter and maple syrup."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "cream-of-wheat",
@@ -173,7 +177,8 @@
               "Drizzle with honey if desired."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "yogurt-banana",
@@ -193,7 +198,8 @@
               "Drizzle generously with honey."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "protein-smoothie",
@@ -249,7 +255,8 @@
               "Season and serve warm."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "egg-drop-soup",
@@ -301,8 +308,7 @@
               "Cut sandwich into strips for dipping."
             ]
           },
-          "submittedBy": "Nick",
-          "isHealingSafe": true
+          "submittedBy": "Nick"
         },
         {
           "id": "turkey-rice",
@@ -325,7 +331,8 @@
               "Season and serve."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "potato-soup",
@@ -371,7 +378,8 @@
               "Warm through and serve."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "chicken-pot-pie-bowl",
@@ -394,7 +402,8 @@
               "Serve over mashed potatoes."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "brothy-lo-mein-soup",
@@ -419,7 +428,8 @@
               "Sip the broth between bites."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         }
       ]
     },
@@ -477,7 +487,8 @@
               "Serve with mashed potatoes."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "stroganoff",
@@ -501,7 +512,8 @@
               "Keep portions small."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "bbq-chicken",
@@ -521,7 +533,8 @@
               "Serve over creamy mashed potatoes."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "smoky-chicken-rice",
@@ -547,7 +560,8 @@
               "Serve over white rice with pan juices."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "teriyaki-pork-rice",
@@ -569,7 +583,8 @@
               "Drizzle with extra sauce."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "turkey-gravy-toast",
@@ -591,7 +606,8 @@
               "Serve with mashed potatoes on side."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "meatloaf",
@@ -634,7 +650,8 @@
               "Combine and serve small portion."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "white-fish",
@@ -677,7 +694,8 @@
               "Microwave until cheese melts."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         }
       ]
     },
@@ -752,7 +770,8 @@
               "Cut into wedges, serve with sour cream."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "mexican-rice-bowl",
@@ -818,7 +837,8 @@
               "Top with cheese and sour cream."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "mexican-potato-bowl",
@@ -838,7 +858,8 @@
               "Add cheese and sour cream."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "soft-taquitos",
@@ -860,7 +881,8 @@
               "Serve with sour cream."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         }
       ]
     },
@@ -893,7 +915,8 @@
               "Serve tender (not crunchy) with extra sauce for dipping."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "af-butter-garlic-wings",
@@ -916,7 +939,8 @@
               "Serve tender."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "af-pork-chops",
@@ -940,7 +964,8 @@
               "Let rest 3 minutes. Serve with mashed potatoes and gravy."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "af-chicken-tenders",
@@ -965,7 +990,8 @@
               "Serve with BBQ sauce or gravy for dipping."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "af-french-fries",
@@ -1010,7 +1036,8 @@
               "Serve over white rice."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "af-sweet-sour-chicken",
@@ -1065,7 +1092,8 @@
               "Serve with mashed potatoes."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "of-bbq-pork",
@@ -1087,7 +1115,8 @@
               "Broil until cheese melts. Serve open-face."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "of-larrys-reuben",
@@ -1133,7 +1162,8 @@
               "Serve with mashed potatoes."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "of-chicken-parm",
@@ -1206,7 +1236,8 @@
               "Slice and serve."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "pz-butter-garlic",
@@ -1229,7 +1260,8 @@
               "Bake at 375F for 8-10 minutes. Slice and serve."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "pz-enchilada",
@@ -1308,7 +1340,8 @@
               "Serve warm. Add extra broth if desired for easier digestion."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "ch-teriyaki-bowl",
@@ -1329,7 +1362,8 @@
               "Add soft carrots on the side."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "ch-fried-rice",
@@ -1355,7 +1389,8 @@
               "Serve warm."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "ch-sesame-chicken",
@@ -1381,7 +1416,8 @@
               "Serve over white rice."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "ch-beef-rice-bowl",
@@ -1404,7 +1440,8 @@
               "Serve over white rice with soft carrots."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "ch-teriyaki-pork-noodles",
@@ -1427,7 +1464,8 @@
               "Serve warm in a bowl."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         }
       ]
     },
@@ -1475,7 +1513,8 @@
               "Serve warm."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "applesauce-cinnamon",
@@ -1533,7 +1572,8 @@
               "Top with pear slices."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "milkshake",
@@ -1604,7 +1644,8 @@
               "Chill before serving."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "rice-pudding",
@@ -1627,7 +1668,8 @@
               "Serve warm with cinnamon on top."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "bread-pudding",
@@ -1651,7 +1693,8 @@
               "Bake at 350F for 40-45 minutes."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "peach-cobbler",
@@ -1674,7 +1717,8 @@
               "Bake at 350F for 45 minutes."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "ice-cream",
