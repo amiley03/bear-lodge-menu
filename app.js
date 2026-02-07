@@ -2,6 +2,39 @@
 
 let menuData = null;
 
+// User votes stored in localStorage
+function getUserVotes() {
+    const votes = localStorage.getItem('bearLodgeVotes');
+    return votes ? JSON.parse(votes) : {};
+}
+
+function saveUserVotes(votes) {
+    localStorage.setItem('bearLodgeVotes', JSON.stringify(votes));
+}
+
+function getVote(itemId) {
+    const votes = getUserVotes();
+    return votes[itemId] || null; // 'up', 'down', or null
+}
+
+function setVote(itemId, vote, event) {
+    if (event) event.stopPropagation();
+    const votes = getUserVotes();
+    if (votes[itemId] === vote) {
+        delete votes[itemId]; // Toggle off
+    } else {
+        votes[itemId] = vote;
+    }
+    saveUserVotes(votes);
+    renderMenuSections(); // Re-render to update buttons
+    // If modal is open, update it too
+    const modal = document.getElementById('recipe-modal');
+    if (modal.classList.contains('active')) {
+        const currentItemId = modal.querySelector('[data-vote-item]')?.dataset.voteItem;
+        if (currentItemId) showRecipe(currentItemId);
+    }
+}
+
 // Load menu data
 async function loadMenuData() {
     try {
@@ -58,7 +91,10 @@ function renderMenuSections() {
 
 // Render individual menu item
 function renderMenuItem(item) {
+    const vote = getVote(item.id);
+
     const badges = [];
+    if (vote === 'up') badges.push('<span class="badge user-fave">Liked</span>');
     if (item.isFavorite) badges.push('<span class="badge favorite">Larry\'s Fave</span>');
     if (item.isSignature) badges.push('<span class="badge signature">Signature</span>');
     if (item.isFlareUpSafe) badges.push('<span class="badge gentle">Gentle</span>');
@@ -67,6 +103,10 @@ function renderMenuItem(item) {
     if (item.isFavorite) cardClass += ' favorite';
     if (item.isSignature) cardClass += ' signature';
     if (item.isFlareUpSafe) cardClass += ' flare-up-safe';
+    if (vote === 'up') cardClass += ' user-liked';
+    if (vote === 'down') cardClass += ' user-passed';
+
+    const submitter = item.submittedBy ? `<span class="submitter">by ${item.submittedBy}</span>` : '';
 
     return `
         <div class="${cardClass}" data-item-id="${item.id}" onclick="showRecipe('${item.id}')">
@@ -78,7 +118,13 @@ function renderMenuItem(item) {
                     <div class="item-badges">${badges.join('')}</div>
                 </div>
                 <p class="item-description">${item.description}</p>
-                <span class="view-recipe">View Recipe →</span>
+                <div class="item-footer">
+                    ${submitter}
+                    <div class="vote-buttons">
+                        <button class="vote-btn ${vote === 'up' ? 'active' : ''}" onclick="setVote('${item.id}', 'up', event)" title="I like this">👍</button>
+                        <button class="vote-btn ${vote === 'down' ? 'active' : ''}" onclick="setVote('${item.id}', 'down', event)" title="I'll pass">👎</button>
+                    </div>
+                </div>
             </div>
         </div>
     `;
@@ -147,13 +193,21 @@ function showRecipe(itemId) {
 
     const modal = document.getElementById('recipe-modal');
     const modalBody = document.getElementById('modal-body');
+    const vote = getVote(item.id);
 
     modalBody.innerHTML = `
         <img src="${item.image}" alt="${item.name}" class="modal-image"
              onerror="this.src='https://images.unsplash.com/photo-1495195134817-aeb325a55b65?w=400'">
-        <div class="modal-body-content">
-            <h2>${item.name}</h2>
+        <div class="modal-body-content" data-vote-item="${item.id}">
+            <div class="modal-header-row">
+                <h2>${item.name}</h2>
+                <div class="modal-vote-buttons">
+                    <button class="vote-btn large ${vote === 'up' ? 'active' : ''}" onclick="setVote('${item.id}', 'up')">👍 Like</button>
+                    <button class="vote-btn large ${vote === 'down' ? 'active' : ''}" onclick="setVote('${item.id}', 'down')">👎 Pass</button>
+                </div>
+            </div>
             <p class="description">${item.description}</p>
+            ${item.submittedBy ? `<p class="modal-submitter">Added by ${item.submittedBy}</p>` : ''}
 
             ${item.recipe ? `
                 <div class="recipe-section">

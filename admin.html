@@ -506,6 +506,11 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="edit-submitter">Submitted By</label>
+                    <input type="text" id="edit-submitter" placeholder="Name of person who added this recipe">
+                </div>
+
+                <div class="form-group">
                     <label>Options</label>
                     <div class="checkbox-group">
                         <label><input type="checkbox" id="edit-favorite"> Larry's Favorite</label>
@@ -795,6 +800,7 @@
             document.getElementById('edit-favorite').checked = false;
             document.getElementById('edit-signature').checked = false;
             document.getElementById('edit-flareup-safe').checked = false;
+            document.getElementById('edit-submitter').value = '';
             document.getElementById('edit-ingredients').value = '';
             document.getElementById('edit-instructions').value = '';
             document.getElementById('edit-validation').style.display = 'none';
@@ -815,6 +821,7 @@
             document.getElementById('edit-favorite').checked = item.isFavorite || false;
             document.getElementById('edit-signature').checked = item.isSignature || false;
             document.getElementById('edit-flareup-safe').checked = item.isFlareUpSafe || false;
+            document.getElementById('edit-submitter').value = item.submittedBy || '';
 
             if (item.recipe) {
                 document.getElementById('edit-ingredients').value = item.recipe.ingredients.join('\n');
@@ -891,6 +898,7 @@
                 isFavorite: document.getElementById('edit-favorite').checked,
                 isSignature: document.getElementById('edit-signature').checked,
                 isFlareUpSafe: document.getElementById('edit-flareup-safe').checked,
+                submittedBy: document.getElementById('edit-submitter').value || '',
                 recipe: {
                     ingredients: ingredients,
                     instructions: instructions

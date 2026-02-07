@@ -6,7 +6,12 @@
     "description": "Every meal is cozy, comforting, and designed to be gentle on the stomach while still tasting like real food made with love."
   },
   "dietaryNotes": {
-    "conditions": ["Portal Hypertension", "Gastroparesis (Severe)", "Esophageal Varices", "Parkinson's Disease"],
+    "conditions": [
+      "Portal Hypertension",
+      "Gastroparesis (Severe)",
+      "Esophageal Varices",
+      "Parkinson's Disease"
+    ],
     "mealPattern": "6 small meals per day - liquids and soft foods prioritized",
     "rules": [
       "Soft, low-fiber, low-fat foods only",
@@ -33,9 +38,23 @@
           "image": "https://images.unsplash.com/photo-1639024471283-03518883512d?w=400&h=300&fit=crop",
           "isFavorite": true,
           "recipe": {
-            "ingredients": ["4 slices white bread", "2 eggs", "1/4 cup milk", "1 tsp vanilla", "2 tbsp butter", "Maple syrup"],
-            "instructions": ["Beat eggs with milk and vanilla until smooth.", "Soak bread slices until saturated but not falling apart.", "Melt butter in pan over medium-low heat.", "Cook each side until golden and custardy inside.", "Serve with syrup."]
-          }
+            "ingredients": [
+              "4 slices white bread",
+              "2 eggs",
+              "1/4 cup milk",
+              "1 tsp vanilla",
+              "2 tbsp butter",
+              "Maple syrup"
+            ],
+            "instructions": [
+              "Beat eggs with milk and vanilla until smooth.",
+              "Soak bread slices until saturated but not falling apart.",
+              "Melt butter in pan over medium-low heat.",
+              "Cook each side until golden and custardy inside.",
+              "Serve with syrup."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "sausage-egg-bowl",
@@ -44,9 +63,22 @@
           "image": "https://images.unsplash.com/photo-1590925806286-fd6799ed850d?w=400&h=300&fit=crop",
           "isFavorite": true,
           "recipe": {
-            "ingredients": ["2 eggs", "2 oz breakfast sausage (crumbled, cooked, drained)", "1 slice white toast (cubed)", "2 tbsp shredded cheese", "Salt to taste"],
-            "instructions": ["Scramble eggs until soft and fluffy.", "Cook sausage until no pink remains, crumble finely, drain fat well.", "Cube toast into small pieces.", "Combine all in a bowl, top with cheese.", "Serve warm."]
-          }
+            "ingredients": [
+              "2 eggs",
+              "2 oz breakfast sausage (crumbled, cooked, drained)",
+              "1 slice white toast (cubed)",
+              "2 tbsp shredded cheese",
+              "Salt to taste"
+            ],
+            "instructions": [
+              "Scramble eggs until soft and fluffy.",
+              "Cook sausage until no pink remains, crumble finely, drain fat well.",
+              "Cube toast into small pieces.",
+              "Combine all in a bowl, top with cheese.",
+              "Serve warm."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "scrambled-eggs",
@@ -55,9 +87,21 @@
           "image": "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=400&h=300&fit=crop",
           "isFlareUpSafe": true,
           "recipe": {
-            "ingredients": ["2-3 eggs", "1 tbsp butter", "2 slices white toast", "1/2 cup vanilla yogurt", "Salt"],
-            "instructions": ["Melt butter in non-stick pan over low heat.", "Beat eggs with a pinch of salt.", "Cook slowly, stirring gently until soft curds form.", "Serve with buttered toast and yogurt."]
-          }
+            "ingredients": [
+              "2-3 eggs",
+              "1 tbsp butter",
+              "2 slices white toast",
+              "1/2 cup vanilla yogurt",
+              "Salt"
+            ],
+            "instructions": [
+              "Melt butter in non-stick pan over low heat.",
+              "Beat eggs with a pinch of salt.",
+              "Cook slowly, stirring gently until soft curds form.",
+              "Serve with buttered toast and yogurt."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "pancakes",
@@ -65,9 +109,24 @@
           "description": "Soft, fluffy, and swimming in syrup. Classic Larry breakfast.",
           "image": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&h=300&fit=crop",
           "recipe": {
-            "ingredients": ["1 cup flour", "1 egg", "3/4 cup milk", "2 tbsp butter (melted)", "1 tbsp sugar", "Maple syrup"],
-            "instructions": ["Mix flour and sugar.", "Whisk egg, milk, and melted butter.", "Combine wet and dry ingredients until just mixed (lumps OK).", "Cook on buttered griddle over medium-low heat.", "Flip when bubbles form on surface.", "Serve soft with butter and maple syrup."]
-          }
+            "ingredients": [
+              "1 cup flour",
+              "1 egg",
+              "3/4 cup milk",
+              "2 tbsp butter (melted)",
+              "1 tbsp sugar",
+              "Maple syrup"
+            ],
+            "instructions": [
+              "Mix flour and sugar.",
+              "Whisk egg, milk, and melted butter.",
+              "Combine wet and dry ingredients until just mixed (lumps OK).",
+              "Cook on buttered griddle over medium-low heat.",
+              "Flip when bubbles form on surface.",
+              "Serve soft with butter and maple syrup."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "cream-of-wheat",
@@ -76,9 +135,22 @@
           "image": "https://images.unsplash.com/photo-1517673400267-0251440c45dc?w=400",
           "isFlareUpSafe": true,
           "recipe": {
-            "ingredients": ["3 tbsp cream of wheat", "1 cup milk", "1 tbsp butter", "2 tbsp brown sugar", "Pinch of salt"],
-            "instructions": ["Heat milk in saucepan until simmering.", "Slowly whisk in cream of wheat.", "Cook 2-3 minutes, stirring constantly.", "Remove from heat, stir in butter and brown sugar.", "Serve warm."]
-          }
+            "ingredients": [
+              "3 tbsp cream of wheat",
+              "1 cup milk",
+              "1 tbsp butter",
+              "2 tbsp brown sugar",
+              "Pinch of salt"
+            ],
+            "instructions": [
+              "Heat milk in saucepan until simmering.",
+              "Slowly whisk in cream of wheat.",
+              "Cook 2-3 minutes, stirring constantly.",
+              "Remove from heat, stir in butter and brown sugar.",
+              "Serve warm."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "cottage-peaches",
@@ -87,9 +159,18 @@
           "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400",
           "isFlareUpSafe": true,
           "recipe": {
-            "ingredients": ["1 cup cottage cheese", "1/2 cup canned peaches (drained)", "1 tsp honey (optional)"],
-            "instructions": ["Spoon cottage cheese into bowl.", "Top with peach slices.", "Drizzle with honey if desired."]
-          }
+            "ingredients": [
+              "1 cup cottage cheese",
+              "1/2 cup canned peaches (drained)",
+              "1 tsp honey (optional)"
+            ],
+            "instructions": [
+              "Spoon cottage cheese into bowl.",
+              "Top with peach slices.",
+              "Drizzle with honey if desired."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "yogurt-banana",
@@ -98,9 +179,18 @@
           "image": "https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?w=400",
           "isFlareUpSafe": true,
           "recipe": {
-            "ingredients": ["1 cup vanilla yogurt", "1 ripe banana (sliced)", "1 tbsp honey"],
-            "instructions": ["Spoon yogurt into bowl.", "Arrange banana slices on top.", "Drizzle generously with honey."]
-          }
+            "ingredients": [
+              "1 cup vanilla yogurt",
+              "1 ripe banana (sliced)",
+              "1 tbsp honey"
+            ],
+            "instructions": [
+              "Spoon yogurt into bowl.",
+              "Arrange banana slices on top.",
+              "Drizzle generously with honey."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "protein-smoothie",
@@ -110,9 +200,19 @@
           "isSignature": true,
           "isFlareUpSafe": true,
           "recipe": {
-            "ingredients": ["1 ripe banana", "1 cup milk", "1 tbsp peanut butter", "1 scoop vanilla protein powder"],
-            "instructions": ["Add all ingredients to blender.", "Blend until completely smooth.", "Serve immediately."]
-          }
+            "ingredients": [
+              "1 ripe banana",
+              "1 cup milk",
+              "1 tbsp peanut butter",
+              "1 scoop vanilla protein powder"
+            ],
+            "instructions": [
+              "Add all ingredients to blender.",
+              "Blend until completely smooth.",
+              "Serve immediately."
+            ]
+          },
+          "submittedBy": "Nick"
         }
       ]
     },
@@ -130,9 +230,22 @@
           "isFavorite": true,
           "isFlareUpSafe": true,
           "recipe": {
-            "ingredients": ["4 cups chicken broth", "1 cup shredded chicken", "1 cup egg noodles", "1/2 cup soft-cooked carrots (diced small)", "Salt to taste"],
-            "instructions": ["Bring broth to simmer.", "Add carrots, cook until very soft (15 min).", "Add noodles, cook until very soft.", "Stir in shredded chicken.", "Season and serve warm."]
-          }
+            "ingredients": [
+              "4 cups chicken broth",
+              "1 cup shredded chicken",
+              "1 cup egg noodles",
+              "1/2 cup soft-cooked carrots (diced small)",
+              "Salt to taste"
+            ],
+            "instructions": [
+              "Bring broth to simmer.",
+              "Add carrots, cook until very soft (15 min).",
+              "Add noodles, cook until very soft.",
+              "Stir in shredded chicken.",
+              "Season and serve warm."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "egg-drop-soup",
@@ -143,9 +256,23 @@
           "isSignature": true,
           "isFlareUpSafe": true,
           "recipe": {
-            "ingredients": ["4 cups chicken broth", "2 eggs (beaten)", "1 tbsp cornstarch mixed with 2 tbsp cold water", "1/2 tsp ground ginger", "1/2 tsp sesame oil", "Salt to taste"],
-            "instructions": ["Bring broth to a simmer.", "Stir in cornstarch slurry to thicken slightly.", "Slowly drizzle beaten eggs into simmering broth while stirring gently.", "Add ginger and sesame oil.", "Season with salt and serve immediately."]
-          }
+            "ingredients": [
+              "4 cups chicken broth",
+              "2 eggs (beaten)",
+              "1 tbsp cornstarch mixed with 2 tbsp cold water",
+              "1/2 tsp ground ginger",
+              "1/2 tsp sesame oil",
+              "Salt to taste"
+            ],
+            "instructions": [
+              "Bring broth to a simmer.",
+              "Stir in cornstarch slurry to thicken slightly.",
+              "Slowly drizzle beaten eggs into simmering broth while stirring gently.",
+              "Add ginger and sesame oil.",
+              "Season with salt and serve immediately."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "tomato-grilled-cheese",
@@ -154,9 +281,22 @@
           "image": "https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?w=400&h=300&fit=crop",
           "isFlareUpSafe": true,
           "recipe": {
-            "ingredients": ["1 can cream of tomato soup", "1/2 cup milk", "2 slices white bread", "2 slices American cheese", "2 tbsp butter"],
-            "instructions": ["Heat soup with milk until warm (not boiling).", "Butter bread slices on outside.", "Place cheese between bread.", "Grill on medium-low until golden and cheese melts.", "Cut sandwich into strips for dipping."]
-          }
+            "ingredients": [
+              "1 can cream of tomato soup",
+              "1/2 cup milk",
+              "2 slices white bread",
+              "2 slices American cheese",
+              "2 tbsp butter"
+            ],
+            "instructions": [
+              "Heat soup with milk until warm (not boiling).",
+              "Butter bread slices on outside.",
+              "Place cheese between bread.",
+              "Grill on medium-low until golden and cheese melts.",
+              "Cut sandwich into strips for dipping."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "turkey-rice",
@@ -165,9 +305,21 @@
           "image": "https://images.unsplash.com/photo-1603105037880-880cd4edfb0d?w=400",
           "isFlareUpSafe": true,
           "recipe": {
-            "ingredients": ["4 cups chicken broth", "1 cup cooked shredded turkey", "1/2 cup cooked white rice", "1/4 cup soft carrots", "Salt"],
-            "instructions": ["Simmer broth with carrots until very soft.", "Add cooked rice and turkey.", "Heat through.", "Season and serve."]
-          }
+            "ingredients": [
+              "4 cups chicken broth",
+              "1 cup cooked shredded turkey",
+              "1/2 cup cooked white rice",
+              "1/4 cup soft carrots",
+              "Salt"
+            ],
+            "instructions": [
+              "Simmer broth with carrots until very soft.",
+              "Add cooked rice and turkey.",
+              "Heat through.",
+              "Season and serve."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "potato-soup",
@@ -176,9 +328,22 @@
           "image": "https://images.unsplash.com/photo-1578020190125-f4f7c18bc9cb?w=400",
           "isFlareUpSafe": true,
           "recipe": {
-            "ingredients": ["3 cups peeled potatoes (cubed)", "2 cups chicken broth", "1 cup milk", "2 tbsp butter", "Salt", "Shredded cheese for topping"],
-            "instructions": ["Boil potatoes in broth until very soft.", "Add milk and butter.", "Blend until completely smooth.", "Reheat gently, top with cheese."]
-          }
+            "ingredients": [
+              "3 cups peeled potatoes (cubed)",
+              "2 cups chicken broth",
+              "1 cup milk",
+              "2 tbsp butter",
+              "Salt",
+              "Shredded cheese for topping"
+            ],
+            "instructions": [
+              "Boil potatoes in broth until very soft.",
+              "Add milk and butter.",
+              "Blend until completely smooth.",
+              "Reheat gently, top with cheese."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "chicken-rice-broth",
@@ -187,9 +352,19 @@
           "image": "https://images.unsplash.com/photo-1547592166-23ac45744aec?w=400",
           "isFlareUpSafe": true,
           "recipe": {
-            "ingredients": ["2 cups chicken broth", "1/2 cup cooked white rice", "1/2 cup shredded chicken", "Salt"],
-            "instructions": ["Heat broth until simmering.", "Add rice and chicken.", "Warm through and serve."]
-          }
+            "ingredients": [
+              "2 cups chicken broth",
+              "1/2 cup cooked white rice",
+              "1/2 cup shredded chicken",
+              "Salt"
+            ],
+            "instructions": [
+              "Heat broth until simmering.",
+              "Add rice and chicken.",
+              "Warm through and serve."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "chicken-pot-pie-bowl",
@@ -198,9 +373,21 @@
           "image": "https://images.unsplash.com/photo-1626200419199-391ae4be7a41?w=400",
           "isFlareUpSafe": true,
           "recipe": {
-            "ingredients": ["1 cup shredded chicken", "1 can cream of chicken soup", "1/4 cup milk", "1/4 cup soft peas", "1/4 cup soft carrots", "Mashed potatoes"],
-            "instructions": ["Mix soup with milk, heat gently.", "Add chicken and very soft vegetables.", "Serve over mashed potatoes."]
-          }
+            "ingredients": [
+              "1 cup shredded chicken",
+              "1 can cream of chicken soup",
+              "1/4 cup milk",
+              "1/4 cup soft peas",
+              "1/4 cup soft carrots",
+              "Mashed potatoes"
+            ],
+            "instructions": [
+              "Mix soup with milk, heat gently.",
+              "Add chicken and very soft vegetables.",
+              "Serve over mashed potatoes."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "brothy-lo-mein-soup",
@@ -209,9 +396,23 @@
           "image": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400",
           "isFlareUpSafe": true,
           "recipe": {
-            "ingredients": ["4 cups chicken broth", "1 cup egg noodles (cooked very soft)", "1/2 cup shredded chicken", "1 tbsp low-sodium soy sauce", "1/2 tsp sesame oil", "1/2 tsp ground ginger"],
-            "instructions": ["Bring broth to a simmer.", "Add soy sauce, sesame oil, and ginger.", "Add cooked noodles and shredded chicken.", "Warm through and serve in a big bowl.", "Sip the broth between bites."]
-          }
+            "ingredients": [
+              "4 cups chicken broth",
+              "1 cup egg noodles (cooked very soft)",
+              "1/2 cup shredded chicken",
+              "1 tbsp low-sodium soy sauce",
+              "1/2 tsp sesame oil",
+              "1/2 tsp ground ginger"
+            ],
+            "instructions": [
+              "Bring broth to a simmer.",
+              "Add soy sauce, sesame oil, and ginger.",
+              "Add cooked noodles and shredded chicken.",
+              "Warm through and serve in a big bowl.",
+              "Sip the broth between bites."
+            ]
+          },
+          "submittedBy": "Nick"
         }
       ]
     },
@@ -230,9 +431,22 @@
           "isSignature": true,
           "isFlareUpSafe": true,
           "recipe": {
-            "ingredients": ["2 lb pork loin", "1/2 cup balsamic glaze", "1/4 cup chicken broth", "Salt", "4 cups mashed potatoes"],
-            "instructions": ["Place pork in slow cooker with broth.", "Cook on low 6-8 hours until shreddable.", "Shred with forks.", "Drizzle with balsamic glaze.", "Serve over smooth mashed potatoes."]
-          }
+            "ingredients": [
+              "2 lb pork loin",
+              "1/2 cup balsamic glaze",
+              "1/4 cup chicken broth",
+              "Salt",
+              "4 cups mashed potatoes"
+            ],
+            "instructions": [
+              "Place pork in slow cooker with broth.",
+              "Cook on low 6-8 hours until shreddable.",
+              "Shred with forks.",
+              "Drizzle with balsamic glaze.",
+              "Serve over smooth mashed potatoes."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "butter-garlic-pork",
@@ -241,9 +455,23 @@
           "image": "https://images.unsplash.com/photo-1588168333986-5078d3ae3976?w=400&h=300&fit=crop",
           "isFavorite": true,
           "recipe": {
-            "ingredients": ["2 lb pork loin", "3 tbsp butter", "1 tsp garlic powder", "1 cup chicken broth", "Salt"],
-            "instructions": ["Place pork loin in slow cooker.", "Add broth, butter, garlic powder, and salt.", "Cook on low 6-8 hours until fork-tender.", "Shred or slice thin.", "Spoon pan juices over pork.", "Serve with mashed potatoes."]
-          }
+            "ingredients": [
+              "2 lb pork loin",
+              "3 tbsp butter",
+              "1 tsp garlic powder",
+              "1 cup chicken broth",
+              "Salt"
+            ],
+            "instructions": [
+              "Place pork loin in slow cooker.",
+              "Add broth, butter, garlic powder, and salt.",
+              "Cook on low 6-8 hours until fork-tender.",
+              "Shred or slice thin.",
+              "Spoon pan juices over pork.",
+              "Serve with mashed potatoes."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "stroganoff",
@@ -252,9 +480,22 @@
           "image": "https://images.unsplash.com/photo-1633337474564-1d9478ca4e2e?w=400&h=300&fit=crop",
           "isFavorite": true,
           "recipe": {
-            "ingredients": ["1 lb ground beef", "1 can cream of mushroom soup", "1/2 cup sour cream", "2 cups egg noodles (cooked very soft)", "Salt"],
-            "instructions": ["Brown beef finely, drain fat.", "Stir in soup and sour cream.", "Heat gently (don't boil).", "Serve over very soft egg noodles.", "Keep portions small."]
-          }
+            "ingredients": [
+              "1 lb ground beef",
+              "1 can cream of mushroom soup",
+              "1/2 cup sour cream",
+              "2 cups egg noodles (cooked very soft)",
+              "Salt"
+            ],
+            "instructions": [
+              "Brown beef finely, drain fat.",
+              "Stir in soup and sour cream.",
+              "Heat gently (don't boil).",
+              "Serve over very soft egg noodles.",
+              "Keep portions small."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "bbq-chicken",
@@ -264,9 +505,18 @@
           "isFavorite": true,
           "isFlareUpSafe": true,
           "recipe": {
-            "ingredients": ["1.5 cups shredded chicken", "1/3 cup low-sodium BBQ sauce", "2 cups mashed potatoes"],
-            "instructions": ["Mix shredded chicken with BBQ sauce.", "Warm gently.", "Serve over creamy mashed potatoes."]
-          }
+            "ingredients": [
+              "1.5 cups shredded chicken",
+              "1/3 cup low-sodium BBQ sauce",
+              "2 cups mashed potatoes"
+            ],
+            "instructions": [
+              "Mix shredded chicken with BBQ sauce.",
+              "Warm gently.",
+              "Serve over creamy mashed potatoes."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "smoky-chicken-rice",
@@ -274,9 +524,25 @@
           "description": "Mild smoky seasoning on tender chicken. Bold flavor, gentle on the stomach.",
           "image": "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=400&h=300&fit=crop",
           "recipe": {
-            "ingredients": ["1 lb chicken breast", "1 tsp paprika", "1/2 tsp garlic powder", "1/2 tsp onion powder", "Salt", "1 cup cooked white rice", "2 tbsp butter"],
-            "instructions": ["Mix paprika, garlic powder, onion powder, and salt.", "Rub seasoning on chicken breast.", "Melt butter in pan over medium heat.", "Cook chicken until done, 6-7 minutes per side.", "Let rest, then slice thin.", "Serve over white rice with pan juices."]
-          }
+            "ingredients": [
+              "1 lb chicken breast",
+              "1 tsp paprika",
+              "1/2 tsp garlic powder",
+              "1/2 tsp onion powder",
+              "Salt",
+              "1 cup cooked white rice",
+              "2 tbsp butter"
+            ],
+            "instructions": [
+              "Mix paprika, garlic powder, onion powder, and salt.",
+              "Rub seasoning on chicken breast.",
+              "Melt butter in pan over medium heat.",
+              "Cook chicken until done, 6-7 minutes per side.",
+              "Let rest, then slice thin.",
+              "Serve over white rice with pan juices."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "teriyaki-pork-rice",
@@ -284,9 +550,21 @@
           "description": "Sweet teriyaki-glazed shredded pork over fluffy rice.",
           "image": "https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?w=400&h=300&fit=crop",
           "recipe": {
-            "ingredients": ["1 cup shredded pork", "1/4 cup low-sodium teriyaki sauce", "1 cup cooked white rice", "1/4 cup soft-cooked carrots (optional)"],
-            "instructions": ["Warm shredded pork with teriyaki sauce in a pan.", "Place rice in bowl.", "Top with teriyaki pork.", "Add soft carrots if desired.", "Drizzle with extra sauce."]
-          }
+            "ingredients": [
+              "1 cup shredded pork",
+              "1/4 cup low-sodium teriyaki sauce",
+              "1 cup cooked white rice",
+              "1/4 cup soft-cooked carrots (optional)"
+            ],
+            "instructions": [
+              "Warm shredded pork with teriyaki sauce in a pan.",
+              "Place rice in bowl.",
+              "Top with teriyaki pork.",
+              "Add soft carrots if desired.",
+              "Drizzle with extra sauce."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "turkey-gravy-toast",
@@ -296,9 +574,20 @@
           "isFavorite": true,
           "isFlareUpSafe": true,
           "recipe": {
-            "ingredients": ["2 slices white bread (cubed)", "1 cup shredded turkey", "1 cup turkey or chicken gravy", "Mashed potatoes"],
-            "instructions": ["Cube bread into bowl.", "Top with shredded turkey.", "Warm gravy and pour over.", "Serve with mashed potatoes on side."]
-          }
+            "ingredients": [
+              "2 slices white bread (cubed)",
+              "1 cup shredded turkey",
+              "1 cup turkey or chicken gravy",
+              "Mashed potatoes"
+            ],
+            "instructions": [
+              "Cube bread into bowl.",
+              "Top with shredded turkey.",
+              "Warm gravy and pour over.",
+              "Serve with mashed potatoes on side."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "meatloaf",
@@ -306,9 +595,23 @@
           "description": "Soft, savory, and served with creamy mashed potatoes.",
           "image": "https://images.unsplash.com/photo-1529694157872-4e0c0f3b238b?w=400&h=300&fit=crop",
           "recipe": {
-            "ingredients": ["1 lb ground turkey", "1 egg", "1/2 cup white breadcrumbs", "1/4 cup milk", "Salt", "2 tbsp ketchup"],
-            "instructions": ["Mix turkey, egg, breadcrumbs, milk, and salt.", "Form into loaf in baking pan.", "Top with ketchup.", "Bake at 350F for 40 minutes.", "Slice and serve with mashed potatoes and gravy."]
-          }
+            "ingredients": [
+              "1 lb ground turkey",
+              "1 egg",
+              "1/2 cup white breadcrumbs",
+              "1/4 cup milk",
+              "Salt",
+              "2 tbsp ketchup"
+            ],
+            "instructions": [
+              "Mix turkey, egg, breadcrumbs, milk, and salt.",
+              "Form into loaf in baking pan.",
+              "Top with ketchup.",
+              "Bake at 350F for 40 minutes.",
+              "Slice and serve with mashed potatoes and gravy."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "chicken-alfredo",
@@ -317,9 +620,18 @@
           "image": "https://images.unsplash.com/photo-1645112411341-6c4fd023714a?w=400",
           "isFlareUpSafe": true,
           "recipe": {
-            "ingredients": ["1 cup cooked pasta (very soft)", "1/2 cup shredded chicken", "1/2 cup Alfredo sauce"],
-            "instructions": ["Cook pasta until very soft.", "Warm Alfredo sauce with chicken.", "Combine and serve small portion."]
-          }
+            "ingredients": [
+              "1 cup cooked pasta (very soft)",
+              "1/2 cup shredded chicken",
+              "1/2 cup Alfredo sauce"
+            ],
+            "instructions": [
+              "Cook pasta until very soft.",
+              "Warm Alfredo sauce with chicken.",
+              "Combine and serve small portion."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "white-fish",
@@ -327,9 +639,21 @@
           "description": "Light, flaky fish with butter and lemon over white rice.",
           "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=400",
           "recipe": {
-            "ingredients": ["1 tilapia or cod fillet", "2 tbsp butter", "1 tbsp lemon juice", "Salt", "1 cup cooked white rice"],
-            "instructions": ["Place fish in baking dish.", "Top with butter and lemon juice.", "Bake at 375F for 15-20 minutes until flaky.", "Serve over white rice."]
-          }
+            "ingredients": [
+              "1 tilapia or cod fillet",
+              "2 tbsp butter",
+              "1 tbsp lemon juice",
+              "Salt",
+              "1 cup cooked white rice"
+            ],
+            "instructions": [
+              "Place fish in baking dish.",
+              "Top with butter and lemon juice.",
+              "Bake at 375F for 15-20 minutes until flaky.",
+              "Serve over white rice."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "shepherds-pie",
@@ -338,9 +662,20 @@
           "image": "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=400",
           "isFlareUpSafe": true,
           "recipe": {
-            "ingredients": ["1 cup cooked ground turkey", "1/4 cup gravy", "1 cup mashed potatoes", "2 tbsp shredded cheese"],
-            "instructions": ["Place turkey in bowl, mix with gravy.", "Top with mashed potatoes.", "Sprinkle with cheese.", "Microwave until cheese melts."]
-          }
+            "ingredients": [
+              "1 cup cooked ground turkey",
+              "1/4 cup gravy",
+              "1 cup mashed potatoes",
+              "2 tbsp shredded cheese"
+            ],
+            "instructions": [
+              "Place turkey in bowl, mix with gravy.",
+              "Top with mashed potatoes.",
+              "Sprinkle with cheese.",
+              "Microwave until cheese melts."
+            ]
+          },
+          "submittedBy": "Nick"
         }
       ]
     },
@@ -357,9 +692,22 @@
           "image": "https://images.unsplash.com/photo-1534352956036-cd81e27dd615?w=400&h=300&fit=crop",
           "isFavorite": true,
           "recipe": {
-            "ingredients": ["4 flour tortillas", "1.5 cups shredded chicken", "1 cup mild enchilada sauce", "1 cup shredded cheese", "1/4 cup sour cream"],
-            "instructions": ["Fill tortillas with chicken and cheese.", "Roll and place seam-down in baking dish.", "Cover with enchilada sauce and more cheese.", "Bake at 350F for 20 minutes until bubbly.", "Top with sour cream."]
-          }
+            "ingredients": [
+              "4 flour tortillas",
+              "1.5 cups shredded chicken",
+              "1 cup mild enchilada sauce",
+              "1 cup shredded cheese",
+              "1/4 cup sour cream"
+            ],
+            "instructions": [
+              "Fill tortillas with chicken and cheese.",
+              "Roll and place seam-down in baking dish.",
+              "Cover with enchilada sauce and more cheese.",
+              "Bake at 350F for 20 minutes until bubbly.",
+              "Top with sour cream."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "cheese-enchiladas",
@@ -367,9 +715,21 @@
           "description": "Soft, cheesy, and perfectly satisfying.",
           "image": "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=400",
           "recipe": {
-            "ingredients": ["4 flour tortillas", "2 cups shredded cheese", "1 cup mild enchilada sauce", "1/4 cup sour cream"],
-            "instructions": ["Fill tortillas with cheese.", "Roll and place in baking dish.", "Cover with sauce and more cheese.", "Bake at 350F for 15-20 minutes.", "Serve with sour cream."]
-          }
+            "ingredients": [
+              "4 flour tortillas",
+              "2 cups shredded cheese",
+              "1 cup mild enchilada sauce",
+              "1/4 cup sour cream"
+            ],
+            "instructions": [
+              "Fill tortillas with cheese.",
+              "Roll and place in baking dish.",
+              "Cover with sauce and more cheese.",
+              "Bake at 350F for 15-20 minutes.",
+              "Serve with sour cream."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "quesadilla",
@@ -377,9 +737,20 @@
           "description": "Melted, not crispy. Easy to eat.",
           "image": "https://images.unsplash.com/photo-1628191139360-4083564d03fd?w=400&h=300&fit=crop",
           "recipe": {
-            "ingredients": ["2 flour tortillas", "1/2 cup shredded chicken", "1/2 cup shredded cheese", "Sour cream for dipping"],
-            "instructions": ["Place chicken and cheese on one tortilla.", "Top with second tortilla.", "Cook on medium-low until cheese melts (don't crisp).", "Cut into wedges, serve with sour cream."]
-          }
+            "ingredients": [
+              "2 flour tortillas",
+              "1/2 cup shredded chicken",
+              "1/2 cup shredded cheese",
+              "Sour cream for dipping"
+            ],
+            "instructions": [
+              "Place chicken and cheese on one tortilla.",
+              "Top with second tortilla.",
+              "Cook on medium-low until cheese melts (don't crisp).",
+              "Cut into wedges, serve with sour cream."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "mexican-rice-bowl",
@@ -387,9 +758,22 @@
           "description": "Rice, chicken, sauce, cheese - simple and satisfying.",
           "image": "https://images.unsplash.com/photo-1543339308-43e59d6b73a6?w=400",
           "recipe": {
-            "ingredients": ["1 cup cooked white rice", "1/2 cup shredded chicken", "1/4 cup mild enchilada sauce", "1/4 cup shredded cheese", "2 tbsp sour cream"],
-            "instructions": ["Place rice in bowl.", "Top with chicken and sauce.", "Sprinkle with cheese.", "Microwave until warm.", "Top with sour cream."]
-          }
+            "ingredients": [
+              "1 cup cooked white rice",
+              "1/2 cup shredded chicken",
+              "1/4 cup mild enchilada sauce",
+              "1/4 cup shredded cheese",
+              "2 tbsp sour cream"
+            ],
+            "instructions": [
+              "Place rice in bowl.",
+              "Top with chicken and sauce.",
+              "Sprinkle with cheese.",
+              "Microwave until warm.",
+              "Top with sour cream."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "enchilada-casserole",
@@ -397,9 +781,20 @@
           "description": "All the enchilada flavors, spoonable comfort.",
           "image": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400",
           "recipe": {
-            "ingredients": ["4 flour tortillas (torn)", "1 cup shredded chicken", "1.5 cups mild enchilada sauce", "1.5 cups shredded cheese"],
-            "instructions": ["Layer torn tortillas, chicken, sauce, and cheese in baking dish.", "Repeat layers.", "Bake at 350F for 25 minutes.", "Scoop and serve."]
-          }
+            "ingredients": [
+              "4 flour tortillas (torn)",
+              "1 cup shredded chicken",
+              "1.5 cups mild enchilada sauce",
+              "1.5 cups shredded cheese"
+            ],
+            "instructions": [
+              "Layer torn tortillas, chicken, sauce, and cheese in baking dish.",
+              "Repeat layers.",
+              "Bake at 350F for 25 minutes.",
+              "Scoop and serve."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "taco-bowl",
@@ -407,9 +802,21 @@
           "description": "Mild taco flavors over rice. No shell needed.",
           "image": "https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?w=400",
           "recipe": {
-            "ingredients": ["1/2 lb ground turkey", "1 tbsp mild taco seasoning", "1 cup cooked white rice", "1/4 cup shredded cheese", "2 tbsp sour cream"],
-            "instructions": ["Brown turkey, drain fat.", "Add taco seasoning and a little water, simmer.", "Serve over rice.", "Top with cheese and sour cream."]
-          }
+            "ingredients": [
+              "1/2 lb ground turkey",
+              "1 tbsp mild taco seasoning",
+              "1 cup cooked white rice",
+              "1/4 cup shredded cheese",
+              "2 tbsp sour cream"
+            ],
+            "instructions": [
+              "Brown turkey, drain fat.",
+              "Add taco seasoning and a little water, simmer.",
+              "Serve over rice.",
+              "Top with cheese and sour cream."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "mexican-potato-bowl",
@@ -417,9 +824,19 @@
           "description": "Creamy potatoes with taco turkey and all the toppings.",
           "image": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400",
           "recipe": {
-            "ingredients": ["1.5 cups mashed potatoes", "1/2 cup seasoned ground turkey", "1/4 cup shredded cheese", "2 tbsp sour cream"],
-            "instructions": ["Place mashed potatoes in bowl.", "Top with seasoned turkey.", "Add cheese and sour cream."]
-          }
+            "ingredients": [
+              "1.5 cups mashed potatoes",
+              "1/2 cup seasoned ground turkey",
+              "1/4 cup shredded cheese",
+              "2 tbsp sour cream"
+            ],
+            "instructions": [
+              "Place mashed potatoes in bowl.",
+              "Top with seasoned turkey.",
+              "Add cheese and sour cream."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "soft-taquitos",
@@ -427,9 +844,21 @@
           "description": "Rolled tortillas baked just until warm, not crispy.",
           "image": "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=400",
           "recipe": {
-            "ingredients": ["4 flour tortillas", "1 cup shredded chicken", "1/2 cup shredded cheese", "Sour cream for dipping"],
-            "instructions": ["Mix chicken with cheese.", "Place filling on edge of each tortilla, roll tight.", "Place seam-down on baking sheet.", "Bake at 350F for 10 minutes (keep soft).", "Serve with sour cream."]
-          }
+            "ingredients": [
+              "4 flour tortillas",
+              "1 cup shredded chicken",
+              "1/2 cup shredded cheese",
+              "Sour cream for dipping"
+            ],
+            "instructions": [
+              "Mix chicken with cheese.",
+              "Place filling on edge of each tortilla, roll tight.",
+              "Place seam-down on baking sheet.",
+              "Bake at 350F for 10 minutes (keep soft).",
+              "Serve with sour cream."
+            ]
+          },
+          "submittedBy": "Nick"
         }
       ]
     },
@@ -446,9 +875,23 @@
           "image": "https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=400&h=300&fit=crop",
           "isFavorite": true,
           "recipe": {
-            "ingredients": ["1 lb chicken wings or drumettes", "1/3 cup low-sodium BBQ sauce", "1 tsp paprika", "1/2 tsp garlic powder", "Salt", "Cooking spray"],
-            "instructions": ["Pat wings dry, season with paprika, garlic powder, and salt.", "Spray air fryer basket with cooking spray.", "Air fry at 380F for 20-25 minutes, flipping halfway.", "Toss with BBQ sauce in last 3 minutes.", "Serve tender (not crunchy) with extra sauce for dipping."]
-          }
+            "ingredients": [
+              "1 lb chicken wings or drumettes",
+              "1/3 cup low-sodium BBQ sauce",
+              "1 tsp paprika",
+              "1/2 tsp garlic powder",
+              "Salt",
+              "Cooking spray"
+            ],
+            "instructions": [
+              "Pat wings dry, season with paprika, garlic powder, and salt.",
+              "Spray air fryer basket with cooking spray.",
+              "Air fry at 380F for 20-25 minutes, flipping halfway.",
+              "Toss with BBQ sauce in last 3 minutes.",
+              "Serve tender (not crunchy) with extra sauce for dipping."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "af-butter-garlic-wings",
@@ -456,9 +899,22 @@
           "description": "All the wing flavor without the heat. Buttery, garlicky, and safe.",
           "image": "https://images.unsplash.com/photo-1608039829572-aea7e089e0e1?w=400&h=300&fit=crop",
           "recipe": {
-            "ingredients": ["1 lb chicken wings or drumettes", "2 tbsp butter (melted)", "1 tsp garlic powder", "Salt", "Cooking spray"],
-            "instructions": ["Season wings with salt and garlic powder.", "Spray air fryer basket, arrange wings.", "Air fry at 380F for 20-25 minutes, flipping halfway.", "Toss in melted butter and extra garlic powder.", "Serve tender."]
-          }
+            "ingredients": [
+              "1 lb chicken wings or drumettes",
+              "2 tbsp butter (melted)",
+              "1 tsp garlic powder",
+              "Salt",
+              "Cooking spray"
+            ],
+            "instructions": [
+              "Season wings with salt and garlic powder.",
+              "Spray air fryer basket, arrange wings.",
+              "Air fry at 380F for 20-25 minutes, flipping halfway.",
+              "Toss in melted butter and extra garlic powder.",
+              "Serve tender."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "af-pork-chops",
@@ -466,9 +922,23 @@
           "description": "Juicy, tender chops with a smoky seasoning. Quick and easy.",
           "image": "https://images.unsplash.com/photo-1615937722923-67f6deaf2cc9?w=400&h=300&fit=crop",
           "recipe": {
-            "ingredients": ["2 boneless thin-cut pork chops", "1 tsp paprika", "1/2 tsp garlic powder", "1/2 tsp onion powder", "Salt", "Cooking spray"],
-            "instructions": ["Mix paprika, garlic powder, onion powder, and salt.", "Rub seasoning on both sides of pork chops.", "Spray air fryer basket, place chops in single layer.", "Air fry at 375F for 10-12 minutes, flipping halfway.", "Let rest 3 minutes. Serve with mashed potatoes and gravy."]
-          }
+            "ingredients": [
+              "2 boneless thin-cut pork chops",
+              "1 tsp paprika",
+              "1/2 tsp garlic powder",
+              "1/2 tsp onion powder",
+              "Salt",
+              "Cooking spray"
+            ],
+            "instructions": [
+              "Mix paprika, garlic powder, onion powder, and salt.",
+              "Rub seasoning on both sides of pork chops.",
+              "Spray air fryer basket, place chops in single layer.",
+              "Air fry at 375F for 10-12 minutes, flipping halfway.",
+              "Let rest 3 minutes. Serve with mashed potatoes and gravy."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "af-chicken-tenders",
@@ -476,9 +946,24 @@
           "description": "Crispy outside, tender inside. Dip in BBQ, gravy, or honey.",
           "image": "https://images.unsplash.com/photo-1562967914-608f82629710?w=400&h=300&fit=crop",
           "recipe": {
-            "ingredients": ["1 lb chicken breast, cut into strips", "1 egg (beaten)", "1/2 cup white breadcrumbs", "1/2 tsp paprika", "1/2 tsp garlic powder", "Salt", "Cooking spray"],
-            "instructions": ["Mix breadcrumbs with paprika, garlic powder, and salt.", "Dip chicken strips in egg, then coat in breadcrumb mixture.", "Spray air fryer basket, arrange tenders in single layer.", "Air fry at 375F for 10-12 minutes, flipping halfway.", "Serve with BBQ sauce or gravy for dipping."]
-          }
+            "ingredients": [
+              "1 lb chicken breast, cut into strips",
+              "1 egg (beaten)",
+              "1/2 cup white breadcrumbs",
+              "1/2 tsp paprika",
+              "1/2 tsp garlic powder",
+              "Salt",
+              "Cooking spray"
+            ],
+            "instructions": [
+              "Mix breadcrumbs with paprika, garlic powder, and salt.",
+              "Dip chicken strips in egg, then coat in breadcrumb mixture.",
+              "Spray air fryer basket, arrange tenders in single layer.",
+              "Air fry at 375F for 10-12 minutes, flipping halfway.",
+              "Serve with BBQ sauce or gravy for dipping."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "af-french-fries",
@@ -486,9 +971,20 @@
           "description": "Golden fries with almost no oil. A safe indulgence.",
           "image": "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=400&h=300&fit=crop",
           "recipe": {
-            "ingredients": ["3 medium potatoes (peeled)", "Cooking spray", "Salt"],
-            "instructions": ["Peel potatoes and cut into thin sticks.", "Soak in cold water 30 minutes, then pat completely dry.", "Spray lightly with cooking spray, season with salt.", "Air fry at 380F for 15-20 minutes, shaking basket halfway.", "Serve with ketchup."]
-          }
+            "ingredients": [
+              "3 medium potatoes (peeled)",
+              "Cooking spray",
+              "Salt"
+            ],
+            "instructions": [
+              "Peel potatoes and cut into thin sticks.",
+              "Soak in cold water 30 minutes, then pat completely dry.",
+              "Spray lightly with cooking spray, season with salt.",
+              "Air fry at 380F for 15-20 minutes, shaking basket halfway.",
+              "Serve with ketchup."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "af-teriyaki-chicken",
@@ -496,9 +992,23 @@
           "description": "Sweet and savory glazed chicken. Chinese buffet flavor at home.",
           "image": "https://images.unsplash.com/photo-1609183480237-ccf8987ab02c?w=400&h=300&fit=crop",
           "recipe": {
-            "ingredients": ["1 lb chicken breast, cubed", "1/3 cup low-sodium teriyaki sauce", "1 tsp garlic powder", "1/2 tsp ground ginger", "Cooking spray", "White rice for serving"],
-            "instructions": ["Toss chicken cubes with half the teriyaki sauce, garlic powder, and ginger.", "Spray air fryer basket, add chicken in single layer.", "Air fry at 375F for 12-15 minutes, shaking halfway.", "Toss with remaining teriyaki sauce.", "Serve over white rice."]
-          }
+            "ingredients": [
+              "1 lb chicken breast, cubed",
+              "1/3 cup low-sodium teriyaki sauce",
+              "1 tsp garlic powder",
+              "1/2 tsp ground ginger",
+              "Cooking spray",
+              "White rice for serving"
+            ],
+            "instructions": [
+              "Toss chicken cubes with half the teriyaki sauce, garlic powder, and ginger.",
+              "Spray air fryer basket, add chicken in single layer.",
+              "Air fry at 375F for 12-15 minutes, shaking halfway.",
+              "Toss with remaining teriyaki sauce.",
+              "Serve over white rice."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "af-sweet-sour-chicken",
@@ -506,9 +1016,23 @@
           "description": "Crispy chicken bites in tangy sweet sauce. Buffet classic, made safe.",
           "image": "https://images.unsplash.com/photo-1525755662778-989d0524087e?w=400&h=300&fit=crop",
           "recipe": {
-            "ingredients": ["1 lb chicken breast, cubed", "1/4 cup sweet and sour sauce", "1 egg (beaten)", "1/4 cup cornstarch", "Cooking spray", "White rice for serving"],
-            "instructions": ["Toss chicken cubes in egg, then coat in cornstarch.", "Spray air fryer basket, arrange chicken.", "Air fry at 375F for 12 minutes, shaking halfway.", "Toss cooked chicken with sweet and sour sauce.", "Serve over white rice."]
-          }
+            "ingredients": [
+              "1 lb chicken breast, cubed",
+              "1/4 cup sweet and sour sauce",
+              "1 egg (beaten)",
+              "1/4 cup cornstarch",
+              "Cooking spray",
+              "White rice for serving"
+            ],
+            "instructions": [
+              "Toss chicken cubes in egg, then coat in cornstarch.",
+              "Spray air fryer basket, arrange chicken.",
+              "Air fry at 375F for 12 minutes, shaking halfway.",
+              "Toss cooked chicken with sweet and sour sauce.",
+              "Serve over white rice."
+            ]
+          },
+          "submittedBy": "Nick"
         }
       ]
     },
@@ -525,9 +1049,21 @@
           "image": "https://images.unsplash.com/photo-1606728035253-49e8a23146de?w=400&h=300&fit=crop",
           "isFavorite": true,
           "recipe": {
-            "ingredients": ["2 slices white bread", "1 cup shredded turkey", "1 cup chicken or turkey gravy", "Mashed potatoes on the side"],
-            "instructions": ["Lay bread slices on plate.", "Pile shredded turkey on bread.", "Heat gravy until hot.", "Pour gravy generously over turkey and bread.", "Serve with mashed potatoes."]
-          }
+            "ingredients": [
+              "2 slices white bread",
+              "1 cup shredded turkey",
+              "1 cup chicken or turkey gravy",
+              "Mashed potatoes on the side"
+            ],
+            "instructions": [
+              "Lay bread slices on plate.",
+              "Pile shredded turkey on bread.",
+              "Heat gravy until hot.",
+              "Pour gravy generously over turkey and bread.",
+              "Serve with mashed potatoes."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "of-bbq-pork",
@@ -535,9 +1071,21 @@
           "description": "Shredded BBQ pork with melted cheese on soft white bread.",
           "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?w=400&h=300&fit=crop",
           "recipe": {
-            "ingredients": ["2 slices white bread", "1 cup shredded pork", "1/4 cup low-sodium BBQ sauce", "2 slices cheese"],
-            "instructions": ["Mix shredded pork with BBQ sauce, warm through.", "Lay bread on baking sheet.", "Pile BBQ pork on each slice.", "Top with cheese.", "Broil until cheese melts. Serve open-face."]
-          }
+            "ingredients": [
+              "2 slices white bread",
+              "1 cup shredded pork",
+              "1/4 cup low-sodium BBQ sauce",
+              "2 slices cheese"
+            ],
+            "instructions": [
+              "Mix shredded pork with BBQ sauce, warm through.",
+              "Lay bread on baking sheet.",
+              "Pile BBQ pork on each slice.",
+              "Top with cheese.",
+              "Broil until cheese melts. Serve open-face."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "of-larrys-reuben",
@@ -546,9 +1094,22 @@
           "image": "https://images.unsplash.com/photo-1509722747041-616f39b57569?w=400&h=300&fit=crop",
           "isFavorite": true,
           "recipe": {
-            "ingredients": ["2 slices white bread", "1 cup shredded turkey", "2 slices Swiss cheese", "2 tbsp Thousand Island dressing"],
-            "instructions": ["Lay bread slices on baking sheet.", "Pile shredded turkey on each slice.", "Top with Swiss cheese.", "Broil until cheese is melted and bubbly.", "Drizzle with Thousand Island dressing.", "Serve open-face."]
-          }
+            "ingredients": [
+              "2 slices white bread",
+              "1 cup shredded turkey",
+              "2 slices Swiss cheese",
+              "2 tbsp Thousand Island dressing"
+            ],
+            "instructions": [
+              "Lay bread slices on baking sheet.",
+              "Pile shredded turkey on each slice.",
+              "Top with Swiss cheese.",
+              "Broil until cheese is melted and bubbly.",
+              "Drizzle with Thousand Island dressing.",
+              "Serve open-face."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "of-hot-beef",
@@ -556,9 +1117,21 @@
           "description": "Tender ground beef smothered in brown gravy over soft bread.",
           "image": "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=400&h=300&fit=crop",
           "recipe": {
-            "ingredients": ["2 slices white bread", "1/2 lb ground beef (cooked, drained)", "1 cup brown gravy", "Mashed potatoes on the side"],
-            "instructions": ["Brown ground beef, drain fat well.", "Lay bread slices on plate.", "Spoon ground beef over bread.", "Pour hot gravy over everything.", "Serve with mashed potatoes."]
-          }
+            "ingredients": [
+              "2 slices white bread",
+              "1/2 lb ground beef (cooked, drained)",
+              "1 cup brown gravy",
+              "Mashed potatoes on the side"
+            ],
+            "instructions": [
+              "Brown ground beef, drain fat well.",
+              "Lay bread slices on plate.",
+              "Spoon ground beef over bread.",
+              "Pour hot gravy over everything.",
+              "Serve with mashed potatoes."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "of-chicken-parm",
@@ -566,9 +1139,21 @@
           "description": "Tender chicken, marinara, and melted mozzarella. Italian comfort.",
           "image": "https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?w=400&h=300&fit=crop",
           "recipe": {
-            "ingredients": ["2 slices white bread", "1 cup shredded chicken", "1/4 cup marinara sauce", "1/4 cup shredded mozzarella cheese"],
-            "instructions": ["Lay bread on baking sheet.", "Spread marinara on each slice.", "Top with shredded chicken.", "Sprinkle with mozzarella.", "Broil until cheese melts. Serve open-face."]
-          }
+            "ingredients": [
+              "2 slices white bread",
+              "1 cup shredded chicken",
+              "1/4 cup marinara sauce",
+              "1/4 cup shredded mozzarella cheese"
+            ],
+            "instructions": [
+              "Lay bread on baking sheet.",
+              "Spread marinara on each slice.",
+              "Top with shredded chicken.",
+              "Sprinkle with mozzarella.",
+              "Broil until cheese melts. Serve open-face."
+            ]
+          },
+          "submittedBy": "Nick"
         }
       ]
     },
@@ -584,9 +1169,19 @@
           "description": "Simple, melty, and satisfying. White bread makes the perfect soft crust.",
           "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&h=300&fit=crop",
           "recipe": {
-            "ingredients": ["2 slices white bread", "3 tbsp marinara sauce", "1/2 cup shredded mozzarella cheese"],
-            "instructions": ["Spread marinara sauce on each bread slice.", "Top generously with mozzarella.", "Bake at 375F for 8-10 minutes until cheese is bubbly.", "Let cool slightly before serving."]
-          }
+            "ingredients": [
+              "2 slices white bread",
+              "3 tbsp marinara sauce",
+              "1/2 cup shredded mozzarella cheese"
+            ],
+            "instructions": [
+              "Spread marinara sauce on each bread slice.",
+              "Top generously with mozzarella.",
+              "Bake at 375F for 8-10 minutes until cheese is bubbly.",
+              "Let cool slightly before serving."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "pz-bbq-chicken",
@@ -595,9 +1190,21 @@
           "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=300&fit=crop",
           "isFavorite": true,
           "recipe": {
-            "ingredients": ["2 flour tortillas", "3 tbsp low-sodium BBQ sauce", "1/2 cup shredded chicken", "1/2 cup shredded cheese"],
-            "instructions": ["Place tortillas on baking sheet.", "Spread BBQ sauce as the base.", "Top with shredded chicken and cheese.", "Bake at 375F for 8-10 minutes until cheese melts.", "Slice and serve."]
-          }
+            "ingredients": [
+              "2 flour tortillas",
+              "3 tbsp low-sodium BBQ sauce",
+              "1/2 cup shredded chicken",
+              "1/2 cup shredded cheese"
+            ],
+            "instructions": [
+              "Place tortillas on baking sheet.",
+              "Spread BBQ sauce as the base.",
+              "Top with shredded chicken and cheese.",
+              "Bake at 375F for 8-10 minutes until cheese melts.",
+              "Slice and serve."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "pz-butter-garlic",
@@ -605,9 +1212,22 @@
           "description": "Rich butter garlic base, tender chicken, melty cheese. No red sauce needed.",
           "image": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&h=300&fit=crop",
           "recipe": {
-            "ingredients": ["2 flour tortillas", "2 tbsp butter (melted)", "1 tsp garlic powder", "1/2 cup shredded chicken", "1/2 cup shredded mozzarella cheese"],
-            "instructions": ["Mix melted butter with garlic powder.", "Place tortillas on baking sheet.", "Brush with butter garlic mixture.", "Top with chicken and mozzarella.", "Bake at 375F for 8-10 minutes. Slice and serve."]
-          }
+            "ingredients": [
+              "2 flour tortillas",
+              "2 tbsp butter (melted)",
+              "1 tsp garlic powder",
+              "1/2 cup shredded chicken",
+              "1/2 cup shredded mozzarella cheese"
+            ],
+            "instructions": [
+              "Mix melted butter with garlic powder.",
+              "Place tortillas on baking sheet.",
+              "Brush with butter garlic mixture.",
+              "Top with chicken and mozzarella.",
+              "Bake at 375F for 8-10 minutes. Slice and serve."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "pz-enchilada",
@@ -615,9 +1235,22 @@
           "description": "Mexican meets Italian. Enchilada sauce, chicken, cheese, sour cream.",
           "image": "https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=400&h=300&fit=crop",
           "recipe": {
-            "ingredients": ["2 flour tortillas", "1/4 cup mild enchilada sauce", "1/2 cup shredded chicken", "1/2 cup shredded cheese", "2 tbsp sour cream"],
-            "instructions": ["Place tortillas on baking sheet.", "Spread enchilada sauce as the base.", "Top with chicken and cheese.", "Bake at 375F for 8-10 minutes.", "Drizzle with sour cream after baking."]
-          }
+            "ingredients": [
+              "2 flour tortillas",
+              "1/4 cup mild enchilada sauce",
+              "1/2 cup shredded chicken",
+              "1/2 cup shredded cheese",
+              "2 tbsp sour cream"
+            ],
+            "instructions": [
+              "Place tortillas on baking sheet.",
+              "Spread enchilada sauce as the base.",
+              "Top with chicken and cheese.",
+              "Bake at 375F for 8-10 minutes.",
+              "Drizzle with sour cream after baking."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "pz-cheeseburger",
@@ -625,9 +1258,21 @@
           "description": "All the cheeseburger flavors on a soft bread crust.",
           "image": "https://images.unsplash.com/photo-1590947132387-155cc02f3212?w=400&h=300&fit=crop",
           "recipe": {
-            "ingredients": ["2 slices white bread", "1/3 cup cooked ground beef (drained)", "2 tbsp ketchup", "1/2 cup shredded cheese", "1 tbsp mustard (optional)"],
-            "instructions": ["Spread ketchup on bread slices.", "Top with ground beef and cheese.", "Bake at 375F for 8-10 minutes until cheese melts.", "Add a small drizzle of mustard if desired."]
-          }
+            "ingredients": [
+              "2 slices white bread",
+              "1/3 cup cooked ground beef (drained)",
+              "2 tbsp ketchup",
+              "1/2 cup shredded cheese",
+              "1 tbsp mustard (optional)"
+            ],
+            "instructions": [
+              "Spread ketchup on bread slices.",
+              "Top with ground beef and cheese.",
+              "Bake at 375F for 8-10 minutes until cheese melts.",
+              "Add a small drizzle of mustard if desired."
+            ]
+          },
+          "submittedBy": "Nick"
         }
       ]
     },
@@ -644,9 +1289,24 @@
           "image": "https://images.unsplash.com/photo-1585032226651-759b368d7246?w=400&h=300&fit=crop",
           "isFavorite": true,
           "recipe": {
-            "ingredients": ["2 cups egg noodles (cooked very soft)", "1 cup shredded chicken", "2 tbsp low-sodium soy sauce", "1 tsp sesame oil", "1/2 tsp garlic powder", "1/2 tsp ground ginger", "1/4 cup chicken broth"],
-            "instructions": ["Cook noodles until very soft, drain.", "In a pan, warm chicken with broth.", "Add soy sauce, sesame oil, garlic powder, and ginger.", "Toss in noodles and stir to coat.", "Serve warm. Add extra broth if desired for easier digestion."]
-          }
+            "ingredients": [
+              "2 cups egg noodles (cooked very soft)",
+              "1 cup shredded chicken",
+              "2 tbsp low-sodium soy sauce",
+              "1 tsp sesame oil",
+              "1/2 tsp garlic powder",
+              "1/2 tsp ground ginger",
+              "1/4 cup chicken broth"
+            ],
+            "instructions": [
+              "Cook noodles until very soft, drain.",
+              "In a pan, warm chicken with broth.",
+              "Add soy sauce, sesame oil, garlic powder, and ginger.",
+              "Toss in noodles and stir to coat.",
+              "Serve warm. Add extra broth if desired for easier digestion."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "ch-teriyaki-bowl",
@@ -654,9 +1314,20 @@
           "description": "Sweet teriyaki glaze over tender chicken and fluffy rice.",
           "image": "https://images.unsplash.com/photo-1609183480237-ccf8987ab02c?w=400&h=300&fit=crop",
           "recipe": {
-            "ingredients": ["1 cup shredded chicken", "1/4 cup low-sodium teriyaki sauce", "1 cup cooked white rice", "1/4 cup soft-cooked carrots (diced small)"],
-            "instructions": ["Warm chicken with teriyaki sauce in a pan.", "Place rice in bowl.", "Top with teriyaki chicken.", "Add soft carrots on the side."]
-          }
+            "ingredients": [
+              "1 cup shredded chicken",
+              "1/4 cup low-sodium teriyaki sauce",
+              "1 cup cooked white rice",
+              "1/4 cup soft-cooked carrots (diced small)"
+            ],
+            "instructions": [
+              "Warm chicken with teriyaki sauce in a pan.",
+              "Place rice in bowl.",
+              "Top with teriyaki chicken.",
+              "Add soft carrots on the side."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "ch-fried-rice",
@@ -664,9 +1335,25 @@
           "description": "Day-old rice, scrambled egg, tender chicken. Homemade and low sodium.",
           "image": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=400&h=300&fit=crop",
           "recipe": {
-            "ingredients": ["2 cups cooked white rice (day-old is best)", "1/2 cup shredded chicken", "2 eggs (scrambled)", "2 tbsp low-sodium soy sauce", "1 tsp sesame oil", "1/4 cup soft peas (optional)", "Cooking spray"],
-            "instructions": ["Scramble eggs in a pan, set aside and chop small.", "Spray pan with cooking spray, add rice over medium heat.", "Stir rice until lightly toasted.", "Add chicken, eggs, and soft peas.", "Drizzle with soy sauce and sesame oil, toss to combine.", "Serve warm."]
-          }
+            "ingredients": [
+              "2 cups cooked white rice (day-old is best)",
+              "1/2 cup shredded chicken",
+              "2 eggs (scrambled)",
+              "2 tbsp low-sodium soy sauce",
+              "1 tsp sesame oil",
+              "1/4 cup soft peas (optional)",
+              "Cooking spray"
+            ],
+            "instructions": [
+              "Scramble eggs in a pan, set aside and chop small.",
+              "Spray pan with cooking spray, add rice over medium heat.",
+              "Stir rice until lightly toasted.",
+              "Add chicken, eggs, and soft peas.",
+              "Drizzle with soy sauce and sesame oil, toss to combine.",
+              "Serve warm."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "ch-sesame-chicken",
@@ -674,9 +1361,25 @@
           "description": "Crispy air fried chicken in a sweet sesame glaze. Better than the buffet.",
           "image": "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=400&h=300&fit=crop",
           "recipe": {
-            "ingredients": ["1 lb chicken breast, cubed", "1/4 cup low-sodium soy sauce", "2 tbsp honey", "1 tsp sesame oil", "1 tbsp cornstarch", "1 egg (beaten)", "Cooking spray", "White rice for serving"],
-            "instructions": ["Toss chicken cubes in egg, then coat in cornstarch.", "Air fry at 375F for 12 minutes, shaking halfway.", "Mix soy sauce, honey, and sesame oil in a small pan, warm through.", "Toss cooked chicken in sesame glaze.", "Serve over white rice."]
-          }
+            "ingredients": [
+              "1 lb chicken breast, cubed",
+              "1/4 cup low-sodium soy sauce",
+              "2 tbsp honey",
+              "1 tsp sesame oil",
+              "1 tbsp cornstarch",
+              "1 egg (beaten)",
+              "Cooking spray",
+              "White rice for serving"
+            ],
+            "instructions": [
+              "Toss chicken cubes in egg, then coat in cornstarch.",
+              "Air fry at 375F for 12 minutes, shaking halfway.",
+              "Mix soy sauce, honey, and sesame oil in a small pan, warm through.",
+              "Toss cooked chicken in sesame glaze.",
+              "Serve over white rice."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "ch-beef-rice-bowl",
@@ -684,9 +1387,22 @@
           "description": "Savory ground beef with garlic and soy over rice. Simple Chinese comfort.",
           "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=300&fit=crop",
           "recipe": {
-            "ingredients": ["1/2 lb ground beef", "1 tsp garlic powder", "2 tbsp low-sodium soy sauce", "1 tsp sesame oil", "1 cup cooked white rice", "1/4 cup soft-cooked carrots"],
-            "instructions": ["Brown ground beef, drain fat well.", "Add garlic powder, soy sauce, and sesame oil.", "Stir to combine and warm through.", "Serve over white rice with soft carrots."]
-          }
+            "ingredients": [
+              "1/2 lb ground beef",
+              "1 tsp garlic powder",
+              "2 tbsp low-sodium soy sauce",
+              "1 tsp sesame oil",
+              "1 cup cooked white rice",
+              "1/4 cup soft-cooked carrots"
+            ],
+            "instructions": [
+              "Brown ground beef, drain fat well.",
+              "Add garlic powder, soy sauce, and sesame oil.",
+              "Stir to combine and warm through.",
+              "Serve over white rice with soft carrots."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "ch-teriyaki-pork-noodles",
@@ -694,9 +1410,22 @@
           "description": "Shredded pork in teriyaki over soft noodles. Comfort in a bowl.",
           "image": "https://images.unsplash.com/photo-1552611052-33e04de1b100?w=400&h=300&fit=crop",
           "recipe": {
-            "ingredients": ["1 cup shredded pork", "1/4 cup low-sodium teriyaki sauce", "2 cups egg noodles (cooked very soft)", "1/2 tsp ground ginger", "1/2 tsp garlic powder", "1/4 cup chicken broth"],
-            "instructions": ["Cook noodles until very soft, drain.", "Warm shredded pork with teriyaki sauce, ginger, garlic, and broth.", "Toss noodles with pork and sauce.", "Serve warm in a bowl."]
-          }
+            "ingredients": [
+              "1 cup shredded pork",
+              "1/4 cup low-sodium teriyaki sauce",
+              "2 cups egg noodles (cooked very soft)",
+              "1/2 tsp ground ginger",
+              "1/2 tsp garlic powder",
+              "1/4 cup chicken broth"
+            ],
+            "instructions": [
+              "Cook noodles until very soft, drain.",
+              "Warm shredded pork with teriyaki sauce, ginger, garlic, and broth.",
+              "Toss noodles with pork and sauce.",
+              "Serve warm in a bowl."
+            ]
+          },
+          "submittedBy": "Nick"
         }
       ]
     },
@@ -713,9 +1442,17 @@
           "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400",
           "isFlareUpSafe": true,
           "recipe": {
-            "ingredients": ["1 cup vanilla yogurt", "1 tbsp honey"],
-            "instructions": ["Spoon yogurt into bowl.", "Drizzle with honey.", "Enjoy."]
-          }
+            "ingredients": [
+              "1 cup vanilla yogurt",
+              "1 tbsp honey"
+            ],
+            "instructions": [
+              "Spoon yogurt into bowl.",
+              "Drizzle with honey.",
+              "Enjoy."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "pb-honey-toast",
@@ -724,9 +1461,19 @@
           "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&h=300&fit=crop",
           "isFlareUpSafe": true,
           "recipe": {
-            "ingredients": ["2 slices white bread (toasted)", "2 tbsp peanut butter", "1 tbsp honey"],
-            "instructions": ["Toast bread until just lightly golden.", "Spread peanut butter on each slice.", "Drizzle with honey.", "Serve warm."]
-          }
+            "ingredients": [
+              "2 slices white bread (toasted)",
+              "2 tbsp peanut butter",
+              "1 tbsp honey"
+            ],
+            "instructions": [
+              "Toast bread until just lightly golden.",
+              "Spread peanut butter on each slice.",
+              "Drizzle with honey.",
+              "Serve warm."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "applesauce-cinnamon",
@@ -735,9 +1482,18 @@
           "image": "https://images.unsplash.com/photo-1568909344668-6f14a07b56a0?w=400",
           "isFlareUpSafe": true,
           "recipe": {
-            "ingredients": ["1 cup applesauce", "1/4 tsp cinnamon", "1 tsp butter (optional)"],
-            "instructions": ["Warm applesauce in microwave.", "Stir in cinnamon and butter.", "Serve warm."]
-          }
+            "ingredients": [
+              "1 cup applesauce",
+              "1/4 tsp cinnamon",
+              "1 tsp butter (optional)"
+            ],
+            "instructions": [
+              "Warm applesauce in microwave.",
+              "Stir in cinnamon and butter.",
+              "Serve warm."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "protein-pudding",
@@ -746,9 +1502,17 @@
           "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400",
           "isFlareUpSafe": true,
           "recipe": {
-            "ingredients": ["1 cup prepared vanilla pudding", "1/2 scoop vanilla protein powder"],
-            "instructions": ["Mix protein powder into pudding.", "Stir until smooth.", "Chill and serve."]
-          }
+            "ingredients": [
+              "1 cup prepared vanilla pudding",
+              "1/2 scoop vanilla protein powder"
+            ],
+            "instructions": [
+              "Mix protein powder into pudding.",
+              "Stir until smooth.",
+              "Chill and serve."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "cottage-pears",
@@ -756,9 +1520,16 @@
           "description": "Protein-rich and naturally sweet.",
           "image": "https://images.unsplash.com/photo-1464454709131-ffd692591ee5?w=400",
           "recipe": {
-            "ingredients": ["1 cup cottage cheese", "1/2 cup canned pears (drained)"],
-            "instructions": ["Spoon cottage cheese into bowl.", "Top with pear slices."]
-          }
+            "ingredients": [
+              "1 cup cottage cheese",
+              "1/2 cup canned pears (drained)"
+            ],
+            "instructions": [
+              "Spoon cottage cheese into bowl.",
+              "Top with pear slices."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "milkshake",
@@ -768,9 +1539,17 @@
           "isSignature": true,
           "isFlareUpSafe": true,
           "recipe": {
-            "ingredients": ["1 cup vanilla ice cream", "1/2 cup milk", "1 scoop vanilla protein powder"],
-            "instructions": ["Blend all ingredients until smooth.", "Serve immediately."]
-          }
+            "ingredients": [
+              "1 cup vanilla ice cream",
+              "1/2 cup milk",
+              "1 scoop vanilla protein powder"
+            ],
+            "instructions": [
+              "Blend all ingredients until smooth.",
+              "Serve immediately."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "pizza-toast-snack",
@@ -778,9 +1557,19 @@
           "description": "Quick cheesy snack. One slice, big flavor.",
           "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400",
           "recipe": {
-            "ingredients": ["1 slice white bread", "2 tbsp marinara sauce", "1/4 cup shredded mozzarella cheese"],
-            "instructions": ["Spread marinara on bread.", "Top with mozzarella.", "Bake at 375F for 5-7 minutes until bubbly.", "Let cool slightly."]
-          }
+            "ingredients": [
+              "1 slice white bread",
+              "2 tbsp marinara sauce",
+              "1/4 cup shredded mozzarella cheese"
+            ],
+            "instructions": [
+              "Spread marinara on bread.",
+              "Top with mozzarella.",
+              "Bake at 375F for 5-7 minutes until bubbly.",
+              "Let cool slightly."
+            ]
+          },
+          "submittedBy": "Nick"
         }
       ]
     },
@@ -798,9 +1587,20 @@
           "isFavorite": true,
           "isFlareUpSafe": true,
           "recipe": {
-            "ingredients": ["2 cups vanilla pudding", "2 ripe bananas (sliced)", "1 cup vanilla wafers", "Whipped cream"],
-            "instructions": ["Layer pudding, bananas, and wafers in dish.", "Repeat layers.", "Top with whipped cream.", "Chill before serving."]
-          }
+            "ingredients": [
+              "2 cups vanilla pudding",
+              "2 ripe bananas (sliced)",
+              "1 cup vanilla wafers",
+              "Whipped cream"
+            ],
+            "instructions": [
+              "Layer pudding, bananas, and wafers in dish.",
+              "Repeat layers.",
+              "Top with whipped cream.",
+              "Chill before serving."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "rice-pudding",
@@ -809,9 +1609,21 @@
           "image": "https://images.unsplash.com/photo-1517673400267-0251440c45dc?w=400&h=300&fit=crop",
           "isFlareUpSafe": true,
           "recipe": {
-            "ingredients": ["1 cup cooked white rice", "1.5 cups milk", "1/4 cup sugar", "1/2 tsp vanilla", "1/4 tsp cinnamon"],
-            "instructions": ["Combine rice, milk, and sugar in saucepan.", "Simmer on low 20 minutes, stirring often.", "Stir in vanilla.", "Serve warm with cinnamon on top."]
-          }
+            "ingredients": [
+              "1 cup cooked white rice",
+              "1.5 cups milk",
+              "1/4 cup sugar",
+              "1/2 tsp vanilla",
+              "1/4 tsp cinnamon"
+            ],
+            "instructions": [
+              "Combine rice, milk, and sugar in saucepan.",
+              "Simmer on low 20 minutes, stirring often.",
+              "Stir in vanilla.",
+              "Serve warm with cinnamon on top."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "bread-pudding",
@@ -820,9 +1632,23 @@
           "image": "https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=400",
           "isFlareUpSafe": true,
           "recipe": {
-            "ingredients": ["4 slices white bread (cubed)", "2 cups milk", "2 eggs", "1/2 cup sugar", "1 tsp vanilla", "2 tbsp butter"],
-            "instructions": ["Place bread cubes in buttered baking dish.", "Whisk milk, eggs, sugar, and vanilla.", "Pour over bread, let soak 15 minutes.", "Dot with butter.", "Bake at 350F for 40-45 minutes."]
-          }
+            "ingredients": [
+              "4 slices white bread (cubed)",
+              "2 cups milk",
+              "2 eggs",
+              "1/2 cup sugar",
+              "1 tsp vanilla",
+              "2 tbsp butter"
+            ],
+            "instructions": [
+              "Place bread cubes in buttered baking dish.",
+              "Whisk milk, eggs, sugar, and vanilla.",
+              "Pour over bread, let soak 15 minutes.",
+              "Dot with butter.",
+              "Bake at 350F for 40-45 minutes."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "peach-cobbler",
@@ -830,9 +1656,22 @@
           "description": "Sweet canned peaches with soft topping.",
           "image": "https://images.unsplash.com/photo-1568571780765-9276ac8b75a2?w=400",
           "recipe": {
-            "ingredients": ["2 cans sliced peaches (drained)", "1 cup flour", "1 cup sugar", "1 cup milk", "1/2 cup butter (melted)"],
-            "instructions": ["Pour melted butter in baking dish.", "Mix flour, sugar, and milk into batter.", "Pour batter over butter (don't stir).", "Add peaches on top.", "Bake at 350F for 45 minutes."]
-          }
+            "ingredients": [
+              "2 cans sliced peaches (drained)",
+              "1 cup flour",
+              "1 cup sugar",
+              "1 cup milk",
+              "1/2 cup butter (melted)"
+            ],
+            "instructions": [
+              "Pour melted butter in baking dish.",
+              "Mix flour, sugar, and milk into batter.",
+              "Pour batter over butter (don't stir).",
+              "Add peaches on top.",
+              "Bake at 350F for 45 minutes."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "ice-cream",
@@ -841,9 +1680,18 @@
           "image": "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=400",
           "isFlareUpSafe": true,
           "recipe": {
-            "ingredients": ["Vanilla ice cream", "Chocolate sauce (optional)", "Whipped cream (optional)"],
-            "instructions": ["Scoop ice cream into bowl.", "Add toppings if desired.", "Enjoy."]
-          }
+            "ingredients": [
+              "Vanilla ice cream",
+              "Chocolate sauce (optional)",
+              "Whipped cream (optional)"
+            ],
+            "instructions": [
+              "Scoop ice cream into bowl.",
+              "Add toppings if desired.",
+              "Enjoy."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "vanilla-custard",
@@ -852,9 +1700,22 @@
           "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400",
           "isFlareUpSafe": true,
           "recipe": {
-            "ingredients": ["2 cups milk", "3 egg yolks", "1/3 cup sugar", "2 tbsp cornstarch", "1 tsp vanilla"],
-            "instructions": ["Whisk yolks, sugar, and cornstarch.", "Heat milk until steaming.", "Slowly add hot milk to egg mixture, whisking.", "Return to pan, cook until thick.", "Stir in vanilla, chill."]
-          }
+            "ingredients": [
+              "2 cups milk",
+              "3 egg yolks",
+              "1/3 cup sugar",
+              "2 tbsp cornstarch",
+              "1 tsp vanilla"
+            ],
+            "instructions": [
+              "Whisk yolks, sugar, and cornstarch.",
+              "Heat milk until steaming.",
+              "Slowly add hot milk to egg mixture, whisking.",
+              "Return to pan, cook until thick.",
+              "Stir in vanilla, chill."
+            ]
+          },
+          "submittedBy": "Nick"
         },
         {
           "id": "peanut-butter-ice-cream",
@@ -863,9 +1724,18 @@
           "image": "https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=400",
           "isFlareUpSafe": true,
           "recipe": {
-            "ingredients": ["Vanilla ice cream", "2 tbsp peanut butter (warmed)", "Chocolate sauce"],
-            "instructions": ["Scoop ice cream into bowl.", "Drizzle with warm peanut butter.", "Add chocolate sauce if desired."]
-          }
+            "ingredients": [
+              "Vanilla ice cream",
+              "2 tbsp peanut butter (warmed)",
+              "Chocolate sauce"
+            ],
+            "instructions": [
+              "Scoop ice cream into bowl.",
+              "Drizzle with warm peanut butter.",
+              "Add chocolate sauce if desired."
+            ]
+          },
+          "submittedBy": "Nick"
         }
       ]
     }
@@ -873,160 +1743,583 @@
   "coreIngredients": {
     "description": "All recipes should be built from these safe, approved ingredients. Low sodium versions required.",
     "proteins": [
-      {"name": "chicken breast", "link": ""},
-      {"name": "shredded chicken", "link": ""},
-      {"name": "chicken wings", "link": ""},
-      {"name": "drumettes", "link": ""},
-      {"name": "chicken tenders", "link": ""},
-      {"name": "ground turkey", "link": ""},
-      {"name": "shredded turkey", "link": ""},
-      {"name": "pork loin", "link": ""},
-      {"name": "shredded pork", "link": ""},
-      {"name": "pork chops", "link": ""},
-      {"name": "ground beef", "link": ""},
-      {"name": "white fish", "link": ""},
-      {"name": "tilapia", "link": ""},
-      {"name": "cod", "link": ""},
-      {"name": "eggs", "link": ""}
+      {
+        "name": "chicken breast",
+        "link": ""
+      },
+      {
+        "name": "shredded chicken",
+        "link": ""
+      },
+      {
+        "name": "chicken wings",
+        "link": ""
+      },
+      {
+        "name": "drumettes",
+        "link": ""
+      },
+      {
+        "name": "chicken tenders",
+        "link": ""
+      },
+      {
+        "name": "ground turkey",
+        "link": ""
+      },
+      {
+        "name": "shredded turkey",
+        "link": ""
+      },
+      {
+        "name": "pork loin",
+        "link": ""
+      },
+      {
+        "name": "shredded pork",
+        "link": ""
+      },
+      {
+        "name": "pork chops",
+        "link": ""
+      },
+      {
+        "name": "ground beef",
+        "link": ""
+      },
+      {
+        "name": "white fish",
+        "link": ""
+      },
+      {
+        "name": "tilapia",
+        "link": ""
+      },
+      {
+        "name": "cod",
+        "link": ""
+      },
+      {
+        "name": "eggs",
+        "link": ""
+      }
     ],
     "carbs": [
-      {"name": "white bread", "link": ""},
-      {"name": "white rice", "link": ""},
-      {"name": "egg noodles", "link": ""},
-      {"name": "pasta", "link": ""},
-      {"name": "potatoes", "link": ""},
-      {"name": "mashed potatoes", "link": ""},
-      {"name": "flour tortillas", "link": ""},
-      {"name": "crackers", "link": ""},
-      {"name": "saltines", "link": ""},
-      {"name": "white breadcrumbs", "link": ""},
-      {"name": "flour", "link": ""}
+      {
+        "name": "white bread",
+        "link": ""
+      },
+      {
+        "name": "white rice",
+        "link": ""
+      },
+      {
+        "name": "egg noodles",
+        "link": ""
+      },
+      {
+        "name": "pasta",
+        "link": ""
+      },
+      {
+        "name": "potatoes",
+        "link": ""
+      },
+      {
+        "name": "mashed potatoes",
+        "link": ""
+      },
+      {
+        "name": "flour tortillas",
+        "link": ""
+      },
+      {
+        "name": "crackers",
+        "link": ""
+      },
+      {
+        "name": "saltines",
+        "link": ""
+      },
+      {
+        "name": "white breadcrumbs",
+        "link": ""
+      },
+      {
+        "name": "flour",
+        "link": ""
+      }
     ],
     "dairy": [
-      {"name": "milk", "link": ""},
-      {"name": "butter", "link": ""},
-      {"name": "shredded cheese", "link": ""},
-      {"name": "american cheese", "link": ""},
-      {"name": "swiss cheese", "link": ""},
-      {"name": "mozzarella cheese", "link": ""},
-      {"name": "sour cream", "link": ""},
-      {"name": "cream cheese", "link": ""},
-      {"name": "cottage cheese", "link": ""},
-      {"name": "vanilla yogurt", "link": ""},
-      {"name": "vanilla ice cream", "link": ""},
-      {"name": "whipped cream", "link": ""}
+      {
+        "name": "milk",
+        "link": ""
+      },
+      {
+        "name": "butter",
+        "link": ""
+      },
+      {
+        "name": "shredded cheese",
+        "link": ""
+      },
+      {
+        "name": "american cheese",
+        "link": ""
+      },
+      {
+        "name": "swiss cheese",
+        "link": ""
+      },
+      {
+        "name": "mozzarella cheese",
+        "link": ""
+      },
+      {
+        "name": "sour cream",
+        "link": ""
+      },
+      {
+        "name": "cream cheese",
+        "link": ""
+      },
+      {
+        "name": "cottage cheese",
+        "link": ""
+      },
+      {
+        "name": "vanilla yogurt",
+        "link": ""
+      },
+      {
+        "name": "vanilla ice cream",
+        "link": ""
+      },
+      {
+        "name": "whipped cream",
+        "link": ""
+      }
     ],
     "sauces": [
-      {"name": "chicken broth", "link": ""},
-      {"name": "turkey gravy", "link": ""},
-      {"name": "chicken gravy", "link": ""},
-      {"name": "brown gravy", "link": ""},
-      {"name": "cream of mushroom soup", "link": ""},
-      {"name": "cream of chicken soup", "link": ""},
-      {"name": "cream of tomato soup", "link": ""},
-      {"name": "alfredo sauce", "link": ""},
-      {"name": "mild enchilada sauce", "link": ""},
-      {"name": "low-sodium bbq sauce", "link": ""},
-      {"name": "balsamic glaze", "link": ""},
-      {"name": "mild taco seasoning", "link": ""},
-      {"name": "marinara sauce", "link": ""},
-      {"name": "ketchup", "link": ""},
-      {"name": "mustard", "link": ""},
-      {"name": "low-sodium soy sauce", "link": ""},
-      {"name": "low-sodium teriyaki sauce", "link": ""},
-      {"name": "sweet and sour sauce", "link": ""},
-      {"name": "Thousand Island dressing", "link": ""},
-      {"name": "lemon juice", "link": ""}
+      {
+        "name": "chicken broth",
+        "link": ""
+      },
+      {
+        "name": "turkey gravy",
+        "link": ""
+      },
+      {
+        "name": "chicken gravy",
+        "link": ""
+      },
+      {
+        "name": "brown gravy",
+        "link": ""
+      },
+      {
+        "name": "cream of mushroom soup",
+        "link": ""
+      },
+      {
+        "name": "cream of chicken soup",
+        "link": ""
+      },
+      {
+        "name": "cream of tomato soup",
+        "link": ""
+      },
+      {
+        "name": "alfredo sauce",
+        "link": ""
+      },
+      {
+        "name": "mild enchilada sauce",
+        "link": ""
+      },
+      {
+        "name": "low-sodium bbq sauce",
+        "link": ""
+      },
+      {
+        "name": "balsamic glaze",
+        "link": ""
+      },
+      {
+        "name": "mild taco seasoning",
+        "link": ""
+      },
+      {
+        "name": "marinara sauce",
+        "link": ""
+      },
+      {
+        "name": "ketchup",
+        "link": ""
+      },
+      {
+        "name": "mustard",
+        "link": ""
+      },
+      {
+        "name": "low-sodium soy sauce",
+        "link": ""
+      },
+      {
+        "name": "low-sodium teriyaki sauce",
+        "link": ""
+      },
+      {
+        "name": "sweet and sour sauce",
+        "link": ""
+      },
+      {
+        "name": "Thousand Island dressing",
+        "link": ""
+      },
+      {
+        "name": "lemon juice",
+        "link": ""
+      }
     ],
     "produce": [
-      {"name": "bananas", "link": ""},
-      {"name": "applesauce", "link": ""},
-      {"name": "canned peaches", "link": ""},
-      {"name": "canned pears", "link": ""},
-      {"name": "soft carrots", "link": ""},
-      {"name": "soft zucchini", "link": ""},
-      {"name": "soft peas", "link": ""}
+      {
+        "name": "bananas",
+        "link": ""
+      },
+      {
+        "name": "applesauce",
+        "link": ""
+      },
+      {
+        "name": "canned peaches",
+        "link": ""
+      },
+      {
+        "name": "canned pears",
+        "link": ""
+      },
+      {
+        "name": "soft carrots",
+        "link": ""
+      },
+      {
+        "name": "soft zucchini",
+        "link": ""
+      },
+      {
+        "name": "soft peas",
+        "link": ""
+      }
     ],
     "pantry": [
-      {"name": "sugar", "link": ""},
-      {"name": "brown sugar", "link": ""},
-      {"name": "honey", "link": ""},
-      {"name": "maple syrup", "link": ""},
-      {"name": "vanilla extract", "link": ""},
-      {"name": "cinnamon", "link": ""},
-      {"name": "salt", "link": ""},
-      {"name": "paprika", "link": ""},
-      {"name": "garlic powder", "link": ""},
-      {"name": "onion powder", "link": ""},
-      {"name": "black pepper", "link": ""},
-      {"name": "ground ginger", "link": ""},
-      {"name": "sesame oil", "link": ""},
-      {"name": "cornstarch", "link": ""},
-      {"name": "cooking spray", "link": ""},
-      {"name": "cream of wheat", "link": ""},
-      {"name": "vanilla protein powder", "link": ""},
-      {"name": "vanilla pudding", "link": ""},
-      {"name": "vanilla wafers", "link": ""},
-      {"name": "peanut butter", "link": ""},
-      {"name": "chocolate sauce", "link": ""}
+      {
+        "name": "sugar",
+        "link": ""
+      },
+      {
+        "name": "brown sugar",
+        "link": ""
+      },
+      {
+        "name": "honey",
+        "link": ""
+      },
+      {
+        "name": "maple syrup",
+        "link": ""
+      },
+      {
+        "name": "vanilla extract",
+        "link": ""
+      },
+      {
+        "name": "cinnamon",
+        "link": ""
+      },
+      {
+        "name": "salt",
+        "link": ""
+      },
+      {
+        "name": "paprika",
+        "link": ""
+      },
+      {
+        "name": "garlic powder",
+        "link": ""
+      },
+      {
+        "name": "onion powder",
+        "link": ""
+      },
+      {
+        "name": "black pepper",
+        "link": ""
+      },
+      {
+        "name": "ground ginger",
+        "link": ""
+      },
+      {
+        "name": "sesame oil",
+        "link": ""
+      },
+      {
+        "name": "cornstarch",
+        "link": ""
+      },
+      {
+        "name": "cooking spray",
+        "link": ""
+      },
+      {
+        "name": "cream of wheat",
+        "link": ""
+      },
+      {
+        "name": "vanilla protein powder",
+        "link": ""
+      },
+      {
+        "name": "vanilla pudding",
+        "link": ""
+      },
+      {
+        "name": "vanilla wafers",
+        "link": ""
+      },
+      {
+        "name": "peanut butter",
+        "link": ""
+      },
+      {
+        "name": "chocolate sauce",
+        "link": ""
+      }
     ]
   },
   "forbiddenIngredients": [
-    {"name": "salad", "reason": "fiber"},
-    {"name": "raw vegetables", "reason": "fiber"},
-    {"name": "raw broccoli", "reason": "fiber"},
-    {"name": "raw cauliflower", "reason": "fiber"},
-    {"name": "celery", "reason": "fiber"},
-    {"name": "apple", "reason": "fiber/skin"},
-    {"name": "orange", "reason": "fiber"},
-    {"name": "berries", "reason": "seeds"},
-    {"name": "pineapple", "reason": "fiber"},
-    {"name": "seeds", "reason": "hard to digest"},
-    {"name": "brown rice", "reason": "high fiber"},
-    {"name": "quinoa", "reason": "high fiber"},
-    {"name": "oatmeal", "reason": "high fiber"},
-    {"name": "whole wheat", "reason": "high fiber"},
-    {"name": "whole grain", "reason": "high fiber"},
-    {"name": "steak", "reason": "fat/tough"},
-    {"name": "burger", "reason": "fat"},
-    {"name": "bacon", "reason": "fat/sodium"},
-    {"name": "sausage links", "reason": "fat"},
-    {"name": "deep fried", "reason": "fat"},
-    {"name": "chips", "reason": "fat/hard"},
-    {"name": "almonds", "reason": "hard to digest"},
-    {"name": "peanuts", "reason": "hard to digest"},
-    {"name": "walnuts", "reason": "hard to digest"},
-    {"name": "nuts", "reason": "hard to digest"},
-    {"name": "chia", "reason": "fiber"},
-    {"name": "flax", "reason": "fiber"},
-    {"name": "black beans", "reason": "fiber/gas"},
-    {"name": "beans", "reason": "fiber/gas"},
-    {"name": "lentils", "reason": "fiber/gas"},
-    {"name": "chili", "reason": "fiber/spicy"},
-    {"name": "soda", "reason": "carbonation"},
-    {"name": "carbonated", "reason": "pressure"},
-    {"name": "sparkling", "reason": "pressure"},
-    {"name": "beer", "reason": "alcohol"},
-    {"name": "wine", "reason": "alcohol"},
-    {"name": "alcohol", "reason": "variceal risk"},
-    {"name": "hot sauce", "reason": "spicy"},
-    {"name": "cayenne", "reason": "spicy"},
-    {"name": "crushed red pepper", "reason": "spicy"},
-    {"name": "jalapeño", "reason": "spicy"},
-    {"name": "habanero", "reason": "spicy"},
-    {"name": "sriracha", "reason": "spicy"},
-    {"name": "chili flakes", "reason": "spicy"},
-    {"name": "chili powder", "reason": "spicy"},
-    {"name": "sauerkraut", "reason": "sodium"},
-    {"name": "corned beef", "reason": "sodium"},
-    {"name": "salami", "reason": "sodium"},
-    {"name": "pepperoni", "reason": "sodium"},
-    {"name": "bologna", "reason": "sodium"},
-    {"name": "deli meat", "reason": "sodium"},
-    {"name": "ham", "reason": "sodium"},
-    {"name": "shrimp", "reason": "shellfish"},
-    {"name": "shellfish", "reason": "allergen risk"},
-    {"name": "raw seafood", "reason": "safety"}
+    {
+      "name": "salad",
+      "reason": "fiber"
+    },
+    {
+      "name": "raw vegetables",
+      "reason": "fiber"
+    },
+    {
+      "name": "raw broccoli",
+      "reason": "fiber"
+    },
+    {
+      "name": "raw cauliflower",
+      "reason": "fiber"
+    },
+    {
+      "name": "celery",
+      "reason": "fiber"
+    },
+    {
+      "name": "apple",
+      "reason": "fiber/skin"
+    },
+    {
+      "name": "orange",
+      "reason": "fiber"
+    },
+    {
+      "name": "berries",
+      "reason": "seeds"
+    },
+    {
+      "name": "pineapple",
+      "reason": "fiber"
+    },
+    {
+      "name": "seeds",
+      "reason": "hard to digest"
+    },
+    {
+      "name": "brown rice",
+      "reason": "high fiber"
+    },
+    {
+      "name": "quinoa",
+      "reason": "high fiber"
+    },
+    {
+      "name": "oatmeal",
+      "reason": "high fiber"
+    },
+    {
+      "name": "whole wheat",
+      "reason": "high fiber"
+    },
+    {
+      "name": "whole grain",
+      "reason": "high fiber"
+    },
+    {
+      "name": "steak",
+      "reason": "fat/tough"
+    },
+    {
+      "name": "burger",
+      "reason": "fat"
+    },
+    {
+      "name": "bacon",
+      "reason": "fat/sodium"
+    },
+    {
+      "name": "sausage links",
+      "reason": "fat"
+    },
+    {
+      "name": "deep fried",
+      "reason": "fat"
+    },
+    {
+      "name": "chips",
+      "reason": "fat/hard"
+    },
+    {
+      "name": "almonds",
+      "reason": "hard to digest"
+    },
+    {
+      "name": "peanuts",
+      "reason": "hard to digest"
+    },
+    {
+      "name": "walnuts",
+      "reason": "hard to digest"
+    },
+    {
+      "name": "nuts",
+      "reason": "hard to digest"
+    },
+    {
+      "name": "chia",
+      "reason": "fiber"
+    },
+    {
+      "name": "flax",
+      "reason": "fiber"
+    },
+    {
+      "name": "black beans",
+      "reason": "fiber/gas"
+    },
+    {
+      "name": "beans",
+      "reason": "fiber/gas"
+    },
+    {
+      "name": "lentils",
+      "reason": "fiber/gas"
+    },
+    {
+      "name": "chili",
+      "reason": "fiber/spicy"
+    },
+    {
+      "name": "soda",
+      "reason": "carbonation"
+    },
+    {
+      "name": "carbonated",
+      "reason": "pressure"
+    },
+    {
+      "name": "sparkling",
+      "reason": "pressure"
+    },
+    {
+      "name": "beer",
+      "reason": "alcohol"
+    },
+    {
+      "name": "wine",
+      "reason": "alcohol"
+    },
+    {
+      "name": "alcohol",
+      "reason": "variceal risk"
+    },
+    {
+      "name": "hot sauce",
+      "reason": "spicy"
+    },
+    {
+      "name": "cayenne",
+      "reason": "spicy"
+    },
+    {
+      "name": "crushed red pepper",
+      "reason": "spicy"
+    },
+    {
+      "name": "jalapeño",
+      "reason": "spicy"
+    },
+    {
+      "name": "habanero",
+      "reason": "spicy"
+    },
+    {
+      "name": "sriracha",
+      "reason": "spicy"
+    },
+    {
+      "name": "chili flakes",
+      "reason": "spicy"
+    },
+    {
+      "name": "chili powder",
+      "reason": "spicy"
+    },
+    {
+      "name": "sauerkraut",
+      "reason": "sodium"
+    },
+    {
+      "name": "corned beef",
+      "reason": "sodium"
+    },
+    {
+      "name": "salami",
+      "reason": "sodium"
+    },
+    {
+      "name": "pepperoni",
+      "reason": "sodium"
+    },
+    {
+      "name": "bologna",
+      "reason": "sodium"
+    },
+    {
+      "name": "deli meat",
+      "reason": "sodium"
+    },
+    {
+      "name": "ham",
+      "reason": "sodium"
+    },
+    {
+      "name": "shrimp",
+      "reason": "shellfish"
+    },
+    {
+      "name": "shellfish",
+      "reason": "allergen risk"
+    },
+    {
+      "name": "raw seafood",
+      "reason": "safety"
+    }
   ],
   "mealPrepGuide": {
     "weekly": [
@@ -1072,57 +2365,111 @@
     "categories": [
       {
         "name": "Raw Vegetables",
-        "items": ["Salads", "Raw broccoli/cauliflower", "Raw carrots", "Celery"],
+        "items": [
+          "Salads",
+          "Raw broccoli/cauliflower",
+          "Raw carrots",
+          "Celery"
+        ],
         "reason": "Fiber sits in stomach for hours"
       },
       {
         "name": "Tough Fruits",
-        "items": ["Apples with skin", "Oranges", "Berries with seeds", "Pineapple"],
+        "items": [
+          "Apples with skin",
+          "Oranges",
+          "Berries with seeds",
+          "Pineapple"
+        ],
         "reason": "Fiber and skins delay emptying"
       },
       {
         "name": "Whole Grains",
-        "items": ["Brown rice", "Quinoa", "Oatmeal", "Whole-wheat bread"],
+        "items": [
+          "Brown rice",
+          "Quinoa",
+          "Oatmeal",
+          "Whole-wheat bread"
+        ],
         "reason": "High fiber is worst for gastroparesis"
       },
       {
         "name": "Fatty Meats",
-        "items": ["Steak", "Thick burgers", "Sausage links", "Bacon"],
+        "items": [
+          "Steak",
+          "Thick burgers",
+          "Sausage links",
+          "Bacon"
+        ],
         "reason": "Fat slows stomach emptying"
       },
       {
         "name": "Cured & Processed Meats",
-        "items": ["Corned beef", "Salami", "Pepperoni", "Bologna", "Ham", "Deli meats"],
+        "items": [
+          "Corned beef",
+          "Salami",
+          "Pepperoni",
+          "Bologna",
+          "Ham",
+          "Deli meats"
+        ],
         "reason": "Extremely high sodium - dangerous for portal hypertension"
       },
       {
         "name": "Deep-Fried Foods",
-        "items": ["Deep-fried chicken", "Deep-fried fish", "Chips"],
+        "items": [
+          "Deep-fried chicken",
+          "Deep-fried fish",
+          "Chips"
+        ],
         "reason": "Fat plus reflux risk (air fryer is OK)"
       },
       {
         "name": "Spicy Foods",
-        "items": ["Hot sauce", "Frank's Red Hot", "Cayenne pepper", "Jalapeños", "Sriracha"],
+        "items": [
+          "Hot sauce",
+          "Frank's Red Hot",
+          "Cayenne pepper",
+          "Jalapeños",
+          "Sriracha"
+        ],
         "reason": "Triggers acid reflux which can cause varices to bleed, can trigger vomiting"
       },
       {
         "name": "Nuts & Seeds",
-        "items": ["Almonds", "Peanuts (whole)", "Chia", "Flax"],
+        "items": [
+          "Almonds",
+          "Peanuts (whole)",
+          "Chia",
+          "Flax"
+        ],
         "reason": "Don't digest well, sit in stomach"
       },
       {
         "name": "Beans & Legumes",
-        "items": ["Black beans", "Chili", "Lentils"],
+        "items": [
+          "Black beans",
+          "Chili",
+          "Lentils"
+        ],
         "reason": "Gas, fiber, and pressure"
       },
       {
         "name": "Carbonation & Alcohol",
-        "items": ["Soda", "Sparkling water", "Beer", "Wine", "All alcohol"],
+        "items": [
+          "Soda",
+          "Sparkling water",
+          "Beer",
+          "Wine",
+          "All alcohol"
+        ],
         "reason": "Expands stomach, portal pressure, variceal risk"
       },
       {
         "name": "Large Meals",
-        "items": ["Any portion over 1.5 cups"],
+        "items": [
+          "Any portion over 1.5 cups"
+        ],
         "reason": "Stomach can't empty - 90% retention at 4 hours"
       }
     ]
@@ -1130,12 +2477,36 @@
   "dailySchedule": {
     "description": "Eat every 2-3 hours. Stop before feeling full. Liquids are your friend.",
     "meals": [
-      {"time": "Breakfast", "type": "Easy comfort", "examples": "French toast, eggs, pancakes, smoothie"},
-      {"time": "Mid-morning", "type": "Liquid or soft", "examples": "Yogurt, pudding, smoothie, milkshake"},
-      {"time": "Lunch", "type": "Soup or brothy bowl", "examples": "Egg drop soup, chicken noodle, lo mein soup"},
-      {"time": "Afternoon", "type": "Easy calories", "examples": "PB toast, cottage cheese, applesauce"},
-      {"time": "Dinner", "type": "The real meal", "examples": "Air fryer, pizza night, Chinese, sandwich"},
-      {"time": "Evening", "type": "Perfect night food", "examples": "Pudding, ice cream, rice pudding"}
+      {
+        "time": "Breakfast",
+        "type": "Easy comfort",
+        "examples": "French toast, eggs, pancakes, smoothie"
+      },
+      {
+        "time": "Mid-morning",
+        "type": "Liquid or soft",
+        "examples": "Yogurt, pudding, smoothie, milkshake"
+      },
+      {
+        "time": "Lunch",
+        "type": "Soup or brothy bowl",
+        "examples": "Egg drop soup, chicken noodle, lo mein soup"
+      },
+      {
+        "time": "Afternoon",
+        "type": "Easy calories",
+        "examples": "PB toast, cottage cheese, applesauce"
+      },
+      {
+        "time": "Dinner",
+        "type": "The real meal",
+        "examples": "Air fryer, pizza night, Chinese, sandwich"
+      },
+      {
+        "time": "Evening",
+        "type": "Perfect night food",
+        "examples": "Pudding, ice cream, rice pudding"
+      }
     ]
   }
 }
