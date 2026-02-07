@@ -167,10 +167,72 @@ function renderMenuItem(item) {
     `;
 }
 
+// Search filter
+function filterMenuBySearch() {
+    const searchInput = document.getElementById('menu-search');
+    const query = searchInput.value.toLowerCase().trim();
+
+    if (!query) {
+        clearSearch();
+        return;
+    }
+
+    document.body.classList.add('search-active');
+
+    // Filter menu items
+    document.querySelectorAll('.menu-item').forEach(item => {
+        const name = item.querySelector('.item-name')?.textContent.toLowerCase() || '';
+        const description = item.querySelector('.item-description')?.textContent.toLowerCase() || '';
+        const badges = item.querySelector('.item-badges')?.textContent.toLowerCase() || '';
+
+        if (name.includes(query) || description.includes(query) || badges.includes(query)) {
+            item.classList.add('search-match');
+        } else {
+            item.classList.remove('search-match');
+        }
+    });
+
+    // Hide sections with no matching items
+    document.querySelectorAll('.menu-section').forEach(section => {
+        const matchingItems = section.querySelectorAll('.menu-item.search-match');
+        section.style.display = matchingItems.length === 0 ? 'none' : '';
+    });
+}
+
+function clearSearch() {
+    const searchInput = document.getElementById('menu-search');
+    searchInput.value = '';
+    document.body.classList.remove('search-active');
+
+    // Remove search-match class from all items
+    document.querySelectorAll('.menu-item').forEach(item => {
+        item.classList.remove('search-match');
+    });
+
+    // Show all sections
+    document.querySelectorAll('.menu-section').forEach(section => {
+        section.style.display = '';
+    });
+
+    // Re-apply any active filters
+    const flareUpActive = document.getElementById('flareup-toggle')?.checked;
+    const healingActive = document.getElementById('healing-toggle')?.checked;
+    if (flareUpActive) toggleFlareUpFilter();
+    if (healingActive) toggleHealingFilter();
+}
+
 // Toggle Flare-Up Mode filter
 function toggleFlareUpFilter() {
     const toggle = document.getElementById('flareup-toggle');
     const isActive = toggle.checked;
+
+    // Clear search when using filters
+    if (isActive) {
+        document.getElementById('menu-search').value = '';
+        document.body.classList.remove('search-active');
+        document.querySelectorAll('.menu-item').forEach(item => item.classList.remove('search-match'));
+    }
+
     document.body.classList.toggle('flare-up-mode', isActive);
 
     // Uncheck healing mode if flare-up is checked
@@ -194,6 +256,14 @@ function toggleFlareUpFilter() {
 function toggleHealingFilter() {
     const toggle = document.getElementById('healing-toggle');
     const isActive = toggle.checked;
+
+    // Clear search when using filters
+    if (isActive) {
+        document.getElementById('menu-search').value = '';
+        document.body.classList.remove('search-active');
+        document.querySelectorAll('.menu-item').forEach(item => item.classList.remove('search-match'));
+    }
+
     document.body.classList.toggle('healing-mode', isActive);
 
     // Uncheck flare-up mode if healing is checked

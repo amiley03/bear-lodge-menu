@@ -20,6 +20,10 @@
     </header>
 
     <nav class="menu-nav">
+        <div class="search-container">
+            <input type="text" id="menu-search" placeholder="Search menu..." oninput="filterMenuBySearch()">
+            <button class="search-clear" onclick="clearSearch()" title="Clear search">&times;</button>
+        </div>
         <div class="nav-container">
             <a href="#breakfast" class="nav-item">Breakfast</a>
             <a href="#soups" class="nav-item">Soups</a>
