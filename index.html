@@ -31,6 +31,7 @@
             <a href="#chinese" class="nav-item">Chinese</a>
             <a href="#snacks" class="nav-item">Snacks</a>
             <a href="#desserts" class="nav-item">Desserts</a>
+            <a href="#explore" class="nav-item">Explore</a>
             <a href="#guidelines" class="nav-item">Guidelines</a>
         </div>
     </nav>
@@ -55,6 +56,54 @@
         <div id="menu-sections">
             <!-- Populated by JS -->
         </div>
+
+        <!-- Explore Section (AI Recipe Generator) -->
+        <section id="explore" class="explore-section">
+            <h2>Explore New Recipes</h2>
+
+            <!-- Login Gate -->
+            <div id="explore-login" class="explore-login">
+                <p>Enter the family password to use AI recipe generation</p>
+                <input type="password" id="explore-password" placeholder="Password" onkeypress="if(event.key==='Enter')unlockExplore()">
+                <button onclick="unlockExplore()">Unlock</button>
+                <p class="explore-error" id="explore-error" style="display:none;">Incorrect password</p>
+            </div>
+
+            <!-- AI Interface (hidden until login) -->
+            <div id="explore-interface" class="explore-interface" style="display:none;">
+                <div id="no-api-key-warning" class="no-api-key" style="display:none;">
+                    <p>API key not set up yet. Ask Nick to configure it in the Admin page.</p>
+                </div>
+
+                <div class="explore-chat">
+                    <div class="explore-prompt-ideas">
+                        <p>Try asking:</p>
+                        <button onclick="setPrompt('Suggest a new soup recipe')">New soup idea</button>
+                        <button onclick="setPrompt('I want something sweet for dessert')">Sweet dessert</button>
+                        <button onclick="setPrompt('Quick breakfast I can make in 10 minutes')">Quick breakfast</button>
+                        <button onclick="setPrompt('Something with chicken and rice')">Chicken & rice</button>
+                    </div>
+
+                    <div class="explore-input">
+                        <textarea id="explore-prompt" placeholder="What are you craving? Ask for a recipe idea..."></textarea>
+                        <button onclick="generateRecipe()" id="generate-btn">Generate Recipe</button>
+                    </div>
+
+                    <div id="explore-result" class="explore-result" style="display:none;">
+                        <div id="explore-loading" class="explore-loading" style="display:none;">
+                            <p>Creating a recipe just for Larry...</p>
+                        </div>
+                        <div id="generated-recipe"></div>
+                        <div id="recipe-actions" style="display:none;">
+                            <button onclick="addGeneratedToMenu()" class="btn-add-recipe">Add to Menu</button>
+                            <select id="target-category">
+                                <!-- Populated by JS -->
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Guidelines Section -->
         <section id="guidelines" class="guidelines-section">

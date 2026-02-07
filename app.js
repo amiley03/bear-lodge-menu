@@ -273,5 +273,207 @@ document.querySelectorAll('.nav-item').forEach(link => {
     });
 });
 
+// ========== EXPLORE / AI SECTION ==========
+
+// Cloudflare Worker URL - UPDATE THIS after setting up your worker
+const WORKER_URL = 'YOUR_WORKER_URL_HERE';
+
+let generatedRecipeData = null;
+
+// Check if already unlocked this session
+function checkExploreAuth() {
+    if (sessionStorage.getItem('exploreUnlocked') === 'true') {
+        document.getElementById('explore-login').style.display = 'none';
+        document.getElementById('explore-interface').style.display = 'block';
+        checkWorkerConfigured();
+        populateCategoryDropdown();
+    }
+}
+
+function unlockExplore() {
+    const input = document.getElementById('explore-password');
+    if (input.value === 'bearbear') {
+        sessionStorage.setItem('exploreUnlocked', 'true');
+        document.getElementById('explore-login').style.display = 'none';
+        document.getElementById('explore-interface').style.display = 'block';
+        checkWorkerConfigured();
+        populateCategoryDropdown();
+    } else {
+        document.getElementById('explore-error').style.display = 'block';
+        input.value = '';
+    }
+}
+
+function checkWorkerConfigured() {
+    if (WORKER_URL === 'YOUR_WORKER_URL_HERE') {
+        document.getElementById('no-api-key-warning').style.display = 'block';
+        document.getElementById('generate-btn').disabled = true;
+    }
+}
+
+function setPrompt(text) {
+    document.getElementById('explore-prompt').value = text;
+}
+
+function populateCategoryDropdown() {
+    if (!menuData) return;
+    const select = document.getElementById('target-category');
+    select.innerHTML = menuData.categories.map(cat =>
+        `<option value="${cat.id}">${cat.name}</option>`
+    ).join('');
+}
+
+async function generateRecipe() {
+    const prompt = document.getElementById('explore-prompt').value;
+
+    if (WORKER_URL === 'YOUR_WORKER_URL_HERE') {
+        alert('AI not configured yet. Ask Nick to set up the Cloudflare Worker.');
+        return;
+    }
+    if (!prompt) {
+        alert('Please enter what kind of recipe you want');
+        return;
+    }
+
+    // Build the approved ingredients list
+    const approved = [];
+    ['proteins', 'carbs', 'dairy', 'sauces', 'produce', 'pantry'].forEach(cat => {
+        menuData.coreIngredients[cat].forEach(item => {
+            approved.push(typeof item === 'string' ? item : item.name);
+        });
+    });
+
+    const forbidden = menuData.forbiddenIngredients.map(item =>
+        typeof item === 'string' ? item : item.name
+    );
+
+    const systemPrompt = `You are a recipe creator for Larry, who has portal hypertension, severe gastroparesis, and esophageal varices.
+
+CRITICAL RULES:
+- ONLY use ingredients from this approved list: ${approved.join(', ')}
+- NEVER use these forbidden ingredients: ${forbidden.join(', ')}
+- All foods must be soft, low-fiber, low-fat
+- Small portions only (1-1.5 cups max)
+- No spicy foods, no raw vegetables, no tough meats
+- Soups and soft foods are ideal
+
+Respond with a JSON object in this exact format:
+{
+  "name": "Recipe Name",
+  "description": "Short appealing description",
+  "ingredients": ["ingredient 1 with amount", "ingredient 2 with amount"],
+  "instructions": ["Step 1", "Step 2", "Step 3"],
+  "category": "breakfast|soups|dinners|mexican|snacks|desserts"
+}
+
+Only respond with the JSON, no other text.`;
+
+    // Show loading
+    document.getElementById('explore-result').style.display = 'block';
+    document.getElementById('explore-loading').style.display = 'block';
+    document.getElementById('generated-recipe').innerHTML = '';
+    document.getElementById('recipe-actions').style.display = 'none';
+    document.getElementById('generate-btn').disabled = true;
+
+    try {
+        const response = await fetch(WORKER_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                model: 'claude-sonnet-4-20250514',
+                max_tokens: 1024,
+                messages: [{
+                    role: 'user',
+                    content: prompt
+                }],
+                system: systemPrompt
+            })
+        });
+
+        if (!response.ok) {
+            const error = await response.json();
+            throw new Error(error.error?.message || 'API request failed');
+        }
+
+        const data = await response.json();
+        const text = data.content[0].text;
+
+        // Parse the JSON response
+        const recipe = JSON.parse(text);
+        generatedRecipeData = recipe;
+
+        // Display the recipe
+        document.getElementById('generated-recipe').innerHTML = `
+            <h3>${recipe.name}</h3>
+            <p>${recipe.description}</p>
+            <h4>Ingredients:</h4>
+            <ul>${recipe.ingredients.map(i => `<li>${i}</li>`).join('')}</ul>
+            <h4>Instructions:</h4>
+            <ol>${recipe.instructions.map(i => `<li>${i}</li>`).join('')}</ol>
+        `;
+
+        // Set the category dropdown
+        if (recipe.category) {
+            document.getElementById('target-category').value = recipe.category;
+        }
+
+        document.getElementById('recipe-actions').style.display = 'flex';
+
+    } catch (error) {
+        document.getElementById('generated-recipe').innerHTML = `
+            <p style="color: var(--soft-red);">Error: ${error.message}</p>
+            <p>Make sure your API key is correct and has credits.</p>
+        `;
+    } finally {
+        document.getElementById('explore-loading').style.display = 'none';
+        document.getElementById('generate-btn').disabled = false;
+    }
+}
+
+function addGeneratedToMenu() {
+    if (!generatedRecipeData) return;
+
+    const categoryId = document.getElementById('target-category').value;
+    const category = menuData.categories.find(c => c.id === categoryId);
+    if (!category) {
+        alert('Please select a category');
+        return;
+    }
+
+    // Create the new menu item
+    const newItem = {
+        id: generatedRecipeData.name.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+        name: generatedRecipeData.name,
+        description: generatedRecipeData.description,
+        image: 'https://images.unsplash.com/photo-1495195134817-aeb325a55b65?w=400',
+        submittedBy: 'AI Generated',
+        recipe: {
+            ingredients: generatedRecipeData.ingredients,
+            instructions: generatedRecipeData.instructions
+        }
+    };
+
+    // Add to category
+    category.items.push(newItem);
+
+    // Re-render menu
+    renderMenuSections();
+    populateCategoryDropdown();
+
+    // Show success
+    alert(`"${newItem.name}" added to ${category.name}! Go to Admin > Export to save permanently.`);
+
+    // Clear the result
+    generatedRecipeData = null;
+    document.getElementById('explore-result').style.display = 'none';
+    document.getElementById('explore-prompt').value = '';
+}
+
 // Initialize
-document.addEventListener('DOMContentLoaded', loadMenuData);
+document.addEventListener('DOMContentLoaded', () => {
+    loadMenuData();
+    // Check explore auth after a small delay to ensure DOM is ready
+    setTimeout(checkExploreAuth, 100);
+});

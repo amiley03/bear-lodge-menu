@@ -342,6 +342,208 @@ body.flare-up-mode .menu-item:not(.flare-up-safe) {
     margin-bottom: 1rem;
 }
 
+/* Explore Section */
+.explore-section {
+    background: var(--warm-white);
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    margin-bottom: 3rem;
+}
+
+.explore-section h2 {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    color: var(--cabin-brown);
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.explore-login {
+    text-align: center;
+    padding: 2rem;
+}
+
+.explore-login input {
+    padding: 0.8rem 1rem;
+    border: 2px solid var(--cabin-light);
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-right: 0.5rem;
+}
+
+.explore-login button {
+    padding: 0.8rem 1.5rem;
+    background: var(--forest-green);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.explore-error {
+    color: var(--soft-red);
+    margin-top: 1rem;
+}
+
+.no-api-key {
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #856404;
+}
+
+.api-key-section {
+    background: var(--cream);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.api-key-section label {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.api-key-section input {
+    flex: 1;
+    min-width: 250px;
+    padding: 0.6rem;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-family: monospace;
+}
+
+.api-key-section .help-text {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-top: 0.5rem;
+}
+
+.explore-prompt-ideas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.explore-prompt-ideas p {
+    color: var(--text-light);
+    margin-right: 0.5rem;
+}
+
+.explore-prompt-ideas button {
+    background: var(--cabin-light);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.explore-prompt-ideas button:hover {
+    background: var(--cabin-brown);
+}
+
+.explore-input {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+}
+
+.explore-input textarea {
+    flex: 1;
+    padding: 1rem;
+    border: 2px solid var(--cabin-light);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    min-height: 80px;
+    resize: vertical;
+}
+
+.explore-input button {
+    padding: 1rem 2rem;
+    background: var(--forest-green);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.explore-input button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.explore-result {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--cream);
+    border-radius: 12px;
+    border-left: 5px solid var(--forest-green);
+}
+
+.explore-loading {
+    text-align: center;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+#generated-recipe h3 {
+    color: var(--cabin-brown);
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 0.5rem;
+}
+
+#generated-recipe p {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+#generated-recipe ul, #generated-recipe ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+#generated-recipe li {
+    margin-bottom: 0.3rem;
+}
+
+#recipe-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+}
+
+.btn-add-recipe {
+    background: var(--forest-green);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#target-category {
+    padding: 0.8rem;
+    border: 2px solid var(--cabin-light);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
 .item-image {
     width: 100%;
     height: 200px;
