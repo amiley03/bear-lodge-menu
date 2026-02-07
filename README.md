@@ -103,7 +103,7 @@ npx wrangler kv namespace create "MENU_DATA"
 
 # Set secrets
 npx wrangler secret put ANTHROPIC_API_KEY
-npx wrangler secret put ADMIN_PASSWORD  # use: bearbear
+npx wrangler secret put ADMIN_PASSWORD
 
 # Deploy
 npx wrangler deploy
@@ -148,11 +148,6 @@ Avoid during band recovery:
 - Vinegar-based dressings
 - Citrus (lemon, lime)
 - Spicy seasonings
-
-## Passwords
-
-- **Admin Panel**: `bearbear`
-- **Chef Bear AI**: `bearbear`
 
 ## Contributing
 
