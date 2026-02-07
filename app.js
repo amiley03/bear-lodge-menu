@@ -133,11 +133,13 @@ function renderMenuItem(item) {
     if (item.isFavorite) badges.push('<span class="badge favorite">Larry\'s Fave</span>');
     if (item.isSignature) badges.push('<span class="badge signature">Signature</span>');
     if (item.isFlareUpSafe) badges.push('<span class="badge gentle">Gentle</span>');
+    if (item.isHealingSafe) badges.push('<span class="badge healing">Healing</span>');
 
     let cardClass = 'menu-item';
     if (item.isFavorite) cardClass += ' favorite';
     if (item.isSignature) cardClass += ' signature';
     if (item.isFlareUpSafe) cardClass += ' flare-up-safe';
+    if (item.isHealingSafe) cardClass += ' healing-safe';
     if (vote === 'up') cardClass += ' user-liked';
     if (vote === 'down') cardClass += ' user-passed';
 
@@ -171,10 +173,39 @@ function toggleFlareUpFilter() {
     const isActive = toggle.checked;
     document.body.classList.toggle('flare-up-mode', isActive);
 
+    // Uncheck healing mode if flare-up is checked
+    if (isActive) {
+        document.getElementById('healing-toggle').checked = false;
+        document.body.classList.remove('healing-mode');
+    }
+
     // Hide/show menu sections that have no gentle items
     document.querySelectorAll('.menu-section').forEach(section => {
         const gentleItems = section.querySelectorAll('.menu-item.flare-up-safe');
         if (isActive && gentleItems.length === 0) {
+            section.style.display = 'none';
+        } else {
+            section.style.display = '';
+        }
+    });
+}
+
+// Toggle Healing Mode filter (for esophageal band recovery)
+function toggleHealingFilter() {
+    const toggle = document.getElementById('healing-toggle');
+    const isActive = toggle.checked;
+    document.body.classList.toggle('healing-mode', isActive);
+
+    // Uncheck flare-up mode if healing is checked
+    if (isActive) {
+        document.getElementById('flareup-toggle').checked = false;
+        document.body.classList.remove('flare-up-mode');
+    }
+
+    // Hide/show menu sections that have no healing items
+    document.querySelectorAll('.menu-section').forEach(section => {
+        const healingItems = section.querySelectorAll('.menu-item.healing-safe');
+        if (isActive && healingItems.length === 0) {
             section.style.display = 'none';
         } else {
             section.style.display = '';

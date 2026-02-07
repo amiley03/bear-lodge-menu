@@ -44,12 +44,21 @@
             <div class="schedule-grid" id="schedule-grid">
                 <!-- Populated by JS -->
             </div>
-            <div class="flare-up-filter">
-                <label>
-                    <input type="checkbox" id="flareup-toggle" onchange="toggleFlareUpFilter()">
-                    Flare-Up Mode &mdash; Show only gentlest items
-                </label>
-                <p class="filter-description">Hides everything except liquid, soft, and easy-to-swallow foods</p>
+            <div class="diet-filters">
+                <div class="flare-up-filter">
+                    <label>
+                        <input type="checkbox" id="flareup-toggle" onchange="toggleFlareUpFilter()">
+                        Flare-Up Mode &mdash; Show only gentlest items
+                    </label>
+                    <p class="filter-description">Hides everything except liquid, soft, and easy-to-swallow foods</p>
+                </div>
+                <div class="healing-filter">
+                    <label>
+                        <input type="checkbox" id="healing-toggle" onchange="toggleHealingFilter()">
+                        Healing Mode &mdash; Band recovery safe only
+                    </label>
+                    <p class="filter-description">Ultra-smooth foods for esophageal band healing (2 weeks post-procedure)</p>
+                </div>
             </div>
         </section>
 

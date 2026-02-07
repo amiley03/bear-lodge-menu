@@ -516,7 +516,8 @@
                     <div class="checkbox-group">
                         <label><input type="checkbox" id="edit-favorite"> Larry's Favorite</label>
                         <label><input type="checkbox" id="edit-signature"> Signature Dish</label>
-                        <label><input type="checkbox" id="edit-flareup-safe"> Flare-Up Safe</label>
+                        <label><input type="checkbox" id="edit-flareup-safe"> Flare-Up Safe (Gentle)</label>
+                        <label><input type="checkbox" id="edit-healing-safe"> Healing Safe (Band Recovery)</label>
                     </div>
                 </div>
 
@@ -753,6 +754,7 @@
             if (item.isFavorite) badges += '<span class="badge favorite">Fave</span>';
             if (item.isSignature) badges += '<span class="badge signature">Signature</span>';
             if (item.isFlareUpSafe) badges += '<span class="badge" style="background:#2E5339;color:#FFF8E7;">Gentle</span>';
+            if (item.isHealingSafe) badges += '<span class="badge" style="background:#7b1fa2;color:white;">Healing</span>';
 
             return `
                 <div class="item-card">
@@ -801,6 +803,7 @@
             document.getElementById('edit-favorite').checked = false;
             document.getElementById('edit-signature').checked = false;
             document.getElementById('edit-flareup-safe').checked = false;
+            document.getElementById('edit-healing-safe').checked = false;
             document.getElementById('edit-submitter').value = '';
             document.getElementById('edit-ingredients').value = '';
             document.getElementById('edit-instructions').value = '';
@@ -822,6 +825,7 @@
             document.getElementById('edit-favorite').checked = item.isFavorite || false;
             document.getElementById('edit-signature').checked = item.isSignature || false;
             document.getElementById('edit-flareup-safe').checked = item.isFlareUpSafe || false;
+            document.getElementById('edit-healing-safe').checked = item.isHealingSafe || false;
             document.getElementById('edit-submitter').value = item.submittedBy || '';
 
             if (item.recipe) {
@@ -899,6 +903,7 @@
                 isFavorite: document.getElementById('edit-favorite').checked,
                 isSignature: document.getElementById('edit-signature').checked,
                 isFlareUpSafe: document.getElementById('edit-flareup-safe').checked,
+                isHealingSafe: document.getElementById('edit-healing-safe').checked,
                 submittedBy: document.getElementById('edit-submitter').value || '',
                 recipe: {
                     ingredients: ingredients,

@@ -150,7 +150,8 @@
               "Serve warm."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "cottage-peaches",
@@ -212,7 +213,8 @@
               "Serve immediately."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         }
       ]
     },
@@ -272,7 +274,8 @@
               "Season with salt and serve immediately."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "tomato-grilled-cheese",
@@ -296,7 +299,8 @@
               "Cut sandwich into strips for dipping."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "turkey-rice",
@@ -343,7 +347,8 @@
               "Reheat gently, top with cheese."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "chicken-rice-broth",
@@ -429,7 +434,6 @@
           "image": "https://images.unsplash.com/photo-1432139555190-58524dae6a55?w=400&h=300&fit=crop",
           "isFavorite": true,
           "isSignature": true,
-          "isFlareUpSafe": true,
           "recipe": {
             "ingredients": [
               "2 lb pork loin",
@@ -503,7 +507,6 @@
           "description": "All the BBQ flavor without the heaviness.",
           "image": "https://images.unsplash.com/photo-1623653387945-2fd25214f8fc?w=400&h=300&fit=crop",
           "isFavorite": true,
-          "isFlareUpSafe": true,
           "recipe": {
             "ingredients": [
               "1.5 cups shredded chicken",
@@ -572,7 +575,6 @@
           "description": "Open-face comfort food you eat with a fork. Like a smothered sandwich.",
           "image": "https://images.unsplash.com/photo-1606728035253-49e8a23146de?w=400&h=300&fit=crop",
           "isFavorite": true,
-          "isFlareUpSafe": true,
           "recipe": {
             "ingredients": [
               "2 slices white bread (cubed)",
@@ -618,7 +620,6 @@
           "name": "Creamy Chicken Alfredo",
           "description": "Rich, creamy pasta in a small satisfying portion.",
           "image": "https://images.unsplash.com/photo-1645112411341-6c4fd023714a?w=400",
-          "isFlareUpSafe": true,
           "recipe": {
             "ingredients": [
               "1 cup cooked pasta (very soft)",
@@ -660,7 +661,6 @@
           "name": "Shepherd's Pie Bowl",
           "description": "Ground turkey topped with creamy mashed potatoes.",
           "image": "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=400",
-          "isFlareUpSafe": true,
           "recipe": {
             "ingredients": [
               "1 cup cooked ground turkey",
@@ -1452,14 +1452,14 @@
               "Enjoy."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "pb-honey-toast",
           "name": "PB & Honey Toast",
           "description": "Quick calories and protein. Simple comfort.",
           "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&h=300&fit=crop",
-          "isFlareUpSafe": true,
           "recipe": {
             "ingredients": [
               "2 slices white bread (toasted)",
@@ -1493,7 +1493,8 @@
               "Serve warm."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "protein-pudding",
@@ -1512,7 +1513,8 @@
               "Chill and serve."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "cottage-pears",
@@ -1549,7 +1551,8 @@
               "Serve immediately."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "pizza-toast-snack",
@@ -1585,7 +1588,6 @@
           "description": "Cool, creamy, and perfect for evenings.",
           "image": "https://images.unsplash.com/photo-1587314168485-3236d6710814?w=400&h=300&fit=crop",
           "isFavorite": true,
-          "isFlareUpSafe": true,
           "recipe": {
             "ingredients": [
               "2 cups vanilla pudding",
@@ -1630,7 +1632,6 @@
           "name": "Bread Pudding",
           "description": "Soft, custardy, and deeply comforting.",
           "image": "https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=400",
-          "isFlareUpSafe": true,
           "recipe": {
             "ingredients": [
               "4 slices white bread (cubed)",
@@ -1691,7 +1692,8 @@
               "Enjoy."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "vanilla-custard",
@@ -1715,7 +1717,8 @@
               "Stir in vanilla, chill."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         },
         {
           "id": "peanut-butter-ice-cream",
@@ -1735,7 +1738,8 @@
               "Add chocolate sauce if desired."
             ]
           },
-          "submittedBy": "Nick"
+          "submittedBy": "Nick",
+          "isHealingSafe": true
         }
       ]
     }
