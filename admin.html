@@ -449,8 +449,7 @@
     <header>
         <h1>Bear Lodge Inn - Menu Editor</h1>
         <div style="display: flex; align-items: center; gap: 1rem;">
-            <button id="save-cloud-btn" onclick="saveToCloud()" style="background: var(--forest-green); color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600; cursor: pointer;">Save to Cloud</button>
-            <span id="save-status" style="font-size: 0.9rem;"></span>
+            <span id="save-status" style="font-size: 0.9rem; font-weight: 600;"></span>
             <a href="index.html">← Back to Menu</a>
         </div>
     </header>
@@ -458,13 +457,8 @@
     <div class="container">
         <div class="instructions">
             <h3>How to Edit the Menu</h3>
-            <ol>
-                <li>Click a category tab below to see its items</li>
-                <li>Click "Edit" to modify an item, or "Add New Item" to create one</li>
-                <li>Click <strong>"Save to Cloud"</strong> (top right) to save your changes</li>
-                <li>Refresh the menu page to see your updates!</li>
-            </ol>
-            <p style="margin-top: 1rem;"><strong>Tip:</strong> For images, use URLs from Unsplash (free). Search for the food at unsplash.com, right-click the image, and copy the image URL.</p>
+            <p style="margin-bottom: 0.5rem;">Click a category tab, then click "Edit" or "Add New Item". Changes save automatically to the cloud!</p>
+            <p><strong>Tip:</strong> For images, use URLs from <a href="https://unsplash.com" target="_blank">unsplash.com</a> - search for food, right-click image, copy address.</p>
         </div>
 
         <div class="tabs">
@@ -475,9 +469,6 @@
             <div class="tab" data-tab="snacks">Snacks</div>
             <div class="tab" data-tab="desserts">Desserts</div>
             <div class="tab" data-tab="foundation">Foundation</div>
-            <div class="tab" data-tab="explore">Explore (AI)</div>
-            <div class="tab" data-tab="import">Import JSON</div>
-            <div class="tab" data-tab="export">Export JSON</div>
         </div>
 
         <div id="panels">
@@ -598,68 +589,6 @@
             }
         }
 
-        // Save menu data to Cloudflare
-        async function saveToCloud() {
-            const saveBtn = document.getElementById('save-cloud-btn');
-            const status = document.getElementById('save-status');
-
-            saveBtn.disabled = true;
-            saveBtn.textContent = 'Saving...';
-            status.textContent = '';
-            status.style.color = '';
-
-            try {
-                const response = await fetch(`${WORKER_URL}/menu`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        password: 'bearbear',
-                        menuData: menuData
-                    })
-                });
-
-                const result = await response.json();
-
-                if (response.ok) {
-                    status.textContent = 'Saved to cloud!';
-                    status.style.color = 'var(--forest-green)';
-                } else {
-                    throw new Error(result.error || 'Save failed');
-                }
-            } catch (error) {
-                status.textContent = 'Error: ' + error.message;
-                status.style.color = 'var(--soft-red)';
-            } finally {
-                saveBtn.disabled = false;
-                saveBtn.textContent = 'Save to Cloud';
-            }
-        }
-
-        // Initialize menu data in cloud (one-time upload)
-        async function initCloud() {
-            if (!confirm('This will upload your current menu-data.json to the cloud. Continue?')) return;
-
-            try {
-                const response = await fetch(`${WORKER_URL}/init`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        password: 'bearbear',
-                        menuData: menuData,
-                        force: true
-                    })
-                });
-
-                const result = await response.json();
-                if (response.ok) {
-                    alert('Menu uploaded to cloud successfully!');
-                } else {
-                    alert('Error: ' + (result.error || 'Upload failed'));
-                }
-            } catch (error) {
-                alert('Error: ' + error.message);
-            }
-        }
 
         // Render all panels
         function renderPanels() {
@@ -771,72 +700,7 @@
                 </div>
             `;
 
-            // Import panel
-            html += `
-                <div class="panel" data-panel="import">
-                    <h2>Import Recipes</h2>
-                    <p>Paste JSON to add new recipes to the menu. You can import a single item or multiple items.</p>
-
-                    <div class="form-group">
-                        <label for="import-category">Add to Category</label>
-                        <select id="import-category">
-                            ${menuData.categories.map(cat => `<option value="${cat.id}">${cat.name}</option>`).join('')}
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="import-json">Paste JSON</label>
-                        <textarea id="import-json" style="min-height: 200px; font-family: monospace; font-size: 0.85rem;" placeholder='{
-  "name": "New Recipe",
-  "description": "A delicious dish",
-  "image": "https://images.unsplash.com/...",
-  "isFavorite": false,
-  "recipe": {
-    "ingredients": ["item 1", "item 2"],
-    "instructions": ["Step 1", "Step 2"]
-  }
-}'></textarea>
-                        <p class="help-text">Paste a single recipe object { } or an array of recipes [ { }, { } ]</p>
-                    </div>
-
-                    <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
-                        <button class="btn-add" onclick="previewImport()">Preview Import</button>
-                        <button class="btn-save" onclick="executeImport()" id="import-btn" disabled>Import Recipes</button>
-                    </div>
-
-                    <div id="import-preview" style="display: none;">
-                        <h3 style="margin-bottom: 1rem;">Preview (${`<span id="import-count">0</span>`} items to import)</h3>
-                        <div id="import-preview-list" class="item-list"></div>
-                    </div>
-
-                    <div id="import-error" style="color: var(--soft-red); margin-top: 1rem; display: none;"></div>
-                    <div id="import-success" style="color: var(--forest-green); margin-top: 1rem; display: none;"></div>
-                </div>
-            `;
-
-            // Export panel
-            html += `
-                <div class="panel" data-panel="export">
-                    <h2>Save & Export Menu Data</h2>
-
-                    <div style="background: linear-gradient(135deg, #e8f5e9, #c8e6c9); padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; border-left: 5px solid var(--forest-green);">
-                        <h3 style="color: var(--forest-green); margin-bottom: 1rem;">☁️ Cloud Save (Recommended)</h3>
-                        <p style="margin-bottom: 1rem;">Save directly to Cloudflare. Changes appear on the menu immediately.</p>
-                        <button onclick="saveToCloud()" style="background: var(--forest-green); color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer; margin-right: 1rem;">Save to Cloud</button>
-                        <button onclick="initCloud()" style="background: #666; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer;">Upload Full Menu (Reset)</button>
-                    </div>
-
-                    <div class="export-section">
-                        <h3>Manual Export (Backup)</h3>
-                        <p>Copy this JSON to save as a backup or update menu-data.json manually.</p>
-                        <button class="btn-copy" onclick="copyJson()">Copy JSON to Clipboard</button>
-                        <div class="json-preview" id="json-preview"></div>
-                    </div>
-                </div>
-            `;
-
             container.innerHTML = html;
-            updateJsonPreview();
         }
 
         // Render item card
@@ -940,6 +804,38 @@
             renderPanels();
             // Re-activate the correct tab
             document.querySelector(`[data-tab="${categoryId}"]`).click();
+
+            // Auto-save to cloud
+            autoSaveToCloud();
+        }
+
+        // Auto-save to cloud (called after edits)
+        async function autoSaveToCloud() {
+            const status = document.getElementById('save-status');
+            status.textContent = 'Saving...';
+            status.style.color = 'var(--gold)';
+
+            try {
+                const response = await fetch(`${WORKER_URL}/menu`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        password: 'bearbear',
+                        menuData: menuData
+                    })
+                });
+
+                if (response.ok) {
+                    status.textContent = 'Saved!';
+                    status.style.color = 'var(--forest-green)';
+                    setTimeout(() => { status.textContent = ''; }, 2000);
+                } else {
+                    throw new Error('Save failed');
+                }
+            } catch (error) {
+                status.textContent = 'Save failed!';
+                status.style.color = 'var(--soft-red)';
+            }
         }
 
         // Close modal
@@ -1014,33 +910,10 @@
             closeModal();
             renderPanels();
             document.querySelector(`[data-tab="${categoryId}"]`).click();
+
+            // Auto-save to cloud
+            autoSaveToCloud();
         });
-
-        // Update JSON preview
-        function updateJsonPreview() {
-            const preview = document.getElementById('json-preview');
-            if (preview) {
-                preview.textContent = JSON.stringify(menuData, null, 2);
-            }
-        }
-
-        // Copy JSON
-        function copyJson() {
-            const json = JSON.stringify(menuData, null, 2);
-            navigator.clipboard.writeText(json).then(() => {
-                alert('JSON copied to clipboard! Paste it into menu-data.json');
-            }).catch(err => {
-                console.error('Copy failed:', err);
-                // Fallback
-                const preview = document.getElementById('json-preview');
-                preview.select();
-                document.execCommand('copy');
-                alert('JSON copied!');
-            });
-        }
-
-        // Import functionality
-        let pendingImports = [];
 
         // Validate ingredients against core ingredients and forbidden list
         function validateIngredients(ingredients) {
@@ -1094,168 +967,6 @@
             return result;
         }
 
-        function previewImport() {
-            const jsonInput = document.getElementById('import-json').value.trim();
-            const errorDiv = document.getElementById('import-error');
-            const successDiv = document.getElementById('import-success');
-            const previewDiv = document.getElementById('import-preview');
-            const previewList = document.getElementById('import-preview-list');
-            const importBtn = document.getElementById('import-btn');
-
-            errorDiv.style.display = 'none';
-            successDiv.style.display = 'none';
-            previewDiv.style.display = 'none';
-            importBtn.disabled = true;
-            pendingImports = [];
-
-            if (!jsonInput) {
-                errorDiv.textContent = 'Please paste some JSON first.';
-                errorDiv.style.display = 'block';
-                return;
-            }
-
-            try {
-                let parsed = JSON.parse(jsonInput);
-
-                // Normalize to array
-                if (!Array.isArray(parsed)) {
-                    parsed = [parsed];
-                }
-
-                let hasForbidden = false;
-
-                // Validate each item
-                for (let i = 0; i < parsed.length; i++) {
-                    const item = parsed[i];
-                    if (!item.name) {
-                        throw new Error(`Item ${i + 1} is missing required field: name`);
-                    }
-                    if (!item.description) {
-                        item.description = '';
-                    }
-                    // Generate ID if not provided
-                    if (!item.id) {
-                        item.id = item.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-                    }
-                    // Default image if not provided
-                    if (!item.image) {
-                        item.image = 'https://images.unsplash.com/photo-1495195134817-aeb325a55b65?w=400';
-                    }
-
-                    // Validate ingredients
-                    if (item.recipe && item.recipe.ingredients) {
-                        item._validation = validateIngredients(item.recipe.ingredients);
-                        if (item._validation.forbidden.length > 0) {
-                            hasForbidden = true;
-                        }
-                    }
-
-                    pendingImports.push(item);
-                }
-
-                // Show preview with validation results
-                document.getElementById('import-count').textContent = pendingImports.length;
-                previewList.innerHTML = pendingImports.map(item => {
-                    const v = item._validation || { approved: [], warnings: [], forbidden: [] };
-                    const hasIssues = v.forbidden.length > 0 || v.warnings.length > 0;
-
-                    return `
-                    <div class="item-card" style="${v.forbidden.length > 0 ? 'border: 2px solid var(--soft-red);' : v.warnings.length > 0 ? 'border: 2px solid #ff9800;' : 'border: 2px solid var(--forest-green);'}">
-                        <img src="${item.image}" alt="${item.name}"
-                             onerror="this.src='https://images.unsplash.com/photo-1495195134817-aeb325a55b65?w=100'">
-                        <div class="info" style="flex: 1;">
-                            <h4>${item.name}${item.isFavorite ? '<span class="badge favorite">Fave</span>' : ''}</h4>
-                            <p>${item.description || 'No description'}</p>
-                            ${item.recipe ? `
-                                <p style="font-size: 0.8rem; color: var(--forest-green); margin-top: 0.3rem;">
-                                    ✓ ${v.approved.length} core ingredients
-                                </p>
-                                ${v.warnings.length > 0 ? `
-                                    <p style="font-size: 0.8rem; color: #ff9800; margin-top: 0.3rem;">
-                                        ⚠ Unknown: ${v.warnings.join(', ')}
-                                    </p>
-                                ` : ''}
-                                ${v.forbidden.length > 0 ? `
-                                    <p style="font-size: 0.8rem; color: var(--soft-red); margin-top: 0.3rem;">
-                                        ✗ FORBIDDEN: ${v.forbidden.join(', ')}
-                                    </p>
-                                ` : ''}
-                            ` : '<p style="font-size: 0.8rem; color: #888;">No recipe</p>'}
-                        </div>
-                    </div>
-                `}).join('');
-
-                previewDiv.style.display = 'block';
-
-                // Check for any non-core ingredients
-                const hasNonCore = pendingImports.some(item =>
-                    item._validation && (item._validation.forbidden.length > 0 || item._validation.warnings.length > 0)
-                );
-
-                if (hasForbidden) {
-                    errorDiv.innerHTML = '<strong>BLOCKED:</strong> Contains forbidden ingredients that are unsafe for Larry (high fiber, fatty, etc). Remove these items before importing.';
-                    errorDiv.style.display = 'block';
-                    importBtn.disabled = true;
-                } else if (hasNonCore) {
-                    errorDiv.innerHTML = '<strong>BLOCKED:</strong> Contains ingredients not in the core list. All recipes must use only approved core ingredients to maintain the meal prep foundation. Check the Foundation tab for approved ingredients.';
-                    errorDiv.style.display = 'block';
-                    importBtn.disabled = true;
-                } else {
-                    importBtn.disabled = false;
-                }
-
-            } catch (err) {
-                errorDiv.textContent = 'Invalid JSON: ' + err.message;
-                errorDiv.style.display = 'block';
-            }
-        }
-
-        function executeImport() {
-            if (pendingImports.length === 0) return;
-
-            const categoryId = document.getElementById('import-category').value;
-            const category = findCategory(categoryId);
-
-            if (!category) {
-                document.getElementById('import-error').textContent = 'Category not found.';
-                document.getElementById('import-error').style.display = 'block';
-                return;
-            }
-
-            // Add items to category
-            let added = 0;
-            let skipped = 0;
-            for (const item of pendingImports) {
-                // Check if ID already exists
-                const exists = category.items.find(i => i.id === item.id);
-                if (exists) {
-                    skipped++;
-                } else {
-                    category.items.push(item);
-                    added++;
-                }
-            }
-
-            // Clear and show success
-            document.getElementById('import-json').value = '';
-            document.getElementById('import-preview').style.display = 'none';
-            document.getElementById('import-btn').disabled = true;
-            pendingImports = [];
-
-            const successDiv = document.getElementById('import-success');
-            successDiv.textContent = `Successfully imported ${added} recipe(s) to ${category.name}.${skipped > 0 ? ` (${skipped} skipped - already exist)` : ''}`;
-            successDiv.style.display = 'block';
-
-            // Refresh panels
-            renderPanels();
-            updateJsonPreview();
-
-            // Switch to the category tab to show new items
-            setTimeout(() => {
-                document.querySelector(`[data-tab="${categoryId}"]`).click();
-            }, 1500);
-        }
-
         // Close modal on outside click
         document.getElementById('edit-modal').addEventListener('click', function(e) {
             if (e.target === this) closeModal();
@@ -1265,25 +976,24 @@
         function updateIngredient(category, index, field, value) {
             const item = menuData.coreIngredients[category][index];
             if (typeof item === 'string') {
-                // Convert to object format
                 menuData.coreIngredients[category][index] = { name: item, link: '' };
             }
             menuData.coreIngredients[category][index][field] = value;
-            updateJsonPreview();
+            autoSaveToCloud();
         }
 
         function addIngredient(category) {
             menuData.coreIngredients[category].push({ name: '', link: '' });
             renderPanels();
             document.querySelector(`[data-tab="foundation"]`).click();
-            updateJsonPreview();
+            autoSaveToCloud();
         }
 
         function removeIngredient(category, index) {
             menuData.coreIngredients[category].splice(index, 1);
             renderPanels();
             document.querySelector(`[data-tab="foundation"]`).click();
-            updateJsonPreview();
+            autoSaveToCloud();
         }
 
         function updateForbidden(index, field, value) {
@@ -1292,21 +1002,21 @@
                 menuData.forbiddenIngredients[index] = { name: item, reason: '' };
             }
             menuData.forbiddenIngredients[index][field] = value;
-            updateJsonPreview();
+            autoSaveToCloud();
         }
 
         function addForbidden() {
             menuData.forbiddenIngredients.push({ name: '', reason: '' });
             renderPanels();
             document.querySelector(`[data-tab="foundation"]`).click();
-            updateJsonPreview();
+            autoSaveToCloud();
         }
 
         function removeForbidden(index) {
             menuData.forbiddenIngredients.splice(index, 1);
             renderPanels();
             document.querySelector(`[data-tab="foundation"]`).click();
-            updateJsonPreview();
+            autoSaveToCloud();
         }
 
         // Initialize
