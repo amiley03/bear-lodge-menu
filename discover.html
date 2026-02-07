@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Safe Foods - Bear Lodge Inn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .discover-header {
+            background: linear-gradient(135deg, var(--cabin-dark) 0%, var(--cabin-brown) 100%);
+            color: var(--cream);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .discover-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .discover-header p {
+            opacity: 0.9;
+        }
+
+        .store-badge {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--cabin-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+
+        .discover-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .safety-checker {
+            background: var(--warm-white);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--forest-green);
+        }
+
+        .safety-checker h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--cabin-brown);
+            margin-bottom: 1rem;
+        }
+
+        .safety-input {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .safety-input input {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid var(--cabin-light);
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .safety-input button {
+            padding: 1rem 2rem;
+            background: var(--forest-green);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        #safety-result {
+            padding: 1rem;
+            border-radius: 8px;
+            display: none;
+        }
+
+        #safety-result.safe {
+            background: #e8f5e9;
+            border: 2px solid var(--forest-green);
+            color: #2e7d32;
+        }
+
+        #safety-result.unsafe {
+            background: #ffebee;
+            border: 2px solid var(--soft-red);
+            color: #c62828;
+        }
+
+        #safety-result.maybe {
+            background: #fff3e0;
+            border: 2px solid #ff9800;
+            color: #e65100;
+        }
+
+        .browse-section {
+            margin-bottom: 2rem;
+        }
+
+        .browse-section h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--cabin-brown);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .category-card {
+            background: var(--warm-white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .category-card-header {
+            background: var(--cabin-brown);
+            color: var(--cream);
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .category-card-header span {
+            font-size: 1.5rem;
+        }
+
+        .category-card-header h3 {
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .category-card-body {
+            padding: 1.5rem;
+        }
+
+        .category-card-body p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .suggested-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .suggested-item {
+            background: var(--cream);
+            padding: 0.4rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+        }
+
+        .walmart-browse-btn {
+            display: inline-block;
+            background: #0071dc;
+            color: white;
+            text-decoration: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .walmart-browse-btn:hover {
+            background: #004c91;
+        }
+
+        .ai-suggestions {
+            background: linear-gradient(135deg, var(--gold), #e6c76a);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .ai-suggestions h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--cabin-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .ai-suggestions p {
+            color: var(--cabin-dark);
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .ai-prompt-btn {
+            background: var(--cabin-dark);
+            color: var(--cream);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 0.3rem;
+        }
+
+        .ai-prompt-btn:hover {
+            opacity: 0.9;
+        }
+
+        #ai-suggestion-result {
+            background: var(--warm-white);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            text-align: left;
+            display: none;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--gold);
+            text-decoration: none;
+            margin-bottom: 1rem;
+        }
+
+        .login-gate {
+            background: var(--warm-white);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .login-gate input {
+            padding: 0.8rem 1rem;
+            border: 2px solid var(--cabin-light);
+            border-radius: 8px;
+            margin-right: 0.5rem;
+        }
+
+        .login-gate button {
+            padding: 0.8rem 1.5rem;
+            background: var(--forest-green);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* Category Tabs */
+        .category-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+        }
+
+        .category-tab {
+            padding: 0.7rem 1.2rem;
+            background: var(--warm-white);
+            border: 2px solid var(--cabin-light);
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .category-tab:hover, .category-tab.active {
+            background: var(--cabin-brown);
+            color: var(--cream);
+            border-color: var(--cabin-brown);
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            background: var(--warm-white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .product-card-body {
+            padding: 1.2rem;
+        }
+
+        .product-card h4 {
+            color: var(--cabin-dark);
+            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .product-card .description {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .product-card .why-safe {
+            background: #e8f5e9;
+            color: var(--forest-green);
+            font-size: 0.8rem;
+            padding: 0.4rem 0.6rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .product-card .walmart-btn {
+            display: block;
+            background: #0071dc;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            padding: 0.7rem 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .product-card .walmart-btn:hover {
+            background: #004c91;
+        }
+    </style>
+</head>
+<body>
+    <header class="discover-header">
+        <a href="index.html" class="back-link">← Back to Menu</a>
+        <h1>🐻 Discover Safe Foods</h1>
+        <p>Find new Larry-safe items at your local Walmart</p>
+        <div class="store-badge">📍 Scottsbluff, NE Walmart</div>
+    </header>
+
+    <div class="discover-container">
+        <!-- Login Gate -->
+        <div id="login-gate" class="login-gate">
+            <p>Enter family password to access AI features</p>
+            <input type="password" id="discover-password" placeholder="Password" onkeypress="if(event.key==='Enter')unlockDiscover()">
+            <button onclick="unlockDiscover()">Unlock</button>
+        </div>
+
+        <!-- Safety Checker -->
+        <div id="safety-checker" class="safety-checker hidden">
+            <h2>🔍 Is This Safe for Larry?</h2>
+            <p>Paste a food name or product to check if it's safe</p>
+            <div class="safety-input">
+                <input type="text" id="food-check-input" placeholder="e.g., Greek yogurt, brown rice, cottage cheese...">
+                <button onclick="checkFoodSafety()">Check Safety</button>
+            </div>
+            <div id="safety-result"></div>
+        </div>
+
+        <!-- AI Suggestions -->
+        <div id="ai-suggestions" class="ai-suggestions hidden">
+            <h2>🐻 Chef Bear's Shopping Tips</h2>
+            <p>Ask Chef Bear what new foods to look for at Walmart</p>
+            <div>
+                <button class="ai-prompt-btn" onclick="getAISuggestion('soft proteins')">New Proteins</button>
+                <button class="ai-prompt-btn" onclick="getAISuggestion('easy snacks')">Easy Snacks</button>
+                <button class="ai-prompt-btn" onclick="getAISuggestion('gentle desserts')">Desserts</button>
+                <button class="ai-prompt-btn" onclick="getAISuggestion('soup ingredients')">Soup Stuff</button>
+                <button class="ai-prompt-btn" onclick="getAISuggestion('breakfast items')">Breakfast</button>
+            </div>
+            <div id="ai-suggestion-result"></div>
+        </div>
+
+        <!-- Category Tabs -->
+        <div class="browse-section">
+            <h2>Browse Safe Products</h2>
+            <div class="category-tabs" id="category-tabs">
+                <!-- Generated by JS -->
+            </div>
+            <div class="products-grid" id="products-grid">
+                <!-- Generated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Bear Lodge Inn &bull; Made with love for Larry</p>
+        <a href="index.html" style="color: var(--gold);">← Back to Menu</a>
+    </footer>
+
+    <script>
+        const WORKER_URL = 'https://bear-lodge-api.amiley03.workers.dev';
+        let productsData = null;
+        let activeCategory = null;
+
+        // Load products data
+        async function loadProducts() {
+            try {
+                const response = await fetch('safe-products.json');
+                productsData = await response.json();
+                renderCategoryTabs();
+                selectCategory(productsData.categories[0].id);
+            } catch (error) {
+                console.error('Error loading products:', error);
+            }
+        }
+
+        function renderCategoryTabs() {
+            const container = document.getElementById('category-tabs');
+            container.innerHTML = productsData.categories.map(cat => `
+                <div class="category-tab" data-category="${cat.id}" onclick="selectCategory('${cat.id}')">
+                    <span>${cat.icon}</span> ${cat.name}
+                </div>
+            `).join('');
+        }
+
+        function selectCategory(categoryId) {
+            activeCategory = categoryId;
+
+            // Update tab styles
+            document.querySelectorAll('.category-tab').forEach(tab => {
+                tab.classList.toggle('active', tab.dataset.category === categoryId);
+            });
+
+            // Render products
+            const category = productsData.categories.find(c => c.id === categoryId);
+            const container = document.getElementById('products-grid');
+
+            container.innerHTML = category.products.map(product => `
+                <div class="product-card" onclick="window.open('${product.walmartUrl}', '_blank')">
+                    <img src="${product.image}" alt="${product.name}"
+                         onerror="this.src='https://images.unsplash.com/photo-1495195134817-aeb325a55b65?w=400'">
+                    <div class="product-card-body">
+                        <h4>${product.name}</h4>
+                        <p class="description">${product.description}</p>
+                        <span class="why-safe">✓ ${product.whySafe}</span>
+                        <a href="${product.walmartUrl}" target="_blank" class="walmart-btn" onclick="event.stopPropagation()">
+                            View at Walmart →
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Check session auth
+        if (sessionStorage.getItem('discoverUnlocked') === 'true') {
+            unlockUI();
+        }
+
+        function unlockDiscover() {
+            const input = document.getElementById('discover-password');
+            if (input.value === 'bearbear') {
+                sessionStorage.setItem('discoverUnlocked', 'true');
+                unlockUI();
+            } else {
+                alert('Incorrect password');
+                input.value = '';
+            }
+        }
+
+        function unlockUI() {
+            document.getElementById('login-gate').classList.add('hidden');
+            document.getElementById('safety-checker').classList.remove('hidden');
+            document.getElementById('ai-suggestions').classList.remove('hidden');
+        }
+
+        async function checkFoodSafety() {
+            const input = document.getElementById('food-check-input').value.trim();
+            const result = document.getElementById('safety-result');
+
+            if (!input) {
+                alert('Please enter a food to check');
+                return;
+            }
+
+            result.style.display = 'block';
+            result.className = '';
+            result.innerHTML = '🐻 Checking...';
+
+            try {
+                const response = await fetch(WORKER_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        model: 'claude-sonnet-4-20250514',
+                        max_tokens: 500,
+                        messages: [{ role: 'user', content: `Is "${input}" safe for Larry?` }],
+                        system: `You evaluate foods for Larry who has portal hypertension, severe gastroparesis, and esophageal varices.
+
+SAFE foods are: soft, low-fiber, low-fat, low-sodium, easy to digest, require minimal chewing
+UNSAFE foods are: high fiber, raw vegetables, tough meats, spicy, high sodium, carbonated, alcohol, nuts, seeds, whole grains
+
+Respond with JSON only:
+{"safe": true/false/"maybe", "reason": "brief explanation", "tips": "how to prepare safely if applicable"}`
+                    })
+                });
+
+                const data = await response.json();
+                const evaluation = JSON.parse(data.content[0].text);
+
+                if (evaluation.safe === true) {
+                    result.className = 'safe';
+                    result.innerHTML = `<strong>✅ SAFE:</strong> ${evaluation.reason}${evaluation.tips ? `<br><em>Tip: ${evaluation.tips}</em>` : ''}`;
+                } else if (evaluation.safe === false) {
+                    result.className = 'unsafe';
+                    result.innerHTML = `<strong>❌ NOT SAFE:</strong> ${evaluation.reason}`;
+                } else {
+                    result.className = 'maybe';
+                    result.innerHTML = `<strong>⚠️ MAYBE:</strong> ${evaluation.reason}${evaluation.tips ? `<br><em>Tip: ${evaluation.tips}</em>` : ''}`;
+                }
+            } catch (error) {
+                result.className = 'unsafe';
+                result.innerHTML = 'Error checking food. Please try again.';
+            }
+        }
+
+        async function getAISuggestion(category) {
+            const result = document.getElementById('ai-suggestion-result');
+            result.style.display = 'block';
+            result.innerHTML = '🐻 Chef Bear is thinking...';
+
+            try {
+                const response = await fetch(WORKER_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        model: 'claude-sonnet-4-20250514',
+                        max_tokens: 600,
+                        messages: [{ role: 'user', content: `Suggest ${category} for Larry to look for at Walmart` }],
+                        system: `You are Chef Bear, helping Larry find safe foods at Walmart. Larry has gastroparesis and portal hypertension.
+
+Suggest 5 SPECIFIC products he can find at Walmart that are:
+- Soft, low-fiber, low-fat, low-sodium
+- Easy to digest
+- Ready to eat or easy to prepare
+
+Format as a simple list with product name and why it's good. Be specific (brand names help).
+Keep it friendly and encouraging!`
+                    })
+                });
+
+                const data = await response.json();
+                result.innerHTML = `<strong>🐻 Chef Bear says:</strong><br><br>${data.content[0].text.replace(/\n/g, '<br>')}`;
+            } catch (error) {
+                result.innerHTML = 'Chef Bear is taking a nap. Try again later!';
+            }
+        }
+
+        // Initialize
+        loadProducts();
+    </script>
+</body>
+</html>
