@@ -14,14 +14,16 @@
     ],
     "mealPattern": "6 small meals per day - liquids and soft foods prioritized",
     "rules": [
-      "Soft, low-fiber, low-fat foods only",
+      "Soft, low-fiber, LOW-FAT foods only - fat slows stomach emptying",
       "Small portions every 2-3 hours (1-1.5 cups max)",
       "Sit upright 1-2 hours after eating",
       "Liquids digest better than solids - soups and brothy meals are ideal",
-      "Low sodium everything (under 2g/day)",
+      "Low sodium everything (under 2g/day) - critical for portal hypertension",
+      "Use LOW-FAT dairy: skim milk, low-fat cheese, fat-free sour cream",
       "No spicy foods - risk of variceal bleeding",
-      "Air fryer instead of deep fryer",
+      "Air fryer instead of deep fryer (cuts fat by 80%)",
       "Chew food until mashed-potato consistency before swallowing",
+      "Fiber under 2g per serving - avoid bezoar formation",
       "If on levodopa, eat protein at different times than medication"
     ]
   },
@@ -65,14 +67,14 @@
           "recipe": {
             "ingredients": [
               "2 eggs",
-              "2 oz breakfast sausage (crumbled, cooked, drained)",
+              "2 oz ground turkey (seasoned with sage, crumbled, cooked)",
               "1 slice white toast (cubed)",
               "2 tbsp shredded cheese",
-              "Salt to taste"
+              "Salt sparingly sparingly (optional)"
             ],
             "instructions": [
               "Scramble eggs until soft and fluffy.",
-              "Cook sausage until no pink remains, crumble finely, drain fat well.",
+              "Cook turkey with a pinch of sage until no pink remains, crumble finely.",
               "Cube toast into small pieces.",
               "Combine all in a bowl, top with cheese.",
               "Serve warm."
@@ -92,7 +94,7 @@
               "1 tbsp butter",
               "2 slices white toast",
               "1/2 cup vanilla yogurt",
-              "Salt"
+              "Salt sparingly"
             ],
             "instructions": [
               "Melt butter in non-stick pan over low heat.",
@@ -233,11 +235,11 @@
           "isFlareUpSafe": true,
           "recipe": {
             "ingredients": [
-              "4 cups chicken broth",
+              "4 cups low-sodium chicken broth",
               "1 cup shredded chicken",
               "1 cup egg noodles",
               "1/2 cup soft-cooked carrots (diced small)",
-              "Salt to taste"
+              "Salt sparingly sparingly (optional)"
             ],
             "instructions": [
               "Bring broth to simmer.",
@@ -259,12 +261,12 @@
           "isFlareUpSafe": true,
           "recipe": {
             "ingredients": [
-              "4 cups chicken broth",
+              "4 cups low-sodium chicken broth",
               "2 eggs (beaten)",
               "1 tbsp cornstarch mixed with 2 tbsp cold water",
               "1/2 tsp ground ginger",
               "1/2 tsp sesame oil",
-              "Salt to taste"
+              "Salt sparingly sparingly (optional)"
             ],
             "instructions": [
               "Bring broth to a simmer.",
@@ -285,7 +287,7 @@
           "isFlareUpSafe": true,
           "recipe": {
             "ingredients": [
-              "1 can cream of tomato soup",
+              "1 can low-sodium cream of tomato soup",
               "1/2 cup milk",
               "2 slices white bread",
               "2 slices American cheese",
@@ -310,11 +312,11 @@
           "isFlareUpSafe": true,
           "recipe": {
             "ingredients": [
-              "4 cups chicken broth",
+              "4 cups low-sodium chicken broth",
               "1 cup cooked shredded turkey",
               "1/2 cup cooked white rice",
               "1/4 cup soft carrots",
-              "Salt"
+              "Salt sparingly"
             ],
             "instructions": [
               "Simmer broth with carrots until very soft.",
@@ -334,10 +336,10 @@
           "recipe": {
             "ingredients": [
               "3 cups peeled potatoes (cubed)",
-              "2 cups chicken broth",
+              "2 cups low-sodium chicken broth",
               "1 cup milk",
               "2 tbsp butter",
-              "Salt",
+              "Salt sparingly",
               "Shredded cheese for topping"
             ],
             "instructions": [
@@ -358,10 +360,10 @@
           "isFlareUpSafe": true,
           "recipe": {
             "ingredients": [
-              "2 cups chicken broth",
+              "2 cups low-sodium chicken broth",
               "1/2 cup cooked white rice",
               "1/2 cup shredded chicken",
-              "Salt"
+              "Salt sparingly"
             ],
             "instructions": [
               "Heat broth until simmering.",
@@ -380,7 +382,7 @@
           "recipe": {
             "ingredients": [
               "1 cup shredded chicken",
-              "1 can cream of chicken soup",
+              "1 can low-sodium cream of chicken soup",
               "1/4 cup milk",
               "1/4 cup soft peas",
               "1/4 cup soft carrots",
@@ -402,7 +404,7 @@
           "isFlareUpSafe": true,
           "recipe": {
             "ingredients": [
-              "4 cups chicken broth",
+              "4 cups low-sodium chicken broth",
               "1 cup egg noodles (cooked very soft)",
               "1/2 cup shredded chicken",
               "1 tbsp low-sodium soy sauce",
@@ -438,8 +440,8 @@
             "ingredients": [
               "2 lb pork loin",
               "1/2 cup balsamic glaze",
-              "1/4 cup chicken broth",
-              "Salt",
+              "1/4 cup low-sodium chicken broth",
+              "Salt sparingly",
               "4 cups mashed potatoes"
             ],
             "instructions": [
@@ -463,8 +465,8 @@
               "2 lb pork loin",
               "3 tbsp butter",
               "1 tsp garlic powder",
-              "1 cup chicken broth",
-              "Salt"
+              "1 cup low-sodium chicken broth",
+              "Salt sparingly"
             ],
             "instructions": [
               "Place pork loin in slow cooker.",
@@ -486,10 +488,10 @@
           "recipe": {
             "ingredients": [
               "1 lb ground beef",
-              "1 can cream of mushroom soup",
+              "1 can low-sodium cream of mushroom soup",
               "1/2 cup sour cream",
               "2 cups egg noodles (cooked very soft)",
-              "Salt"
+              "Salt sparingly"
             ],
             "instructions": [
               "Brown beef finely, drain fat.",
@@ -532,7 +534,7 @@
               "1 tsp paprika",
               "1/2 tsp garlic powder",
               "1/2 tsp onion powder",
-              "Salt",
+              "Salt sparingly",
               "1 cup cooked white rice",
               "2 tbsp butter"
             ],
@@ -579,7 +581,7 @@
             "ingredients": [
               "2 slices white bread (cubed)",
               "1 cup shredded turkey",
-              "1 cup turkey or chicken gravy",
+              "1 cup low-sodium turkey or chicken gravy",
               "Mashed potatoes"
             ],
             "instructions": [
@@ -602,7 +604,7 @@
               "1 egg",
               "1/2 cup white breadcrumbs",
               "1/4 cup milk",
-              "Salt",
+              "Salt sparingly",
               "2 tbsp ketchup"
             ],
             "instructions": [
@@ -624,7 +626,7 @@
             "ingredients": [
               "1 cup cooked pasta (very soft)",
               "1/2 cup shredded chicken",
-              "1/2 cup Alfredo sauce"
+              "1/2 cup low-sodium Alfredo sauce"
             ],
             "instructions": [
               "Cook pasta until very soft.",
@@ -644,7 +646,7 @@
               "1 tilapia or cod fillet",
               "2 tbsp butter",
               "1 tbsp lemon juice",
-              "Salt",
+              "Salt sparingly",
               "1 cup cooked white rice"
             ],
             "instructions": [
@@ -695,7 +697,7 @@
             "ingredients": [
               "4 flour tortillas",
               "1.5 cups shredded chicken",
-              "1 cup mild enchilada sauce",
+              "1 cup low-sodium mild enchilada sauce",
               "1 cup shredded cheese",
               "1/4 cup sour cream"
             ],
@@ -718,7 +720,7 @@
             "ingredients": [
               "4 flour tortillas",
               "2 cups shredded cheese",
-              "1 cup mild enchilada sauce",
+              "1 cup low-sodium mild enchilada sauce",
               "1/4 cup sour cream"
             ],
             "instructions": [
@@ -761,7 +763,7 @@
             "ingredients": [
               "1 cup cooked white rice",
               "1/2 cup shredded chicken",
-              "1/4 cup mild enchilada sauce",
+              "1/4 cup low-sodium mild enchilada sauce",
               "1/4 cup shredded cheese",
               "2 tbsp sour cream"
             ],
@@ -784,7 +786,7 @@
             "ingredients": [
               "4 flour tortillas (torn)",
               "1 cup shredded chicken",
-              "1.5 cups mild enchilada sauce",
+              "1.5 cups low-sodium mild enchilada sauce",
               "1.5 cups shredded cheese"
             ],
             "instructions": [
@@ -804,7 +806,7 @@
           "recipe": {
             "ingredients": [
               "1/2 lb ground turkey",
-              "1 tbsp mild taco seasoning",
+              "1 tbsp low-sodium mild taco seasoning",
               "1 cup cooked white rice",
               "1/4 cup shredded cheese",
               "2 tbsp sour cream"
@@ -880,7 +882,7 @@
               "1/3 cup low-sodium BBQ sauce",
               "1 tsp paprika",
               "1/2 tsp garlic powder",
-              "Salt",
+              "Salt sparingly",
               "Cooking spray"
             ],
             "instructions": [
@@ -903,7 +905,7 @@
               "1 lb chicken wings or drumettes",
               "2 tbsp butter (melted)",
               "1 tsp garlic powder",
-              "Salt",
+              "Salt sparingly",
               "Cooking spray"
             ],
             "instructions": [
@@ -927,7 +929,7 @@
               "1 tsp paprika",
               "1/2 tsp garlic powder",
               "1/2 tsp onion powder",
-              "Salt",
+              "Salt sparingly",
               "Cooking spray"
             ],
             "instructions": [
@@ -952,7 +954,7 @@
               "1/2 cup white breadcrumbs",
               "1/2 tsp paprika",
               "1/2 tsp garlic powder",
-              "Salt",
+              "Salt sparingly",
               "Cooking spray"
             ],
             "instructions": [
@@ -974,7 +976,7 @@
             "ingredients": [
               "3 medium potatoes (peeled)",
               "Cooking spray",
-              "Salt"
+              "Salt sparingly"
             ],
             "instructions": [
               "Peel potatoes and cut into thin sticks.",
@@ -1018,7 +1020,7 @@
           "recipe": {
             "ingredients": [
               "1 lb chicken breast, cubed",
-              "1/4 cup sweet and sour sauce",
+              "1/4 cup low-sodium sweet and sour sauce",
               "1 egg (beaten)",
               "1/4 cup cornstarch",
               "Cooking spray",
@@ -1052,7 +1054,7 @@
             "ingredients": [
               "2 slices white bread",
               "1 cup shredded turkey",
-              "1 cup chicken or turkey gravy",
+              "1 cup low-sodium chicken or turkey gravy",
               "Mashed potatoes on the side"
             ],
             "instructions": [
@@ -1098,7 +1100,7 @@
               "2 slices white bread",
               "1 cup shredded turkey",
               "2 slices Swiss cheese",
-              "2 tbsp Thousand Island dressing"
+              "2 tbsp low-sodium Thousand Island dressing"
             ],
             "instructions": [
               "Lay bread slices on baking sheet.",
@@ -1120,7 +1122,7 @@
             "ingredients": [
               "2 slices white bread",
               "1/2 lb ground beef (cooked, drained)",
-              "1 cup brown gravy",
+              "1 cup low-sodium brown gravy",
               "Mashed potatoes on the side"
             ],
             "instructions": [
@@ -1142,7 +1144,7 @@
             "ingredients": [
               "2 slices white bread",
               "1 cup shredded chicken",
-              "1/4 cup marinara sauce",
+              "1/4 cup low-sodium marinara sauce",
               "1/4 cup shredded mozzarella cheese"
             ],
             "instructions": [
@@ -1171,7 +1173,7 @@
           "recipe": {
             "ingredients": [
               "2 slices white bread",
-              "3 tbsp marinara sauce",
+              "3 tbsp low-sodium marinara sauce",
               "1/2 cup shredded mozzarella cheese"
             ],
             "instructions": [
@@ -1237,7 +1239,7 @@
           "recipe": {
             "ingredients": [
               "2 flour tortillas",
-              "1/4 cup mild enchilada sauce",
+              "1/4 cup low-sodium mild enchilada sauce",
               "1/2 cup shredded chicken",
               "1/2 cup shredded cheese",
               "2 tbsp sour cream"
@@ -1296,7 +1298,7 @@
               "1 tsp sesame oil",
               "1/2 tsp garlic powder",
               "1/2 tsp ground ginger",
-              "1/4 cup chicken broth"
+              "1/4 cup low-sodium chicken broth"
             ],
             "instructions": [
               "Cook noodles until very soft, drain.",
@@ -1416,7 +1418,7 @@
               "2 cups egg noodles (cooked very soft)",
               "1/2 tsp ground ginger",
               "1/2 tsp garlic powder",
-              "1/4 cup chicken broth"
+              "1/4 cup low-sodium chicken broth"
             ],
             "instructions": [
               "Cook noodles until very soft, drain.",
@@ -1562,7 +1564,7 @@
           "recipe": {
             "ingredients": [
               "1 slice white bread",
-              "2 tbsp marinara sauce",
+              "2 tbsp low-sodium marinara sauce",
               "1/4 cup shredded mozzarella cheese"
             ],
             "instructions": [
@@ -1856,15 +1858,15 @@
     ],
     "dairy": [
       {
-        "name": "milk",
+        "name": "skim or low-fat milk",
         "link": ""
       },
       {
-        "name": "butter",
+        "name": "butter (use sparingly)",
         "link": ""
       },
       {
-        "name": "shredded cheese",
+        "name": "low-fat shredded cheese",
         "link": ""
       },
       {
@@ -1880,23 +1882,23 @@
         "link": ""
       },
       {
-        "name": "sour cream",
+        "name": "fat-free sour cream",
         "link": ""
       },
       {
-        "name": "cream cheese",
+        "name": "low-fat cream cheese",
         "link": ""
       },
       {
-        "name": "cottage cheese",
+        "name": "low-fat cottage cheese",
         "link": ""
       },
       {
-        "name": "vanilla yogurt",
+        "name": "low-fat vanilla yogurt",
         "link": ""
       },
       {
-        "name": "vanilla ice cream",
+        "name": "low-fat vanilla ice cream",
         "link": ""
       },
       {
@@ -1906,39 +1908,39 @@
     ],
     "sauces": [
       {
-        "name": "chicken broth",
+        "name": "low-sodium chicken broth",
         "link": ""
       },
       {
-        "name": "turkey gravy",
+        "name": "low-sodium turkey gravy",
         "link": ""
       },
       {
-        "name": "chicken gravy",
+        "name": "low-sodium chicken gravy",
         "link": ""
       },
       {
-        "name": "brown gravy",
+        "name": "low-sodium brown gravy",
         "link": ""
       },
       {
-        "name": "cream of mushroom soup",
+        "name": "low-sodium cream of mushroom soup",
         "link": ""
       },
       {
-        "name": "cream of chicken soup",
+        "name": "low-sodium cream of chicken soup",
         "link": ""
       },
       {
-        "name": "cream of tomato soup",
+        "name": "low-sodium cream of tomato soup",
         "link": ""
       },
       {
-        "name": "alfredo sauce",
+        "name": "low-sodium alfredo sauce",
         "link": ""
       },
       {
-        "name": "mild enchilada sauce",
+        "name": "low-sodium mild enchilada sauce",
         "link": ""
       },
       {
@@ -1950,11 +1952,11 @@
         "link": ""
       },
       {
-        "name": "mild taco seasoning",
+        "name": "low-sodium mild taco seasoning",
         "link": ""
       },
       {
-        "name": "marinara sauce",
+        "name": "low-sodium marinara sauce",
         "link": ""
       },
       {
@@ -1974,11 +1976,11 @@
         "link": ""
       },
       {
-        "name": "sweet and sour sauce",
+        "name": "low-sodium sweet and sour sauce",
         "link": ""
       },
       {
-        "name": "Thousand Island dressing",
+        "name": "low-sodium Thousand Island dressing",
         "link": ""
       },
       {
@@ -2094,7 +2096,7 @@
         "link": ""
       },
       {
-        "name": "peanut butter",
+        "name": "peanut butter (smooth, use sparingly)",
         "link": ""
       },
       {
@@ -2323,6 +2325,22 @@
     {
       "name": "raw seafood",
       "reason": "safety"
+    },
+    {
+      "name": "whipping cream",
+      "reason": "high fat - slows stomach emptying"
+    },
+    {
+      "name": "half-and-half",
+      "reason": "high fat - slows stomach emptying"
+    },
+    {
+      "name": "full-fat milk",
+      "reason": "high fat - use skim or low-fat"
+    },
+    {
+      "name": "heavy cream",
+      "reason": "high fat - slows stomach emptying"
     }
   ],
   "mealPrepGuide": {
@@ -2348,11 +2366,11 @@
       "Eggs and milk",
       "Butter",
       "Shredded cheese and mozzarella",
-      "Canned soups (cream of mushroom, chicken, tomato)",
+      "Low-sodium canned soups (cream of mushroom, chicken, tomato)",
       "Chicken broth (low sodium)",
       "Low-sodium soy sauce and teriyaki sauce",
       "BBQ sauce (low sodium)",
-      "Marinara sauce",
+      "Low-sodium marinara sauce",
       "Protein powder",
       "Peanut butter"
     ],
