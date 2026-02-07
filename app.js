@@ -488,16 +488,16 @@ async function generateRecipeOfDay(theme) {
         cat.items.forEach(item => existingRecipes.push(item.name));
     });
 
-    const systemPrompt = `You are Chef Bear, a friendly AI chef creating safe recipes for Larry who has gastroparesis.
+    const systemPrompt = `You are Chef Bear creating safe recipes for Larry who has gastroparesis.
 
 ONLY use: ${approved.join(', ')}
 NEVER use: ${forbidden.join(', ')}
 NOT similar to: ${existingRecipes.join(', ')}
 
-Create ${theme}. Make it NEW and CREATIVE. Soft, gentle, easy to digest.
+Create ${theme}. Soft, gentle, easy to digest.
 
-Return JSON only:
-{"name":"Recipe Name","description":"One sentence","ingredients":["item with amount"],"instructions":["Step"],"category":"breakfast|soups|dinners|snacks|desserts","imageSearch":"food photo search term"}`;
+RESPOND WITH ONLY RAW JSON. NO MARKDOWN, NO CODE BLOCKS.
+{"name":"Recipe Name","description":"One sentence","ingredients":["item with amount"],"instructions":["Step"],"category":"breakfast|soups|dinners|snacks|desserts","imageSearch":"food photo term"}`;
 
     const response = await fetch(WORKER_URL, {
         method: 'POST',
@@ -513,7 +513,10 @@ Return JSON only:
     if (!response.ok) throw new Error('API error');
 
     const data = await response.json();
-    const recipe = JSON.parse(data.content[0].text);
+    let text = data.content[0].text;
+    text = text.replace(/```json\s*/gi, '').replace(/```\s*/g, '').trim();
+
+    const recipe = JSON.parse(text);
     recipe.image = `https://source.unsplash.com/800x600/?${encodeURIComponent(recipe.imageSearch || recipe.name)},food`;
 
     return recipe;
@@ -577,17 +580,8 @@ ${existingRecipes.join(', ')}
 
 Create something NEW and DIFFERENT from the existing recipes above.
 
-Respond with a JSON object in this exact format:
-{
-  "name": "Recipe Name",
-  "description": "Short appealing description (1 sentence)",
-  "ingredients": ["ingredient 1 with amount", "ingredient 2 with amount"],
-  "instructions": ["Step 1", "Step 2", "Step 3"],
-  "category": "breakfast|soups|dinners|mexican|snacks|desserts",
-  "imageSearch": "simple food photography search term for unsplash"
-}
-
-Only respond with valid JSON, no other text.`;
+RESPOND WITH ONLY A RAW JSON OBJECT. NO MARKDOWN, NO CODE BLOCKS, NO EXPLANATION.
+{"name":"Recipe Name","description":"Short description","ingredients":["item"],"instructions":["Step"],"category":"breakfast|soups|dinners|mexican|snacks|desserts","imageSearch":"search term"}`;
 
     // Show loading
     document.getElementById('explore-result').style.display = 'block';
@@ -619,7 +613,10 @@ Only respond with valid JSON, no other text.`;
         }
 
         const data = await response.json();
-        const text = data.content[0].text;
+        let text = data.content[0].text;
+
+        // Strip markdown code blocks if present
+        text = text.replace(/```json\s*/gi, '').replace(/```\s*/g, '').trim();
 
         // Parse the JSON response
         const recipe = JSON.parse(text);

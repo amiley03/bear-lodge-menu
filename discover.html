@@ -522,13 +522,15 @@
 SAFE foods are: soft, low-fiber, low-fat, low-sodium, easy to digest, require minimal chewing
 UNSAFE foods are: high fiber, raw vegetables, tough meats, spicy, high sodium, carbonated, alcohol, nuts, seeds, whole grains
 
-Respond with JSON only:
+RESPOND WITH ONLY RAW JSON, NO MARKDOWN:
 {"safe": true/false/"maybe", "reason": "brief explanation", "tips": "how to prepare safely if applicable"}`
                     })
                 });
 
                 const data = await response.json();
-                const evaluation = JSON.parse(data.content[0].text);
+                let text = data.content[0].text;
+                text = text.replace(/```json\s*/gi, '').replace(/```\s*/g, '').trim();
+                const evaluation = JSON.parse(text);
 
                 if (evaluation.safe === true) {
                     result.className = 'safe';
