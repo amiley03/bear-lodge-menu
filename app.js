@@ -276,7 +276,7 @@ document.querySelectorAll('.nav-item').forEach(link => {
 // ========== EXPLORE / AI SECTION ==========
 
 // Cloudflare Worker URL - UPDATE THIS after setting up your worker
-const WORKER_URL = 'YOUR_WORKER_URL_HERE';
+const WORKER_URL = 'https://bear-lodge-api.amiley03.workers.dev';
 
 let generatedRecipeData = null;
 
